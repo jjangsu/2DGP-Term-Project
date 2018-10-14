@@ -102,6 +102,5 @@ def test_game_framework():
     run(start_state)
 
 
-
 if __name__ == '__main__':
     test_game_framework()

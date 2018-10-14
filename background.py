@@ -10,6 +10,7 @@ background = None
 class Background:
     def __init__(self):
         self.image = load_image('resource/background.png')
+        self.image2 = load_image('resource/background1.png')
         pass
 
     def update(self):
@@ -17,6 +18,7 @@ class Background:
 
     def draw(self):
         self.image.clip_draw(0, 0, 900, 500, 450, 250)
+        self.image2.clip_draw(0, 0, 900, 100, 450, 50)
         pass
 
 

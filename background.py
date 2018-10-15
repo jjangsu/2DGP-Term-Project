@@ -9,17 +9,29 @@ background = None
 
 class Background:
     def __init__(self):
-        self.image = load_image('resource/background.png')
-        self.image2 = load_image('resource/background1.png')
+        self.background = load_image('resource/background.png')
+        self.background2 = load_image('resource/background.png')
+        self.fire = load_image('resource/background1.png')
         self.path = load_image('resource/Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_tb1.png')
+        self.backGround_x = 500
+        self.backGround_x2 = 1500
+
+        # self.path[]
         pass
 
     def update(self):
+        self.backGround_x -= 0.1
+        self.backGround_x2 -= 0.1
+        if (self.backGround_x < -500):
+            self.backGround_x = 1500
+        if self.backGround_x2 < -500:
+            self.backGround_x2 = 1500
         pass
 
     def draw(self):
-        self.image.clip_draw(0, 0, 1000, 500, 500, 250)
-        self.image2.clip_draw(0, 0, 1000, 100, 500, 50)
+        self.background.clip_draw(0, 0, 1000, 500, self.backGround_x, 250)
+        self.background.clip_draw(0, 0, 1000, 500, self.backGround_x2, 250)
+        self.fire.clip_draw(0, 0, 1000, 100, 500, 50)
         for n in range(10):
             self.path.clip_draw(0, 0, 124, 120, 124 * n, 10)
         pass
@@ -38,6 +50,8 @@ def exit():
 
 
 def update():
+    global background
+    background.update()
     pass
 
 

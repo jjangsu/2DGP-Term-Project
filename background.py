@@ -48,15 +48,15 @@ class Background:
         pass
 
 class Path:
-    def __init__(self):
+    def __init__(self, i):
         self.path = load_image('resource/Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_tb1.png')
-        self.path_x = 124
+        self.path_x = i * 124
         pass
 
     def update(self):
-        self.path_x -= 0.5
-        if self.path_x < -124:
-            self.path_x = 1240
+        self.path_x -= 1.0
+        if self.path_x < -62:
+            self.path_x = 124*10-62
         pass
 
     def draw(self):
@@ -65,31 +65,33 @@ class Path:
 
 
 def enter():
-    global background, path
+    global background, paths
     background = Background()
-    path = Path()
+    paths = [Path(n) for n in range(10)]
     pass
 
 
 def exit():
-    global background, path
+    global background, paths
     del (background)
-    del (path)
+    del (paths)
     pass
 
 
 def update():
-    global background, path
+    global background, paths
     background.update()
-    path.update()
+    for path in paths:
+        path.update()
     pass
 
 
 def draw():
-    global background, path
+    global background, paths
     clear_canvas()
     background.draw()
-    path.draw()
+    for path in paths:
+        path.draw()
     update_canvas()
     pass
 

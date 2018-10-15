@@ -13,12 +13,10 @@ class Background:
         self.background2 = load_image('resource/background.png')
         self.fire = load_image('resource/background1.png')
         self.fire2 = load_image('resource/background1.png')
-        self.path = load_image('resource/Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_tb1.png')
         self.backGround_x = 500
         self.backGround_x2 = 1500
         self.fire_x = 500
         self.fire_x2 = 1500
-        self.path_x = 124
 
         # self.path[]
         pass
@@ -38,9 +36,7 @@ class Background:
         if (self.fire_x2 < -500):
             self.fire_x2 = 1500
 
-        self.path_x -= 0.5
-        if self.path_x < -124:
-            self.path_x = 1240
+
         pass
 
     def draw(self):
@@ -48,43 +44,52 @@ class Background:
         self.background.clip_draw(0, 0, 1000, 500, self.backGround_x2, 250)
         self.fire.clip_draw(0, 0, 1000, 100, self.fire_x, 50)
         self.fire2.clip_draw(0, 0, 1000, 100, self.fire_x2, 50)
-        for n in range(10):
-            self.path.clip_draw(0, 0, 124, 120, self.path_x * n, 10)
+
         pass
 
 class Path:
     def __init__(self):
+        self.path = load_image('resource/Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_tb1.png')
+        self.path_x = 124
         pass
 
     def update(self):
+        self.path_x -= 0.5
+        if self.path_x < -124:
+            self.path_x = 1240
         pass
 
     def draw(self):
+        self.path.clip_draw(0, 0, 124, 120, self.path_x, 10)
         pass
 
 
 def enter():
-    global background
+    global background, path
     background = Background()
+    path = Path()
     pass
 
 
 def exit():
-    global background
+    global background, path
     del (background)
+    del (path)
     pass
 
 
 def update():
-    global background
+    global background, path
     background.update()
+    path.update()
     pass
 
 
 def draw():
-    global background
+    global background, path
     clear_canvas()
     background.draw()
+    path.draw()
     update_canvas()
     pass
 

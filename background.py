@@ -11,14 +11,17 @@ class Background:
     def __init__(self):
         self.image = load_image('resource/background.png')
         self.image2 = load_image('resource/background1.png')
+        self.path = load_image('resource/Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_tb1.png')
         pass
 
     def update(self):
         pass
 
     def draw(self):
-        self.image.clip_draw(0, 0, 900, 500, 450, 250)
-        self.image2.clip_draw(0, 0, 900, 100, 450, 50)
+        self.image.clip_draw(0, 0, 1000, 500, 500, 250)
+        self.image2.clip_draw(0, 0, 1000, 100, 500, 50)
+        for n in range(10):
+            self.path.clip_draw(0, 0, 124, 120, 124 * n, 10)
         pass
 
 

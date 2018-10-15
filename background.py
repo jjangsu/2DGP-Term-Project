@@ -18,6 +18,7 @@ class Background:
         self.backGround_x2 = 1500
         self.fire_x = 500
         self.fire_x2 = 1500
+        self.path_x = 124
 
         # self.path[]
         pass
@@ -36,6 +37,10 @@ class Background:
             self.fire_x = 1500
         if (self.fire_x2 < -500):
             self.fire_x2 = 1500
+
+        self.path_x -= 0.5
+        if self.path_x < -124:
+            self.path_x = 1240
         pass
 
     def draw(self):
@@ -44,7 +49,17 @@ class Background:
         self.fire.clip_draw(0, 0, 1000, 100, self.fire_x, 50)
         self.fire2.clip_draw(0, 0, 1000, 100, self.fire_x2, 50)
         for n in range(10):
-            self.path.clip_draw(0, 0, 124, 120, 124 * n, 10)
+            self.path.clip_draw(0, 0, 124, 120, self.path_x * n, 10)
+        pass
+
+class Path:
+    def __init__(self):
+        pass
+
+    def update(self):
+        pass
+
+    def draw(self):
         pass
 
 

@@ -12,9 +12,12 @@ class Background:
         self.background = load_image('resource/background.png')
         self.background2 = load_image('resource/background.png')
         self.fire = load_image('resource/background1.png')
+        self.fire2 = load_image('resource/background1.png')
         self.path = load_image('resource/Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_tb1.png')
         self.backGround_x = 500
         self.backGround_x2 = 1500
+        self.fire_x = 500
+        self.fire_x2 = 1500
 
         # self.path[]
         pass
@@ -26,12 +29,20 @@ class Background:
             self.backGround_x = 1500
         if self.backGround_x2 < -500:
             self.backGround_x2 = 1500
+
+        self.fire_x -= 0.3
+        self.fire_x2 -= 0.3
+        if(self.fire_x < -500):
+            self.fire_x = 1500
+        if (self.fire_x2 < -500):
+            self.fire_x2 = 1500
         pass
 
     def draw(self):
         self.background.clip_draw(0, 0, 1000, 500, self.backGround_x, 250)
         self.background.clip_draw(0, 0, 1000, 500, self.backGround_x2, 250)
-        self.fire.clip_draw(0, 0, 1000, 100, 500, 50)
+        self.fire.clip_draw(0, 0, 1000, 100, self.fire_x, 50)
+        self.fire2.clip_draw(0, 0, 1000, 100, self.fire_x2, 50)
         for n in range(10):
             self.path.clip_draw(0, 0, 124, 120, 124 * n, 10)
         pass

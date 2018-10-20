@@ -24,6 +24,8 @@ def enter():
                 obstacle_type = 1
             elif j == 2:
                 obstacle_type = 2
+            elif j == 3:
+                obstacle_type = 3
             if j != 0:
                 obstacles.append(obstacle.Obstacle(obstacle_type, row, col))
                 # obstacles.append(obstacle.Obstacle(obstacle_type, row, col + 1))

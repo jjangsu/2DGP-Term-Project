@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95ae52e5-0d25-4dd4-9c9a-d8a92e5a4725" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/fork_sky.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_scene.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_scene.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fork_sky_obstacle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fork_sausage_obstacle.py" beforeDir="false" afterPath="$PROJECT_DIR$/fork_sausage_obstacle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fork_sky.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pin_bean_obstacle.py" beforeDir="false" afterPath="$PROJECT_DIR$/pin_bean_obstacle.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +21,8 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/pin_bean_obstacle.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="209">
-                    <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+                  <state relative-caret-position="304">
+                    <caret line="16" column="58" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="58" />
                   </state>
                 </provider>
               </entry>
@@ -60,15 +61,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="18" />
-          <entry key="py" value="4518" />
+          <entry key="dummy" value="28" />
+          <entry key="py" value="4644" />
           <entry key="txt" value="144" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="162" />
-          <entry key="Python" value="4518" />
+          <entry key="PLAIN_TEXT" value="172" />
+          <entry key="Python" value="4644" />
         </counts>
       </usages-collector>
     </session>
@@ -153,8 +154,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fork_sausage_obstacle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+            <state relative-caret-position="190">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -162,7 +163,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_scene.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
+            <state relative-caret-position="323">
               <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
@@ -172,12 +173,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fork_sky.py">
+        <entry file="file://$PROJECT_DIR$/fork_sky_obstacle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="33" lean-forward="true" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+            <state relative-caret-position="304">
+              <caret line="16" column="58" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
               <folding>
-                <marker date="1540026965706" expanded="true" signature="37:38" ph="..." />
+                <marker date="1540027235624" expanded="true" signature="54:55" ph="..." />
               </folding>
             </state>
           </provider>
@@ -207,11 +208,12 @@
         <option value="$PROJECT_DIR$/pin_bean.py" />
         <option value="$PROJECT_DIR$/fork_sosege_obstacle.py" />
         <option value="$PROJECT_DIR$/obstacle.py" />
-        <option value="$PROJECT_DIR$/fork_sausage_obstacle.py" />
         <option value="$PROJECT_DIR$/obstacle.txt" />
         <option value="$PROJECT_DIR$/main_scene.py" />
-        <option value="$PROJECT_DIR$/pin_bean_obstacle.py" />
         <option value="$PROJECT_DIR$/fork_sky.py" />
+        <option value="$PROJECT_DIR$/pin_bean_obstacle.py" />
+        <option value="$PROJECT_DIR$/fork_sausage_obstacle.py" />
+        <option value="$PROJECT_DIR$/fork_sky_obstacle.py" />
       </list>
     </option>
   </component>
@@ -304,12 +306,12 @@
     <frame x="-7" y="0" width="1101" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22859831" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22859831" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32894737" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32894737" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991228" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -403,23 +405,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fork_sausage_obstacle.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cookie run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/obstacle.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -453,9 +438,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/fork_sausage_obstacle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main_scene.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
+        <state relative-caret-position="323">
           <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
@@ -463,19 +455,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pin_bean_obstacle.py">
+    <entry file="file://$PROJECT_DIR$/cookie run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        <state relative-caret-position="114">
+          <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fork_sky.py">
+    <entry file="file://$PROJECT_DIR$/pin_bean_obstacle.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="33" lean-forward="true" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+        <state relative-caret-position="304">
+          <caret line="16" column="58" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fork_sky_obstacle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="58" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
           <folding>
-            <marker date="1540026965706" expanded="true" signature="37:38" ph="..." />
+            <marker date="1540027235624" expanded="true" signature="54:55" ph="..." />
           </folding>
         </state>
       </provider>

@@ -1,5 +1,6 @@
 import pin_bean_obstacle
 import fork_sausage_obstacle
+import fork_sky_obstacle
 
 class Obstacle:
     def __init__(self, obstacle_type, row, col):
@@ -7,6 +8,8 @@ class Obstacle:
             self.type = pin_bean_obstacle.Pin_bean(row, col)
         elif obstacle_type == 2:
             self.type = fork_sausage_obstacle.Fork_sausage(row, col)
+        elif obstacle_type == 3:
+            self.type = fork_sky_obstacle.Fork_sky(row, col)
 
     def update(self):
         self.type.update()

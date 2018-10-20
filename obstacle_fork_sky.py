@@ -5,7 +5,7 @@ class Fork_sky:
     def __init__(self, row, col):
         if Fork_sky.image == None:
             self.image = load_image('resource\Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_sdA.png')
-            self.x = (106 * 9) * col + 106 * row
+            self.x = (106 * 12) * col + 106 * row
             self.y = 500 - 120
         pass
 

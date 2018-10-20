@@ -5,7 +5,7 @@ class Fork_sausage:
     def __init__(self, row, col):
         if Fork_sausage.image == None:
             self.image = load_image('resource\Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_jp2B.png')
-            self.x = (105 * 9) * col + 105 * row
+            self.x = (105 * 12) * col + 105 * row
             self.y = 70 + 92
         pass
 

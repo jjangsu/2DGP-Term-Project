@@ -14,7 +14,7 @@ class Obstacle:
         elif obstacle_type == 3:
             self.type = obstacle_fork_sky.Fork_sky(row, col)
         elif obstacle_type == 4:
-            self.type = random.randint(0, 1)
+            self.type = 1 #random.randint(0, 1)
             self.type = obstacle_fly_stone.Fly_stone(row, col, self.type)
 
     def update(self):

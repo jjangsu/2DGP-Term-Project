@@ -5,7 +5,7 @@ class Pin_bean:
     def __init__(self, row, col):
         if Pin_bean.image == None:
             self.image = load_image('resource\Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_jp1B.png')
-            self.x = (106 * 9) * col + 106 * row
+            self.x = (106 * 12) * col + 106 * row
             self.y = 70 + 45 # 115
         pass
 

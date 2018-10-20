@@ -12,11 +12,11 @@ def enter():
     backgrounds = background.Background()
     paths = [path.Path(n) for n in range(10)]
 
-    line = [[0] * 3 for i in range(10 + 1)]
+    line = [[0] * 12 for i in range(12)]
     with open('obstacle.txt', 'r') as file:
         line = np.loadtxt('obstacle.txt', delimiter=' ')
     row = 1
-    col = 1
+    col = 0
     for i in line:
         for j in i:
             j = int(j)
@@ -26,7 +26,9 @@ def enter():
                 obstacle_type = 2
             if j != 0:
                 obstacles.append(obstacle.Obstacle(obstacle_type, row, col))
+                # obstacles.append(obstacle.Obstacle(obstacle_type, row, col + 1))
             row = row + 1
+        row = 4
         col += 1
     pass
 #

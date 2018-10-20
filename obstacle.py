@@ -1,13 +1,15 @@
 from pico2d import *
 
+
 class Obstacle:
     pin_bean = None
-    def __init__(self):
-        if Obstacle.pin_bean == None:
+    def __init__(self, obstacle_type, j):
+        #self.line = [[0] * 10 for i in range(2 + 1)]
+
+        if obstacle_type == 1:
             self.pin_bean = load_image('resource\Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_jp1B.png')
-        self.pin_bean_x = 124 * 9
-        self.pin_bean_y = 115
-        pass
+            self.pin_bean_x = 68 * 9 + 68 * j
+            self.pin_bean_y = 115
 
     def update(self):
         self.pin_bean_x -= 1.0

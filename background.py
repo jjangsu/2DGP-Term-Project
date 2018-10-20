@@ -1,6 +1,7 @@
 from pico2d import *
 import random
 import os
+import path
 
 import game_framework
 
@@ -22,15 +23,15 @@ class Background:
         pass
 
     def update(self):
-        self.backGround_x -= 0.1
-        self.backGround_x2 -= 0.1
+        self.backGround_x -= 0.3
+        self.backGround_x2 -= 0.3
         if (self.backGround_x < -500):
             self.backGround_x = 1500
         if self.backGround_x2 < -500:
             self.backGround_x2 = 1500
 
-        self.fire_x -= 0.3
-        self.fire_x2 -= 0.3
+        self.fire_x -= 0.5
+        self.fire_x2 -= 0.5
         if(self.fire_x < -500):
             self.fire_x = 1500
         if (self.fire_x2 < -500):
@@ -47,27 +48,13 @@ class Background:
 
         pass
 
-class Path:
-    def __init__(self, i):
-        self.path = load_image('resource/Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_tb1.png')
-        self.path_x = i * 124
-        pass
 
-    def update(self):
-        self.path_x -= 1.0
-        if self.path_x < -62:
-            self.path_x = 124*10-62
-        pass
-
-    def draw(self):
-        self.path.clip_draw(0, 0, 124, 120, self.path_x, 10)
-        pass
 
 
 def enter():
     global background, paths
     background = Background()
-    paths = [Path(n) for n in range(10)]
+    paths = [path.Path(n) for n in range(10)]
     pass
 
 
@@ -110,4 +97,7 @@ def pause():
 
 def resume():
     pass
+
+
+
 

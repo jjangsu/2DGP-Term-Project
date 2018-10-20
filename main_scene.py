@@ -15,16 +15,19 @@ def enter():
     line = [[0] * 3 for i in range(10 + 1)]
     with open('obstacle.txt', 'r') as file:
         line = np.loadtxt('obstacle.txt', delimiter=' ')
-    t = 1
+    row = 1
+    col = 1
     for i in line:
         for j in i:
             j = int(j)
             if j == 1:
                 obstacle_type = 1
+            elif j == 2:
+                obstacle_type = 2
             if j != 0:
-                obstacles.append(obstacle.Obstacle(obstacle_type, t))
-            t = t + 1
-                #obstacles = [obstacle.Obstacle(obstacle_type, n) for n in i]
+                obstacles.append(obstacle.Obstacle(obstacle_type, row, col))
+            row = row + 1
+        col += 1
     pass
 #
 

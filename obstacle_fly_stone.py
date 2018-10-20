@@ -1,5 +1,5 @@
 from pico2d import *
-import random
+import obstacle_fly_stone_1
 
 class Fly_stone:
     image = None

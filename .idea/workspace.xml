@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95ae52e5-0d25-4dd4-9c9a-d8a92e5a4725" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/main_scene.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_scene.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obstacle.py" beforeDir="false" afterPath="$PROJECT_DIR$/obstacle.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,13 +38,12 @@
               </entry>
             </file>
             <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/obstacle.py">
+              <entry file="file://$PROJECT_DIR$/main_scene.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="247">
-                    <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+                  <state relative-caret-position="361">
+                    <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
                     <folding>
-                      <marker date="1540022786647" expanded="true" signature="58:63" ph="..." />
-                      <marker date="1540022786647" expanded="true" signature="107:108" ph="..." />
+                      <element signature="e#0#20#0" expanded="true" />
                     </folding>
                   </state>
                 </provider>
@@ -72,7 +70,7 @@
           <entry key="PNG" value="3" />
           <entry key="jpg" value="4" />
           <entry key="png" value="13" />
-          <entry key="py" value="21" />
+          <entry key="py" value="23" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
@@ -80,43 +78,45 @@
         <counts>
           <entry key="Image" value="20" />
           <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Python" value="21" />
+          <entry key="Python" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="2" />
-          <entry key="py" value="3813" />
-          <entry key="txt" value="42" />
+          <entry key="py" value="4071" />
+          <entry key="txt" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="44" />
-          <entry key="Python" value="3813" />
+          <entry key="PLAIN_TEXT" value="45" />
+          <entry key="Python" value="4071" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main_scene.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/obstacle.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="19">
-              <caret line="1" column="19" lean-forward="true" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+              <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/obstacle.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+              <folding>
+                <marker date="1540023814375" expanded="true" signature="39:43" ph="..." />
+                <marker date="1540023814375" expanded="true" signature="87:88" ph="..." />
+                <marker date="1540023814375" expanded="true" signature="324:329" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -172,15 +172,15 @@
         <option value="$PROJECT_DIR$/path.py" />
         <option value="$PROJECT_DIR$/background.py" />
         <option value="$PROJECT_DIR$/o.txt" />
+        <option value="$PROJECT_DIR$/main_scene.py" />
         <option value="$PROJECT_DIR$/obstacle.txt" />
         <option value="$PROJECT_DIR$/obstacle.py" />
-        <option value="$PROJECT_DIR$/main_scene.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
-    <option name="width" value="974" />
+    <option name="width" value="1101" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
@@ -264,10 +264,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-7" y="0" width="1101" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2596154" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22859831" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -355,13 +355,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/path.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/background.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -390,30 +383,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/obstacle.txt">
+    <entry file="file://$PROJECT_DIR$/path.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="19" lean-forward="true" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+        <state relative-caret-position="171">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/obstacle.py">
+    <entry file="file://$PROJECT_DIR$/obstacle.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-          <folding>
-            <marker date="1540022786647" expanded="true" signature="58:63" ph="..." />
-            <marker date="1540022786647" expanded="true" signature="107:108" ph="..." />
-          </folding>
+        <state relative-caret-position="19">
+          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main_scene.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+        <state relative-caret-position="361">
+          <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/obstacle.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="23" column="20" lean-forward="true" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+          <folding>
+            <marker date="1540023814375" expanded="true" signature="39:43" ph="..." />
+            <marker date="1540023814375" expanded="true" signature="87:88" ph="..." />
+            <marker date="1540023814375" expanded="true" signature="324:329" ph="..." />
           </folding>
         </state>
       </provider>

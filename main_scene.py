@@ -8,7 +8,7 @@ import obstacle
 obstacles = []
 
 def enter():
-    global backgrounds, paths, obstacles, line
+    global backgrounds, paths, obstacles, line, obstacle_type
     backgrounds = background.Background()
     paths = [path.Path(n) for n in range(10)]
 

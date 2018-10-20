@@ -1,5 +1,3 @@
-import random
-
 import obstacle_pin_bean
 import obstacle_fork_sausage
 import obstacle_fork_sky
@@ -14,8 +12,7 @@ class Obstacle:
         elif obstacle_type == 3:
             self.type = obstacle_fork_sky.Fork_sky(row, col)
         elif obstacle_type == 4:
-            self.type = 1 #random.randint(0, 1)
-            self.type = obstacle_fly_stone.Fly_stone(row, col, self.type)
+            self.type = obstacle_fly_stone.Fly_stone(row, col)
 
     def update(self):
         self.type.update()

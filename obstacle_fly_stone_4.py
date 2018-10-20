@@ -2,14 +2,15 @@ from pico2d import *
 
 class Stone_4:
     image = None
-    def __init__(self, col, row):
+
+    def __init__(self, row, col):
         if Stone_4.image == None:
-            self.image = load_image(
+            Stone_4.image = load_image(
                 'resource\Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_bl1_ing_sprite.png')
-            self.x = ((106 * 12) * col + 106 * row - 0) * 2
-            self.y = 500 / 2 - 85
-            self.frame = 0
-            self.time = 0
+        self.x = ((106 * 12) * col + 106 * row - 0) * 2
+        self.y = 500 / 2 - 85
+        self.frame = 0
+        self.time = 0
         pass
 
     def update(self):
@@ -22,4 +23,6 @@ class Stone_4:
 
     def draw(self):
         self.image.clip_draw(self.frame * 200, 0, 202, 117, self.x, self.y)
+        self.image.clip_draw(self.frame * 200, 0, 202, 117, self.x, self.y + 70)
+        self.image.clip_draw(self.frame * 200, 0, 202, 117, self.x, self.y + 70 * 2)
         pass

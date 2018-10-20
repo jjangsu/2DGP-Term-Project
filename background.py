@@ -2,17 +2,23 @@ from pico2d import *
 import random
 import os
 
-
-
 name = "background_state"
-background = None
 
 class Background:
+    background = None
+    background2 = None
+    fire = None
+    fire2 = None
+
     def __init__(self):
-        self.background = load_image('resource/background.png')
-        self.background2 = load_image('resource/background.png')
-        self.fire = load_image('resource/background1.png')
-        self.fire2 = load_image('resource/background1.png')
+        if Background.background == None:
+            self.background = load_image('resource/background.png')
+        if Background.background2 == None:
+            self.background2 = load_image('resource/background.png')
+        if Background.fire == None:
+            self.fire = load_image('resource/background1.png')
+        if Background.fire2 == None:
+            self.fire2 = load_image('resource/background1.png')
         self.backGround_x = 500
         self.backGround_x2 = 1500
         self.fire_x = 500

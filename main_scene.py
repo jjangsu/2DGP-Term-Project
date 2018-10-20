@@ -4,31 +4,31 @@ import path
 import background
 
 def enter():
-    global background, paths
-    background = background.Background()
+    global backgrounds, paths
+    backgrounds = background.Background()
     paths = [path.Path(n) for n in range(10)]
     pass
 
 
 def exit():
-    global background, paths
-    del (background)
+    global backgrounds, paths
+    del (backgrounds)
     del (paths)
     pass
 
 
 def update():
-    global background, paths
-    background.update()
+    global backgrounds, paths
+    backgrounds.update()
     for path in paths:
         path.update()
     pass
 
 
 def draw():
-    global background, paths
+    global backgrounds, paths
     clear_canvas()
-    background.draw()
+    backgrounds.draw()
     for path in paths:
         path.draw()
     update_canvas()

@@ -31,7 +31,7 @@ def enter():
         row = 4
         col += 1
     pass
-#
+
 
 def exit():
     global backgrounds, paths, obstacles

@@ -5,11 +5,12 @@ import background
 import numpy as np
 import obstacle
 import fps
+import character
 
 obstacles = []
 
 def enter():
-    global backgrounds, paths, obstacles, line, obstacle_type
+    global backgrounds, paths, obstacles, line, obstacle_type, cookie
     backgrounds = background.Background()
     paths = [path.Path(n) for n in range(10)]
 
@@ -34,32 +35,36 @@ def enter():
             row = row + 1
         row = 4
         col += 1
+    cookie = character.Character(1)
 
 
 def exit():
-    global backgrounds, paths, obstacles
+    global backgrounds, paths, obstacles, cookie
     del (backgrounds)
     del (paths)
-    del(obstacles)
+    del (obstacles)
+    del (cookie)
 
 
 def update():
-    global backgrounds, paths, obstacles
+    global backgrounds, paths, obstacles, cookie
     backgrounds.update()
     for path in paths:
         path.update()
     for obstacle in obstacles:
         obstacle.update()
+    cookie.update()
 
 
 def draw():
-    global backgrounds, paths, obstacles
+    global backgrounds, paths, obstacles, cookie
     clear_canvas()
     backgrounds.draw()
     for path in paths:
         path.draw()
     for obstacle in obstacles:
         obstacle.draw()
+    cookie.draw()
     update_canvas()
 
 

@@ -4,6 +4,7 @@ import path
 import background
 import numpy as np
 import obstacle
+import fps
 
 obstacles = []
 
@@ -33,7 +34,6 @@ def enter():
             row = row + 1
         row = 4
         col += 1
-    pass
 
 
 def exit():
@@ -41,7 +41,6 @@ def exit():
     del (backgrounds)
     del (paths)
     del(obstacles)
-    pass
 
 
 def update():
@@ -51,7 +50,6 @@ def update():
         path.update()
     for obstacle in obstacles:
         obstacle.update()
-    pass
 
 
 def draw():
@@ -63,7 +61,6 @@ def draw():
     for obstacle in obstacles:
         obstacle.draw()
     update_canvas()
-    pass
 
 
 def handle_events():
@@ -71,7 +68,6 @@ def handle_events():
     for event in events:
         if event.type == SDL_QUIT:
             game_framework.quit()
-    pass
 
 
 def pause():

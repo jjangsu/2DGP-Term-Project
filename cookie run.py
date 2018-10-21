@@ -1,9 +1,9 @@
 import game_framework
 import pico2d
 
-import main_scene
+import scene_main
 
 
 pico2d.open_canvas(1000, 500)
-game_framework.run(main_scene)
+game_framework.run(scene_main)
 pico2d.close_canvas()

@@ -1,6 +1,6 @@
 from pico2d import *
 import game_framework
-import scene_main
+import scene_robby
 
 image = None
 start_time = 0.0
@@ -21,7 +21,7 @@ def update():
     global start_time
     if(start_time > 2.0):
         start_time = 0
-        game_framework.change_state(scene_main)
+        game_framework.change_state(scene_robby)
     start_time += 0.01
     pass
 

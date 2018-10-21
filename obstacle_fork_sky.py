@@ -14,5 +14,6 @@ class Fork_sky:
         pass
 
     def draw(self):
-        self.image.clip_draw(0, 0, 86, 482, self.x, self.y)
+        if self.x < 1100 and self.x > -100:
+            self.image.clip_draw(0, 0, 86, 482, self.x, self.y)
         pass

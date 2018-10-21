@@ -14,5 +14,6 @@ class Fork_sausage:
         pass
 
     def draw(self):
-        self.image.clip_draw(0, 0, 106, 193, self.x, self.y)
+        if self.x < 1100 and self.x > -100:
+            self.image.clip_draw(0, 0, 106, 193, self.x, self.y)
         pass

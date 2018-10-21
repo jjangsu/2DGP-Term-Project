@@ -23,8 +23,9 @@ class Stone_4:
         pass
 
     def draw(self):
-        self.image.clip_draw(self.frame * 200, 0, 202, 117, self.x, self.y)
-        self.image.clip_draw(self.frame * 200, 0, 202, 117, self.x, self.y + 70)
-        self.image.clip_draw(self.frame * 200, 0, 202, 117, self.x, self.y + 70 * 2)
-        self.image.clip_draw(self.frame * 200, 0, 202, 117, self.x, self.y + 70 * 3)
+        if self.x < 1100 and self.x > -100:
+            self.image.clip_draw(self.frame * 200, 0, 202, 117, self.x, self.y)
+            self.image.clip_draw(self.frame * 200, 0, 202, 117, self.x, self.y + 70)
+            self.image.clip_draw(self.frame * 200, 0, 202, 117, self.x, self.y + 70 * 2)
+            self.image.clip_draw(self.frame * 200, 0, 202, 117, self.x, self.y + 70 * 3)
         pass

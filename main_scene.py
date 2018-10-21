@@ -10,7 +10,8 @@ import character
 obstacles = []
 
 def enter():
-    global backgrounds, paths, obstacles, line, obstacle_type, cookie
+    global backgrounds, paths, obstacles, line, obstacle_type, cookie, FPS
+    FPS = fps.FPS()
     backgrounds = background.Background()
     paths = [path.Path(n) for n in range(10)]
     cookie = character.Character(1)
@@ -39,15 +40,17 @@ def enter():
 
 
 def exit():
-    global backgrounds, paths, obstacles, cookie
+    global backgrounds, paths, obstacles, cookie, FPS
     del (backgrounds)
     del (paths)
     del (obstacles)
     del (cookie)
+    del (FPS)
 
 
 def update():
-    global backgrounds, paths, obstacles, cookie
+    global backgrounds, paths, obstacles, cookie, FPS
+    FPS.update()
     backgrounds.update()
     for path in paths:
         path.update()

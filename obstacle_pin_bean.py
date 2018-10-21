@@ -1,4 +1,5 @@
 from pico2d import *
+import fps
 
 class Pin_bean:
     image = None
@@ -10,7 +11,7 @@ class Pin_bean:
         pass
 
     def update(self):
-        self.x -= 2.0
+        self.x -= 2.0 * fps.FPS().elapsed
         pass
 
     def draw(self):

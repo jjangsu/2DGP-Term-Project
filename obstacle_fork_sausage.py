@@ -1,4 +1,5 @@
 from pico2d import *
+import fps
 
 class Fork_sausage:
     image = None
@@ -10,7 +11,7 @@ class Fork_sausage:
         pass
 
     def update(self):
-        self.x -= 2.0
+        self.x -= 2.0 * fps.FPS().elapsed
         pass
 
     def draw(self):

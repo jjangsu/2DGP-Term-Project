@@ -1,5 +1,6 @@
 from pico2d import *
 import character
+import fps
 
 class Stone_4:
     image = None
@@ -15,7 +16,7 @@ class Stone_4:
         pass
 
     def update(self):
-        self.x -= 4.0
+        self.x -= 4.0 * fps.FPS().elapsed
         self.time += 1
         if self.time > 20:
             self.frame = (self.frame + 1) % 3

@@ -25,4 +25,5 @@ class Stone_4:
         self.image.clip_draw(self.frame * 200, 0, 202, 117, self.x, self.y)
         self.image.clip_draw(self.frame * 200, 0, 202, 117, self.x, self.y + 70)
         self.image.clip_draw(self.frame * 200, 0, 202, 117, self.x, self.y + 70 * 2)
+        self.image.clip_draw(self.frame * 200, 0, 202, 117, self.x, self.y + 70 * 3)
         pass

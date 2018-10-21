@@ -10,7 +10,7 @@ class Fork_sausage:
         pass
 
     def update(self):
-        self.x -= 1.0
+        self.x -= 2.0
         pass
 
     def draw(self):

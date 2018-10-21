@@ -14,4 +14,3 @@ class FPS:
         self.lastTime = self.current
         self.lag += self.elapsed
         pass
-7

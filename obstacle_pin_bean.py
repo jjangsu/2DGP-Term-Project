@@ -10,7 +10,7 @@ class Pin_bean:
         pass
 
     def update(self):
-        self.x -= 1.0
+        self.x -= 2.0
         pass
 
     def draw(self):

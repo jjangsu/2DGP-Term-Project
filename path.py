@@ -9,7 +9,7 @@ class Path:
         pass
 
     def update(self):
-        self.path_x -= 1.0
+        self.path_x -= 2.0
         if self.path_x < -62:
             self.path_x = 124*10-62
         pass

@@ -13,6 +13,7 @@ def enter():
     global backgrounds, paths, obstacles, line, obstacle_type, cookie
     backgrounds = background.Background()
     paths = [path.Path(n) for n in range(10)]
+    cookie = character.Character(1)
 
     line = [[0] * 12 for i in range(12)]
     with open('obstacle.txt', 'r') as file:
@@ -35,7 +36,6 @@ def enter():
             row = row + 1
         row = 4
         col += 1
-    cookie = character.Character(1)
 
 
 def exit():

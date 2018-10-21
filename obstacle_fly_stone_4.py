@@ -1,4 +1,5 @@
 from pico2d import *
+import character
 
 class Stone_4:
     image = None
@@ -7,14 +8,14 @@ class Stone_4:
         if Stone_4.image == None:
             Stone_4.image = load_image(
                 'resource\Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_bl1_ing_sprite.png')
-        self.x = ((106 * 12) * col + 106 * row - 0) * 2
+        self.x = ((106 * 12) * col + 106 * row - character.Character(1).x + 118) * 2
         self.y = 500 / 2 - 85
         self.frame = 0
         self.time = 0
         pass
 
     def update(self):
-        self.x -= 2.0
+        self.x -= 4.0
         self.time += 1
         if self.time > 20:
             self.frame = (self.frame + 1) % 3

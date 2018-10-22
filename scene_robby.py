@@ -13,8 +13,9 @@ mouse = None
 mouse_x = 0
 mouse_y = 0
 
+
 def enter():
-    global top_image, bottom_image, top_image_2, mouse, mouse_x, mouse_y
+    global top_image, bottom_image, mouse
     if top_image == None:
         top_image = load_image('resource/robby_top1.png')
 
@@ -24,6 +25,8 @@ def enter():
     if mouse == None:
         hide_cursor()
         mouse = load_image('resource/mouse1.png')
+
+
     pass
 
 def exit():
@@ -49,6 +52,7 @@ def update():
     bottom_image_x_2 -= 1.0 * fps.FPS().elapsed
     if bottom_image_x_2 < -657:
         bottom_image_x_2 = 1000 + 1314 / 2
+
     pass
 
 
@@ -59,7 +63,7 @@ def draw():
     top_image.clip_draw(0, 0, 1030, 246, top_image_x_2, 250 + 125)
     bottom_image.clip_draw(0, 0, 1314, 394, bottom_image_x, 250 - 195)
     bottom_image.clip_draw(0, 0, 1314, 394, bottom_image_x_2, 250 - 195)
-    mouse.clip_draw(0, 0, 80, 80, mouse_x, mouse_y)
+    mouse.clip_draw(0, 0, 73, 73, mouse_x, mouse_y)
     update_canvas()
     pass
 
@@ -69,7 +73,7 @@ def handle_events():
     events = get_events()
     for event in events:
         if event.type == SDL_MOUSEMOTION:
-            mouse_x, mouse_y = event.x, 500 - 1 - event.y
+            mouse_x, mouse_y = event.x, 500 - 1 - event.y - 73/2 + 3
         if event.type == SDL_KEYDOWN:
             if event.key == SDLK_SPACE:
                 game_framework.push_state(scene_main)

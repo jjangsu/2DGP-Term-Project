@@ -1,6 +1,7 @@
 from pico2d import *
 import game_framework
 import fps
+import scene_main
 
 top_image = None
 top_image_x = 500
@@ -69,6 +70,9 @@ def handle_events():
     for event in events:
         if event.type == SDL_MOUSEMOTION:
             mouse_x, mouse_y = event.x, 500 - 1 - event.y
+        if event.type == SDL_KEYDOWN:
+            if event.key == SDLK_SPACE:
+                game_framework.push_state(scene_main)
     pass
 
 

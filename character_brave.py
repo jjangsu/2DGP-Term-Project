@@ -10,6 +10,11 @@ class Brave():
         self.time = 0
         pass
 
+    def newPosition(self, x, y):
+        self.x = x
+        self.y = y
+        pass
+
     def update(self):
         self.time += 1
         if self.time > 2:

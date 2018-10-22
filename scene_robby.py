@@ -2,6 +2,8 @@ from pico2d import *
 import game_framework
 import fps
 import scene_main
+import character_brave
+import character_bright
 
 top_image = None
 top_image_x = 500
@@ -15,7 +17,7 @@ mouse_y = 0
 
 
 def enter():
-    global top_image, bottom_image, mouse
+    global top_image, bottom_image, mouse, brave, bright
     if top_image == None:
         top_image = load_image('resource/robby_top1.png')
 
@@ -26,19 +28,27 @@ def enter():
         hide_cursor()
         mouse = load_image('resource/mouse1.png')
 
+    brave = character_brave.Brave()
+    brave.newPosition(500 - 150, 250)
+
+    bright = character_bright.Bright()
+    bright.newPosition(500 + 150, 250)
+
 
     pass
 
 def exit():
-    global top_image, bottom_image, mouse
+    global top_image, bottom_image, mouse, brave, bright
     del (top_image)
     del (bottom_image)
     del (mouse)
+    del (brave)
+    del (bright)
     pass
 
 
 def update():
-    global top_image_x, top_image_x_2, bottom_image_x, bottom_image_x_2
+    global top_image_x, top_image_x_2, bottom_image_x, bottom_image_x_2, brave, bright
     top_image_x -= 0.5 * fps.FPS().elapsed
     if top_image_x <= -515:
         top_image_x = 1000 + 515
@@ -53,16 +63,21 @@ def update():
     if bottom_image_x_2 < -657:
         bottom_image_x_2 = 1000 + 1314 / 2
 
+    brave.update()
+    bright.update()
+
     pass
 
 
 def draw():
-    global top_image, bottom_image, top_image_2, bottom_image_x_2
+    global top_image, bottom_image, top_image_2, bottom_image_x_2, brave, bright
     clear_canvas()
     top_image.clip_draw(0, 0, 1030, 246, top_image_x, 250 + 125)
     top_image.clip_draw(0, 0, 1030, 246, top_image_x_2, 250 + 125)
     bottom_image.clip_draw(0, 0, 1314, 394, bottom_image_x, 250 - 195)
     bottom_image.clip_draw(0, 0, 1314, 394, bottom_image_x_2, 250 - 195)
+    brave.draw()
+    bright.draw()
     mouse.clip_draw(0, 0, 73, 73, mouse_x, mouse_y)
     update_canvas()
     pass

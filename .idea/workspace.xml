@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95ae52e5-0d25-4dd4-9c9a-d8a92e5a4725" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/character_bright.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/character.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/character_brave.py" beforeDir="false" afterPath="$PROJECT_DIR$/character_brave.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obstacle_fly_stone_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/obstacle_fly_stone_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obstacle_fly_stone_4.py" beforeDir="false" afterPath="$PROJECT_DIR$/obstacle_fly_stone_4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scene_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/scene_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/character_bright.py" beforeDir="false" afterPath="$PROJECT_DIR$/character_bright.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scene_robby.py" beforeDir="false" afterPath="$PROJECT_DIR$/scene_robby.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,54 +12,11 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DockManager">
-    <window id="2">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/character_bright.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="171">
-                    <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/scene_main.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="950">
-                    <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
-                    <folding>
-                      <element signature="e#0#20#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/obstacle_fly_stone_4.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="209">
-                    <caret line="11" column="70" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
-                    <folding>
-                      <element signature="e#0#20#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1820792846">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.6" value="3" />
@@ -77,34 +31,43 @@
           <entry key="PNG" value="3" />
           <entry key="jpg" value="4" />
           <entry key="png" value="13" />
-          <entry key="py" value="117" />
-          <entry key="txt" value="9" />
+          <entry key="py" value="119" />
+          <entry key="txt" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="20" />
-          <entry key="PLAIN_TEXT" value="9" />
-          <entry key="Python" value="117" />
+          <entry key="PLAIN_TEXT" value="10" />
+          <entry key="Python" value="119" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="50" />
-          <entry key="py" value="9575" />
+          <entry key="py" value="9799" />
           <entry key="txt" value="222" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="272" />
-          <entry key="Python" value="9575" />
+          <entry key="Python" value="9799" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/obstacle.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/obstacle_fork_sausage.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -120,8 +83,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scene_robby.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="186">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -129,11 +95,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/character_brave.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="60" />
+            <state relative-caret-position="95">
+              <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
               <folding>
-                <marker date="1540206630052" expanded="true" signature="36:41" ph="..." />
-                <marker date="1540206630052" expanded="true" signature="251:257" ph="..." />
+                <marker date="1540207598943" expanded="true" signature="36:41" ph="..." />
+                <marker date="1540207598943" expanded="true" signature="323:342" ph="..." />
               </folding>
             </state>
           </provider>
@@ -173,18 +139,6 @@
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
                 <marker date="1540202004146" expanded="true" signature="372:377" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/path.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -251,12 +205,12 @@
         <option value="$PROJECT_DIR$/obstacle.txt" />
         <option value="$PROJECT_DIR$/scene_title.py" />
         <option value="$PROJECT_DIR$/cookie run.py" />
-        <option value="$PROJECT_DIR$/scene_robby.py" />
         <option value="$PROJECT_DIR$/scene_start.py" />
         <option value="$PROJECT_DIR$/character.py" />
         <option value="$PROJECT_DIR$/obstacle_fly_stone_4.py" />
         <option value="$PROJECT_DIR$/scene_main.py" />
         <option value="$PROJECT_DIR$/obstacle_fly_stone_1.py" />
+        <option value="$PROJECT_DIR$/scene_robby.py" />
         <option value="$PROJECT_DIR$/character_brave.py" />
         <option value="$PROJECT_DIR$/character_bright.py" />
       </list>
@@ -349,14 +303,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1104" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22795497" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22795497" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33223686" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33223686" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991228" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -468,13 +421,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/obstacle.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/obstacle_fly_stone.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -551,13 +497,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scene_robby.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/obstacle_fly_stone_1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -598,21 +537,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/character_brave.py">
+    <entry file="file://$PROJECT_DIR$/scene_robby.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="60" />
+        <state relative-caret-position="186">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
           <folding>
-            <marker date="1540206630052" expanded="true" signature="36:41" ph="..." />
-            <marker date="1540206630052" expanded="true" signature="251:257" ph="..." />
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/obstacle.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/character_bright.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        <state relative-caret-position="361">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/character_brave.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+          <folding>
+            <marker date="1540207598943" expanded="true" signature="36:41" ph="..." />
+            <marker date="1540207598943" expanded="true" signature="323:342" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

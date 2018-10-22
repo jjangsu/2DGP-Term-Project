@@ -5,7 +5,8 @@ import background
 import numpy as np
 import obstacle
 import fps
-import character
+import character_bright
+import character_brave
 
 obstacles = []
 
@@ -14,7 +15,7 @@ def enter():
     FPS = fps.FPS()
     backgrounds = background.Background()
     paths = [path.Path(n) for n in range(10)]
-    cookie = character.Character(1)
+    cookie = character_brave.Brave()# character.Character(1)
 
     line = [[0] * 12 for i in range(12)]
     with open('obstacle.txt', 'r') as file:

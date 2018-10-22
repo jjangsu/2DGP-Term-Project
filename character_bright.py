@@ -1,12 +1,12 @@
 from pico2d import *
 
-class Character:
-    def __init__(self, type):
-        self.x = 200
-        self.y = 70 + 115
-        self.frame = 1
+class Bright:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.frame = 0
         self.image_y = 4
-        self.image = load_image('resource/Brave Cookie.png')
+        self.image = load_image('resource/Bright Cookie.png')
         self.time = 0
         pass
 

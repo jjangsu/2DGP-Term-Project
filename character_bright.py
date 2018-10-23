@@ -1,12 +1,14 @@
 from pico2d import *
 
 class Bright:
+    image = None
     def __init__(self):
         self.x = 200
         self.y = 70 + 115
         self.frame = 0
         self.image_y = 4
-        self.image = load_image('resource/Bright Cookie.png')
+        if Bright.image == None:
+            Bright.image = load_image('resource/Bright Cookie.png')
         self.time = 0
         pass
 

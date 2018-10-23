@@ -1,12 +1,14 @@
 from pico2d import *
 
 class Brave():
+    image = None
     def __init__(self):
         self.x = 200
         self.y = 70 + 115
         self.image_y = 4
         self.frame = 0
-        self.image = load_image('resource/Brave Cookie.png')
+        if Brave.image == None:
+            Brave.image = load_image('resource/Brave Cookie.png')
         self.time = 0
         pass
 

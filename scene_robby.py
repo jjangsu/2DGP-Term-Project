@@ -2,8 +2,8 @@ from pico2d import *
 import game_framework
 import fps
 import scene_main
-import character_brave
 import character_bright
+import character_brave
 
 top_image = None
 top_image_x = 500
@@ -14,6 +14,7 @@ bottom_image_x_2 = 500 + 1314
 mouse = None
 mouse_x = 0
 mouse_y = 0
+select = None
 
 
 def enter():
@@ -33,8 +34,6 @@ def enter():
 
     bright = character_bright.Bright()
     bright.newPosition(500 + 150, 250)
-
-
     pass
 
 def exit():
@@ -48,7 +47,7 @@ def exit():
 
 
 def update():
-    global top_image_x, top_image_x_2, bottom_image_x, bottom_image_x_2, brave, bright
+    global top_image_x, top_image_x_2, bottom_image_x, bottom_image_x_2, brave, bright, select, mouse_x, mouse_y
     top_image_x -= 0.5 * fps.FPS().elapsed
     if top_image_x <= -515:
         top_image_x = 1000 + 515
@@ -62,6 +61,26 @@ def update():
     bottom_image_x_2 -= 1.0 * fps.FPS().elapsed
     if bottom_image_x_2 < -657:
         bottom_image_x_2 = 1000 + 1314 / 2
+
+    if mouse_x > brave.x - 30 and mouse_x < brave.x + 50 and \
+            mouse_y > brave.y - 130 and mouse_y < brave.y + 10:
+        brave.image_y = 3
+        brave.frame_num = 6
+        brave.standard_time = 5.0
+    else:
+        brave.image_y = 4
+        brave.frame_num = 4
+        brave.standard_time = 3.5
+
+    if mouse_x > bright.x - 30 and mouse_x < bright.x + 50 and \
+            mouse_y > bright.y - 130 and mouse_y < bright.y + 10:
+        bright.image_y = 3
+        bright.frame_num = 6
+        bright.standard_time = 5.0
+    else:
+        bright.image_y = 4
+        bright.frame_num = 4
+        bright.standard_time = 3.5
 
     brave.update()
     bright.update()

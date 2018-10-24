@@ -1,25 +1,27 @@
 from pico2d import *
 
+
 class Character:
     def __init__(self):
         self.x = 200
         self.y = 70 + 115
         self.image_y = 4
+        self.frame_num = 4
         self.frame = 0
         self.time = 0
         self.standard_time = 3.0
-        self.image = None
+        self.image = None # load_image('resource/Brave Cookie.png')
         pass
 
-    def newPosition(self, x, y):
-        self.x = x
-        self.y = y
-        pass
+    # def newPosition(self, x, y):
+    #     self.x = x
+    #     self.y = y
+    #     pass
 
     def update(self):
         self.time += 1
         if self.time > self.standard_time:
-            self.frame = (self.frame + 1) % 4
+            self.frame = (self.frame + 1) % self.frame_num
             self.time = 0
         pass
 

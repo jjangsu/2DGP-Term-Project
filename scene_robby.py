@@ -12,9 +12,10 @@ bottom_image = None
 bottom_image_x = 500
 bottom_image_x_2 = 500 + 1314
 mouse = None
-mouse_x = 0
-mouse_y = 0
+mouse_x , mouse_y = 0, 0
 select = None
+click_x, click_y = 0, 0
+select_cookie = 2
 
 
 def enter():
@@ -67,10 +68,19 @@ def update():
         brave.image_y = 3
         brave.frame_num = 6
         brave.standard_time = 5.0
+
     else:
         brave.image_y = 4
         brave.frame_num = 4
         brave.standard_time = 3.5
+
+    # if click_x > brave.x - 30 and click_x < brave.x + 50 and \
+    #         click_y > brave.y - 50 and click_y < brave.y + 50:
+    #     brave.image_x = 4
+    #     brave.standard_time = 2.0
+    # else:
+    #     brave.image_x = 1
+
 
     if mouse_x > bright.x - 30 and mouse_x < bright.x + 50 and \
             mouse_y > bright.y - 130 and mouse_y < bright.y + 10:
@@ -103,12 +113,15 @@ def draw():
 
 
 def handle_events():
-    global mouse_x, mouse_y
+    global mouse_x, mouse_y, click_x, click_y
     events = get_events()
     for event in events:
         if event.type == SDL_MOUSEMOTION:
             mouse_x, mouse_y = event.x, 500 - 1 - event.y - 73/2 + 3
-        if event.type == SDL_KEYDOWN:
+        elif event.type == SDL_MOUSEBUTTONDOWN:
+            if event.button == SDL_BUTTON_LEFT:
+                click_x, click_y = event.x, event.y - 73 / 2 + 3
+        elif event.type == SDL_KEYDOWN:
             if event.key == SDLK_SPACE:
                 game_framework.push_state(scene_main)
     pass

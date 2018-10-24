@@ -5,17 +5,24 @@ import background
 import numpy as np
 import obstacle
 import fps
-import character
+import character_brave
+import character_bright
+import scene_robby
 
 
 obstacles = []
 
 def enter():
-    global backgrounds, paths, obstacles, line, obstacle_type, cookie, FPS
+    global backgrounds, paths, obstacles, line, obstacle_type, cookie, FPS, select_cookie
     FPS = fps.FPS()
     backgrounds = background.Background()
     paths = [path.Path(n) for n in range(10)]
-    cookie = character.Character() # character_brave.Brave()#
+    if scene_robby.select_cookie == 1:
+        cookie = character_brave.Brave() # character_brave.Brave()#
+        cookie.newPosition(200, 70 + 115)
+    elif scene_robby.select_cookie == 2:
+        cookie = character_bright.Bright()
+        cookie.newPosition(200, 70 + 115)
 
     line = [[0] * 12 for i in range(12)]
     with open('obstacle.txt', 'r') as file:

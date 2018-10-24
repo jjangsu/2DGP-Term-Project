@@ -6,6 +6,7 @@ class Character:
         self.x = 200
         self.y = 70 + 115
         self.image_y = 4
+        self.image_x = 0
         self.frame_num = 4
         self.frame = 0
         self.time = 0
@@ -21,7 +22,7 @@ class Character:
     def update(self):
         self.time += 1
         if self.time > self.standard_time:
-            self.frame = (self.frame + 1) % self.frame_num
+            self.frame = (self.frame + 1) % self.frame_num + self.image_x
             self.time = 0
         pass
 

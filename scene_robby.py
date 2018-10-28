@@ -15,7 +15,7 @@ mouse = None
 mouse_x , mouse_y = 0, 0
 select = None
 click_x, click_y = 0, 0
-select_cookie = 2
+select_cookie = 1
 
 
 def enter():

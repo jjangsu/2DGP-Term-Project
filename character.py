@@ -41,6 +41,9 @@ class RunningState:
 class JumpState:
     @staticmethod
     def enter(character, event):
+        if event == SPACE_DOWN:
+            character.image_y = 0
+
         pass
 
     @staticmethod
@@ -49,16 +52,23 @@ class JumpState:
 
     @staticmethod
     def do(character):
+        character.time += 1
+        if character.time > character.standard_time:
+            character.frame = (character.frame + 1) % character.frame_num + character.image_x
+            character.time = 0
         pass
 
     @staticmethod
     def draw(character):
+        character.image.clip_draw(character.frame * 236, character.image_y * 236, 236, 236, character.x, character.y)
         pass
 
-next_state_table ={
+
+next_state_table = {
     RunningState: {SPACE_DOWN: JumpState, SPACE_UP: JumpState},
     JumpState: {SPACE_DOWN: RunningState, SPACE_UP: RunningState}
 }
+
 
 class Character:
     def __init__(self):
@@ -94,8 +104,7 @@ class Character:
                 self.cur_state.exit(self, event)
                 self.cur_state = next_state_table[self.cur_state][event]
                 self.cur_state.enter(self, event)
-        #
-        #
+
         #     self.frame = (self.frame + 1) % self.frame_num + self.image_x
         #     self.time = 0
         pass

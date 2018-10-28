@@ -29,6 +29,23 @@ class RunningState:
         pass
 
 
+class JumpState:
+    @staticmethod
+    def enter(character, event):
+        pass
+
+    @staticmethod
+    def exit(character, event):
+        pass
+
+    @staticmethod
+    def do(character):
+        pass
+
+    @staticmethod
+    def draw(character):
+        pass
+
 class Character:
     def __init__(self):
         self.x = 200

@@ -94,7 +94,7 @@ def run(start_state):
     while (running):
         runTime = get_time()
         stack[-1].handle_events()
-        if runTime - curTime > 0.013:
+        if runTime - curTime > 0.045:
             stack[-1].update()
             stack[-1].draw()
             curTime = runTime

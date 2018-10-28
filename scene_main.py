@@ -9,6 +9,8 @@ import character_brave
 import character_bright
 import scene_robby
 
+import game_world
+
 
 obstacles = []
 
@@ -46,36 +48,48 @@ def enter():
         row = 4
         col += 1
 
+        game_world.add_object(backgrounds, 0)
+        for i in paths:
+            game_world.add_object(i, 0)
+        game_world.add_object(cookie, 2)
+        for obs in obstacles:
+            game_world.add_object(obs, 1)
 
+#
 def exit():
-    global backgrounds, paths, obstacles, cookie, FPS
-    del (backgrounds)
-    del (paths)
-    del (obstacles)
-    del (cookie)
-    del (FPS)
+    # global backgrounds, paths, obstacles, cookie, FPS
+    # del (backgrounds)
+    # del (paths)
+    # del (obstacles)
+    # del (cookie)
+    # del (FPS)#
+    game_world.clear()
 
 
 def update():
-    global backgrounds, paths, obstacles, cookie, FPS
-    FPS.update()
-    backgrounds.update()
-    for path in paths:
-        path.update()
-    for obstacle in obstacles:
-        obstacle.update()
-    cookie.update()
+    # global backgrounds, paths, obstacles, cookie, FPS
+    # FPS.update()
+    # backgrounds.update()
+    # for path in paths:
+    #     path.update()
+    # for obstacle in obstacles:
+    #     obstacle.update()
+    # cookie.update()
+    for game_object in game_world.all_objects():
+        game_object.update()
 
 
 def draw():
-    global backgrounds, paths, obstacles, cookie
+    # global backgrounds, paths, obstacles, cookie
     clear_canvas()
-    backgrounds.draw()
-    for path in paths:
-        path.draw()
-    for obstacle in obstacles:
-        obstacle.draw()
-    cookie.draw()
+    for game_object in game_world.all_objects():
+        game_object.draw()
+    # backgrounds.draw()
+    # for path in paths:#
+    #     path.draw()
+    # for obstacle in obstacles:
+    #     obstacle.draw()
+    # cookie.draw()
     update_canvas()
 
 

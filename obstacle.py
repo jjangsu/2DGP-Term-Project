@@ -14,7 +14,11 @@ class Obstacle:
         elif obstacle_type == 4:
             self.type = obstacle_fly_stone.Fly_stone(row, col)
 
+        self.timer = 0
+
     def update(self):
+        #self.timer += 1
+        #if self.timer > 20:
         self.type.update()
         pass
 

@@ -15,7 +15,7 @@ import game_world
 obstacles = []
 
 def enter():
-    global backgrounds, paths, obstacles, line, obstacle_type, cookie, FPS, select_cookie
+    global backgrounds, paths, obstacles, line, obstacle_type, cookie, FPS, select_cookie, timer
     FPS = fps.FPS()
     backgrounds = background.Background()
     paths = [path.Path(n) for n in range(10)]
@@ -54,6 +54,7 @@ def enter():
         game_world.add_object(cookie, 2)
         for obs in obstacles:
             game_world.add_object(obs, 1)
+        timer = 0
 
 #
 def exit():
@@ -67,6 +68,7 @@ def exit():
 
 
 def update():
+    global timer
     # global backgrounds, paths, obstacles, cookie, FPS
     # FPS.update()
     # backgrounds.update()
@@ -75,8 +77,11 @@ def update():
     # for obstacle in obstacles:
     #     obstacle.update()
     # cookie.update()
-    for game_object in game_world.all_objects():
-        game_object.update()
+    timer += 1
+    if timer > 2:
+        for game_object in game_world.all_objects():
+           game_object.update()
+        timer = 0
 
 
 def draw():

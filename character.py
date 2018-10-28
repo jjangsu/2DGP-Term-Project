@@ -86,14 +86,16 @@ class Character:
         self.event_que.insert(0, event)
 
     def update(self):
-        self.cur_state.do(self)
-        if len(self.event_que) > 0:
-            event = self.event_que.pop()
-            self.cur_state.exit(self, event)
-            self.cur_state = next_state_table[self.cur_state][event]
-            self.cur_state.enter(self, event)
-        # self.time += 1
-        # if self.time > self.standard_time:
+        self.time += 1
+        if self.time > self.standard_time:
+            self.cur_state.do(self)
+            if len(self.event_que) > 0:
+                event = self.event_que.pop()
+                self.cur_state.exit(self, event)
+                self.cur_state = next_state_table[self.cur_state][event]
+                self.cur_state.enter(self, event)
+        #
+        #
         #     self.frame = (self.frame + 1) % self.frame_num + self.image_x
         #     self.time = 0
         pass

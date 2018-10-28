@@ -16,9 +16,9 @@ class Stone_4:
         pass
 
     def update(self):
-        self.x -= 4.0 * fps.FPS().elapsed
+        self.x -= 2.0 * fps.FPS().elapsed
         self.time += 1
-        if self.time > 20:
+        if self.time > 25:
             self.frame = (self.frame + 1) % 3
             self.time = 0
         pass

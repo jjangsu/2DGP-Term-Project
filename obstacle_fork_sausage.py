@@ -11,7 +11,7 @@ class Fork_sausage:
         pass
 
     def update(self):
-        self.x -= 2.0 * fps.FPS().elapsed
+        self.x -= 1.0 * fps.FPS().elapsed
         pass
 
     def draw(self):

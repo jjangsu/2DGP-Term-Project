@@ -1,5 +1,33 @@
 from pico2d import *
 
+# character event
+SPACE_DOWN, SPACE_UP = range(2)
+
+key_event_avle = {
+    {SDL_KEYDOWN, SDLK_SPACE}: SPACE_DOWN,
+    {SDL_KEYUP, SDLK_SPACE}: SPACE_UP
+}
+
+# character state
+
+
+class RunningState:
+    @staticmethod
+    def enter(character, event):
+        pass
+
+    @staticmethod
+    def exit(character, event):
+        pass
+
+    @staticmethod
+    def do(character):
+        pass
+
+    @staticmethod
+    def draw(character):
+        pass
+
 
 class Character:
     def __init__(self):

@@ -1,9 +1,9 @@
 from pico2d import *
 import game_framework
-import fps
 import scene_main
 import character_bright
 import character_brave
+import fps
 
 top_image = None
 top_image_x = 500

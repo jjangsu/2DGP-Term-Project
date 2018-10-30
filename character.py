@@ -1,4 +1,5 @@
 from pico2d import *
+import game_framework
 
 # character event
 SPACE_DOWN, SPACE_UP = range(2)

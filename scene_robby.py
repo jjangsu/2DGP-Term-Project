@@ -15,11 +15,14 @@ mouse = None
 mouse_x , mouse_y = 0, 0
 select = None
 click_x, click_y = 0, 0
-select_cookie = 1
+select_cookie = 0
+select_image = None
+select_x = - 200
+select_y = 350
 
 
 def enter():
-    global top_image, bottom_image, mouse, brave, bright
+    global top_image, bottom_image, mouse, brave, bright, select_image
     if top_image == None:
         top_image = load_image('resource/robby_top1.png')
 
@@ -29,6 +32,9 @@ def enter():
     if mouse == None:
         hide_cursor()
         mouse = load_image('resource/mouse1.png')
+
+    if select_image == None:
+        select_image = load_image('resource/epN01_tm11_jp2down.png')
 
     brave = character_brave.Brave()
     brave.newPosition(500 - 150, 250)
@@ -48,7 +54,8 @@ def exit():
 
 
 def update():
-    global top_image_x, top_image_x_2, bottom_image_x, bottom_image_x_2, brave, bright, select, mouse_x, mouse_y
+    global top_image_x, top_image_x_2, bottom_image_x, bottom_image_x_2, brave, bright, select, mouse_x, mouse_y,select_cookie
+    global select_x
     top_image_x -= 0.5 * fps.FPS().elapsed
     if top_image_x <= -515:
         top_image_x = 1000 + 515
@@ -63,31 +70,43 @@ def update():
     if bottom_image_x_2 < -657:
         bottom_image_x_2 = 1000 + 1314 / 2
 
-    if mouse_x > brave.x - 30 and mouse_x < brave.x + 50 and \
+    # if not (brave.image_x == 4 and brave.image_y == 4):
+    if (not select_cookie == 1) and mouse_x > brave.x - 30 and mouse_x < brave.x + 50 and \
             mouse_y > brave.y - 130 and mouse_y < brave.y + 10:
+        brave.image_x = 0
         brave.image_y = 3
         brave.frame_num = 6
         brave.standard_time = 5.0
 
+    elif (not select_cookie == 1) and click_x > brave.x - 30 and click_x < brave.x + 50 and \
+                click_y > brave.y - 50 and click_y < brave.y + 50:
+        brave.image_x = 4
+        brave.image_y = 4
+        brave.standard_time = 2.0
+        select_cookie = 1
+        select_x = 500 - 150
     else:
+        brave.image_x = 0
         brave.image_y = 4
         brave.frame_num = 4
         brave.standard_time = 3.5
 
-    # if click_x > brave.x - 30 and click_x < brave.x + 50 and \
-    #         click_y > brave.y - 50 and click_y < brave.y + 50:
-    #     brave.image_x = 4
-    #     brave.standard_time = 2.0
-    # else:
-    #     brave.image_x = 1
-
-
-    if mouse_x > bright.x - 30 and mouse_x < bright.x + 50 and \
+    # if  not (bright.image_x == 4 and  bright.image_y == 4):
+    if (not select_cookie == 2) and  mouse_x > bright.x - 30 and mouse_x < bright.x + 50 and \
             mouse_y > bright.y - 130 and mouse_y < bright.y + 10:
+        bright.image_x = 0
         bright.image_y = 3
         bright.frame_num = 6
         bright.standard_time = 5.0
+    elif (not select_cookie == 2) and click_x > bright.x - 30 and click_x < bright.x + 50 and \
+                click_y > bright.y - 50 and click_y < bright.y + 50:
+        bright.image_x = 4
+        bright.image_y = 4
+        bright.standardtime = 2.
+        select_cookie = 2
+        select_x = 500 + 150
     else:
+        bright.image_x = 0
         bright.image_y = 4
         bright.frame_num = 4
         bright.standard_time = 3.5
@@ -107,6 +126,8 @@ def draw():
     bottom_image.clip_draw(0, 0, 1314, 394, bottom_image_x_2, 250 - 195)
     brave.draw()
     bright.draw()
+    #if select_x > 100:
+    select_image.clip_draw(0, 0, 110, 179, select_x, select_y)
     mouse.clip_draw(0, 0, 73, 73, mouse_x, mouse_y)
     update_canvas()
     pass

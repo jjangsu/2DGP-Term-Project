@@ -67,8 +67,8 @@ def exit():
 
 
 def update():
-    global top_image_x, top_image_x_2, bottom_image_x, bottom_image_x_2, brave, bright, select, mouse_x, mouse_y,select_cookie
-    global select_x
+    global top_image_x, top_image_x_2, bottom_image_x, bottom_image_x_2, brave, bright, select, mouse_x, mouse_y, select_cookie
+    global select_x, play, click_x, click_y
     top_image_x -= 0.5 * fps.FPS().elapsed
     if top_image_x <= -515:
         top_image_x = 1000 + 515
@@ -100,7 +100,6 @@ def update():
                 click_y > brave.y - 50 and click_y < brave.y + 50:
             select_cookie = 1
             select_x = 500 - 140
-
     else:
         brave.image_x = 0
         brave.image_y = 4
@@ -124,18 +123,21 @@ def update():
                 click_y > bright.y - 50 and click_y < bright.y + 50:
             select_cookie = 2
             select_x = 500 + 150
-
     else:
         bright.image_x = 0
         bright.image_y = 4
         bright.frame_num = 4
         bright.standard_time = 3.5
 
+    if select_cookie == 0:
+        play = False
+    else :
+        play = True
 
-    if play == True:
-        pass
-    else:
-        pass
+
+    if play and 500 - 150 < click_x and click_x < 500 + 150 and \
+        60 < 500 - click_y and 500 - click_y < 60 + 85:
+            game_framework.push_state(scene_main)
 
 
     brave.update()
@@ -155,6 +157,11 @@ def draw():
     bright.draw()
     #if select_x > 100:
     select_image.clip_draw(0, 0, 110, 179, select_x, select_y)
+
+    if play == True:
+        play_image.clip_draw(0, 0, 300, 85, 1000 // 2, 60)
+    else:
+        no_play_image.clip_draw(0, 0, 300, 85, 1000 // 2, 60)
     mouse.clip_draw(0, 0, 73, 73, mouse_x, mouse_y)
     update_canvas()
     pass
@@ -164,14 +171,16 @@ def handle_events():
     global mouse_x, mouse_y, click_x, click_y
     events = get_events()
     for event in events:
-        if event.type == SDL_MOUSEMOTION:
+        if event.type == SDL_QUIT:
+            game_framework.quit()
+        elif event.type == SDL_MOUSEMOTION:
             mouse_x, mouse_y = event.x, 500 - 1 - event.y - 73/2 + 3
         elif event.type == SDL_MOUSEBUTTONDOWN:
             if event.button == SDL_BUTTON_LEFT:
                 click_x, click_y = event.x, event.y - 73 / 2 + 3
-        elif event.type == SDL_KEYDOWN:
-            if event.key == SDLK_SPACE:
-                game_framework.push_state(scene_main)
+        # elif event.type == SDL_KEYDOWN:
+        #     if event.key == SDLK_SPACE:
+        #         game_framework.push_state(scene_main)
     pass
 
 

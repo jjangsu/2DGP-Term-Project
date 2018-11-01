@@ -82,9 +82,10 @@ def update():
                 click_y > brave.y - 50 and click_y < brave.y + 50:
         brave.image_x = 4
         brave.image_y = 4
+        brave.frame_num = 4
         brave.standard_time = 2.0
         select_cookie = 1
-        select_x = 500 - 150
+        select_x = 500 - 140
     else:
         brave.image_x = 0
         brave.image_y = 4
@@ -102,7 +103,8 @@ def update():
                 click_y > bright.y - 50 and click_y < bright.y + 50:
         bright.image_x = 4
         bright.image_y = 4
-        bright.standardtime = 2.
+        bright.frame_num = 4
+        bright.standard_time = 2.
         select_cookie = 2
         select_x = 500 + 150
     else:

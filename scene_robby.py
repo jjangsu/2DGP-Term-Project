@@ -20,9 +20,14 @@ select_image = None
 select_x = - 200
 select_y = 350
 
+play_image = None
+no_play_image = None
+
+play = False
+
 
 def enter():
-    global top_image, bottom_image, mouse, brave, bright, select_image
+    global top_image, bottom_image, mouse, brave, bright, select_image, play_image, no_play_image
     if top_image == None:
         top_image = load_image('resource/robby_top1.png')
 
@@ -36,6 +41,12 @@ def enter():
     if select_image == None:
         select_image = load_image('resource/epN01_tm11_jp2down.png')
 
+    if play_image == None:
+        play_image = load_image('resource/play.png')
+
+    if no_play_image == None:
+        no_play_image = load_image('resource/no play.png')
+
     brave = character_brave.Brave()
     brave.newPosition(500 - 150, 250)
 
@@ -44,12 +55,14 @@ def enter():
     pass
 
 def exit():
-    global top_image, bottom_image, mouse, brave, bright
+    global top_image, bottom_image, mouse, brave, bright, play_image, no_play_image
     del (top_image)
     del (bottom_image)
     del (mouse)
     del (brave)
     del (bright)
+    del(play_image)
+    del(no_play_image)
     pass
 
 
@@ -117,6 +130,13 @@ def update():
         bright.image_y = 4
         bright.frame_num = 4
         bright.standard_time = 3.5
+
+
+    if play == True:
+        pass
+    else:
+        pass
+
 
     brave.update()
     bright.update()

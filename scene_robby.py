@@ -71,21 +71,23 @@ def update():
         bottom_image_x_2 = 1000 + 1314 / 2
 
     # if not (brave.image_x == 4 and brave.image_y == 4):
-    if (not select_cookie == 1) and mouse_x > brave.x - 30 and mouse_x < brave.x + 50 and \
+    if select_cookie == 1:
+        brave.image_x = 4
+        brave.image_y = 4
+        brave.frame_num = 4
+        brave.standard_time = 2.0
+
+    elif (not select_cookie == 1) and mouse_x > brave.x - 30 and mouse_x < brave.x + 50 and \
             mouse_y > brave.y - 130 and mouse_y < brave.y + 10:
         brave.image_x = 0
         brave.image_y = 3
         brave.frame_num = 6
         brave.standard_time = 5.0
-
-    elif (not select_cookie == 1) and click_x > brave.x - 30 and click_x < brave.x + 50 and \
+        if click_x > brave.x - 30 and click_x < brave.x + 50 and \
                 click_y > brave.y - 50 and click_y < brave.y + 50:
-        brave.image_x = 4
-        brave.image_y = 4
-        brave.frame_num = 4
-        brave.standard_time = 2.0
-        select_cookie = 1
-        select_x = 500 - 140
+            select_cookie = 1
+            select_x = 500 - 140
+
     else:
         brave.image_x = 0
         brave.image_y = 4
@@ -93,20 +95,23 @@ def update():
         brave.standard_time = 3.5
 
     # if  not (bright.image_x == 4 and  bright.image_y == 4):
-    if (not select_cookie == 2) and  mouse_x > bright.x - 30 and mouse_x < bright.x + 50 and \
+    if select_cookie == 2:
+        bright.image_x = 4
+        bright.image_y = 4
+        bright.frame_num = 4
+        bright.standard_time = 2.
+
+    elif (not select_cookie == 2) and  mouse_x > bright.x - 30 and mouse_x < bright.x + 50 and \
             mouse_y > bright.y - 130 and mouse_y < bright.y + 10:
         bright.image_x = 0
         bright.image_y = 3
         bright.frame_num = 6
         bright.standard_time = 5.0
-    elif (not select_cookie == 2) and click_x > bright.x - 30 and click_x < bright.x + 50 and \
+        if click_x > bright.x - 30 and click_x < bright.x + 50 and \
                 click_y > bright.y - 50 and click_y < bright.y + 50:
-        bright.image_x = 4
-        bright.image_y = 4
-        bright.frame_num = 4
-        bright.standard_time = 2.
-        select_cookie = 2
-        select_x = 500 + 150
+            select_cookie = 2
+            select_x = 500 + 150
+
     else:
         bright.image_x = 0
         bright.image_y = 4

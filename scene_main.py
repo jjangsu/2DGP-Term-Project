@@ -5,6 +5,7 @@ import background
 import numpy as np
 import obstacle
 import fps
+import character
 import character_brave
 import character_bright
 import scene_robby
@@ -103,6 +104,9 @@ def handle_events():
     for event in events:
         if event.type == SDL_QUIT:
             game_framework.quit()
+        else:
+            cookie.handle_event(event)
+
 
 
 def pause():

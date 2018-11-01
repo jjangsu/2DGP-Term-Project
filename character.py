@@ -6,11 +6,11 @@ ACTION_PER_TIME = 1.0 / TIME_PER_ACTION
 FRAMES_PER_ACTION = 8
 
 # character event
-SPACE_DOWN, SPACE_UP = range(2)
+L_SHIFT_DOWN, L_SHIFT_UP, RUN_TIMER = range(3)
 
 key_event_table = {
-    (SDL_KEYDOWN, SDLK_SPACE): SPACE_DOWN,
-    (SDL_KEYUP, SDLK_SPACE): SPACE_UP
+    (SDL_KEYDOWN, SDLK_LSHIFT): L_SHIFT_DOWN,
+    (SDL_KEYUP, SDLK_SPACE): L_SHIFT_UP
 }
 
 # character state
@@ -19,10 +19,10 @@ key_event_table = {
 class RunningState:
     @staticmethod
     def enter(character, event):
-        if event == SPACE_DOWN:
-            character.jump += 1
-        elif event == SPACE_UP:
-            character.jump -= 1
+        if event == L_SHIFT_DOWN:
+            character.add_event(L_SHIFT_DOWN)
+        elif event == L_SHIFT_UP:
+            character.add_event(L_SHIFT_UP)
         pass
 
     @staticmethod
@@ -35,8 +35,9 @@ class RunningState:
         if character.time > character.standard_time:
             character.frame = (character.frame + 1) % character.frame_num + character.image_x
             character.time = 0
-        pass
-#
+
+
+
     @staticmethod
     def draw(character):
         character.image.clip_draw(character.frame * 236, character.image_y * 236, 236, 236, character.x, character.y)
@@ -46,9 +47,11 @@ class RunningState:
 class JumpState:
     @staticmethod
     def enter(character, event):
-        if event == SPACE_DOWN:
+        if event == L_SHIFT_DOWN:
             character.image_y = 0
 
+        character.jump_timer = 20.0
+        character.standard_time = 7.0
         pass
 
     @staticmethod
@@ -57,7 +60,10 @@ class JumpState:
 
     @staticmethod
     def do(character):
-        character.time += 1
+        character.jump_timer -= 10.0
+        if character.jump_timer <= 0.0:
+            character.add_event(RUN_TIMER)
+        character.time += 0.1
         if character.time > character.standard_time:
             character.frame = (character.frame + 1) % character.frame_num + character.image_x
             character.time = 0
@@ -70,8 +76,8 @@ class JumpState:
 
 
 next_state_table = {
-    RunningState: {SPACE_DOWN: JumpState, SPACE_UP: JumpState},
-    JumpState: {SPACE_DOWN: RunningState, SPACE_UP: RunningState}
+    RunningState: {L_SHIFT_DOWN: JumpState, L_SHIFT_UP: RunningState, RUN_TIMER: RunningState},
+    JumpState: {L_SHIFT_DOWN: JumpState, L_SHIFT_UP: RunningState, RUN_TIMER: RunningState}
 }
 
 
@@ -86,10 +92,10 @@ class Character:
         self.time = 0
         self.standard_time = 3.0
         self.image = None # load_image('resource/Brave Cookie.png')
-        self.jump = 0
         self.event_que = []
         self.cur_state = RunningState
         self.cur_state.enter(self, None)
+        self.jump_timer = 0
         pass
 
     # def newPosition(self, x, y):

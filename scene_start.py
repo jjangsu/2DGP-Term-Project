@@ -7,14 +7,22 @@ start_time = 0.0
 loading = None
 loading_x = 0
 
+PIXEL_PER_METER = (10.0 / 0.3)
+RUN_SPEED_KMPH = 54.0
+RUN_SPEED_MPM = (RUN_SPEED_KMPH * 1000.0 / 60.0)
+RUN_SPEED_MPS = (RUN_SPEED_MPM / 60.0)
+RUN_SPEED_PPS = (RUN_SPEED_MPS * PIXEL_PER_METER)
+
 def enter():
-    global image, loading, loading_x
+    global image, loading, loading_x, previous_time
     hide_cursor()
     if image == None:
         image = load_image('resource/title.png')
     if loading == None:
         loading = load_image('resource/title_loading.png')
         loading_x = -1027/2
+
+    previous_time = get_time()
     pass
 
 def exit():
@@ -25,12 +33,16 @@ def exit():
 
 
 def update():
-    global start_time, loading_x
-    if(start_time > 2.0):
-        start_time = 0
+    global start_time, loading_x, previous_time
+    # if(start_time > 2.0):
+        # start_time = 0
+    current = get_time()
+
+    if current - previous_time >= 2.0:
         game_framework.change_state(scene_robby)
-    start_time += 0.01
-    loading_x += 1027 / 200
+    # start_time += 0.01
+    loading_x += RUN_SPEED_PPS * game_framework.frame_time # 1027 / 470
+
     pass
 
 

@@ -1,6 +1,12 @@
 from pico2d import *
 import game_framework
 
+PIXEL_PER_METER = (10.0 / 0.3)
+RUN_SPEED_KMPH = 20.0
+RUN_SPEED_MPM = (RUN_SPEED_KMPH * 1000.0 / 60.0)
+RUN_SPEED_MPS = (RUN_SPEED_MPM / 60.0)
+RUN_SPEED_PPS = (RUN_SPEED_MPS * PIXEL_PER_METER)
+
 TIME_PER_ACTION = 0.5
 ACTION_PER_TIME = 1.0 / TIME_PER_ACTION
 FRAMES_PER_ACTION = 8
@@ -31,16 +37,14 @@ class RunningState:
 
     @staticmethod
     def do(character):
-        character.time += 1
-        if character.time > character.standard_time:
-            character.frame = (character.frame + 1) % character.frame_num + character.image_x
-            character.time = 0
-
-
+        # character.time += 1
+        #if character.time > character.standard_time:
+        character.frame = (character.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % character.frame_num + character.image_x
+        # character.time = 0
 
     @staticmethod
     def draw(character):
-        character.image.clip_draw(character.frame * 236, character.image_y * 236, 236, 236, character.x, character.y)
+        character.image.clip_draw(int(character.frame) * 236, character.image_y * 236, 236, 236, character.x, character.y)
         pass
 
 
@@ -63,10 +67,10 @@ class JumpState:
         character.jump_timer -= 10.0
         if character.jump_timer <= 0.0:
             character.add_event(RUN_TIMER)
-        character.time += 0.1
-        if character.time > character.standard_time:
-            character.frame = (character.frame + 1) % character.frame_num + character.image_x
-            character.time = 0
+        #character.time += 0.1
+        #if character.time > character.standard_time:
+        character.frame = (int(character.frame) + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % character.frame_num + character.image_x
+        # character.time = 0
         pass
 
     @staticmethod

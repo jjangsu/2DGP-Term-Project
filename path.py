@@ -7,10 +7,12 @@ class Path:
         if Path.path == None:
             self.path = load_image('resource/Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_tb1.png')
         self.path_x = i * 124
+        self.speed = 0.0
         pass
 
     def update(self):
-        self.path_x -= 20.0 * game_framework.frame_time
+        self.speed = game_framework.frame_time
+        self.path_x -= 20.0 * self.speed
         if self.path_x < -62:
             self.path_x = 124*10-62
         pass
@@ -18,3 +20,4 @@ class Path:
     def draw(self):
         self.path.clip_draw(0, 0, 124, 120, self.path_x, 10)
         pass
+

@@ -81,7 +81,7 @@ class JumpState:
 
 next_state_table = {
     RunningState: {L_SHIFT_DOWN: JumpState, L_SHIFT_UP: RunningState, RUN_TIMER: RunningState},
-    JumpState: {L_SHIFT_DOWN: JumpState, L_SHIFT_UP: RunningState, RUN_TIMER: RunningState}
+    JumpState: {L_SHIFT_DOWN: JumpState, L_SHIFT_UP: JumpState, RUN_TIMER: RunningState}
 }
 
 

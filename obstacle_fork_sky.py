@@ -1,5 +1,6 @@
 from pico2d import *
-import fps
+import game_framework
+import game_world
 
 class Fork_sky:
     image = None
@@ -11,10 +12,12 @@ class Fork_sky:
         pass
 
     def update(self):
-        self.x -= 1.0 * fps.FPS().elapsed
+        self.x -= 20.0 * game_framework.frame_time
+        if self.x < -100:
+            game_world.remove_object(self)
         pass
 
     def draw(self):
-        if self.x < 1100 and self.x > -100:
+        if self.x < 1100:
             self.image.clip_draw(0, 0, 86, 482, self.x, self.y)
         pass

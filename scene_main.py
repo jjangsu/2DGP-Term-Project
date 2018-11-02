@@ -4,7 +4,6 @@ import path
 import background
 import numpy as np
 import obstacle
-import fps
 import character
 import character_brave
 import character_bright
@@ -16,13 +15,13 @@ import game_world
 obstacles = []
 
 def enter():
-    global backgrounds, paths, obstacles, line, obstacle_type, cookie, FPS, select_cookie, timer
-    FPS = fps.FPS()
+    global backgrounds, paths, obstacles, line, obstacle_type, cookie, select_cookie, timer
     backgrounds = background.Background()
     paths = [path.Path(n) for n in range(10)]
     if scene_robby.select_cookie == 1:
-        cookie = character_brave.Brave() # character_brave.Brave()#
+        cookie = character_brave.Brave()
         cookie.newPosition(200, 70 + 115)
+
     elif scene_robby.select_cookie == 2:
         cookie = character_bright.Bright()
         cookie.newPosition(200, 70 + 115)
@@ -55,47 +54,24 @@ def enter():
         game_world.add_object(cookie, 2)
         for obs in obstacles:
             game_world.add_object(obs, 1)
-        timer = 0
 
-#
+
 def exit():
-    # global backgrounds, paths, obstacles, cookie, FPS
-    # del (backgrounds)
-    # del (paths)
-    # del (obstacles)
-    # del (cookie)
-    # del (FPS)#
     game_world.clear()
 
 
 def update():
-    global timer
-    # global backgrounds, paths, obstacles, cookie, FPS
-    # FPS.update()
-    # backgrounds.update()
-    # for path in paths:
-    #     path.update()
-    # for obstacle in obstacles:
-    #     obstacle.update()
-    # cookie.update()
-    timer += 1
-    if timer > 2:
-        for game_object in game_world.all_objects():
-           game_object.update()
-        timer = 0
+    # timer += 1
+    # if timer > 2:
+    for game_object in game_world.all_objects():
+       game_object.update()
+        #timer = 0
 
 
 def draw():
-    # global backgrounds, paths, obstacles, cookie
     clear_canvas()
     for game_object in game_world.all_objects():
         game_object.draw()
-    # backgrounds.draw()
-    # for path in paths:#
-    #     path.draw()
-    # for obstacle in obstacles:
-    #     obstacle.draw()
-    # cookie.draw()
     update_canvas()
 
 
@@ -106,7 +82,6 @@ def handle_events():
             game_framework.quit()
         else:
             cookie.handle_event(event)
-
 
 
 def pause():

@@ -1,5 +1,5 @@
 from pico2d import *
-import fps
+import game_framework
 import random
 import os
 
@@ -29,15 +29,15 @@ class Background:
         pass
 
     def update(self):
-        self.backGround_x -= 0.3 * fps.FPS().elapsed
-        self.backGround_x2 -= 0.3 * fps.FPS().elapsed
+        self.backGround_x -= 0.3 * game_framework.frame_time
+        self.backGround_x2 -= 0.3 * game_framework.frame_time
         if (self.backGround_x < -500):
             self.backGround_x = 1500
         if self.backGround_x2 < -500:
             self.backGround_x2 = 1500
 
-        self.fire_x -= 0.5 * fps.FPS().elapsed
-        self.fire_x2 -= 0.5 * fps.FPS().elapsed
+        self.fire_x -= 0.5 * game_framework.frame_time
+        self.fire_x2 -= 0.5 * game_framework.frame_time
         if(self.fire_x < -500):
             self.fire_x = 1500
         if (self.fire_x2 < -500):

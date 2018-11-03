@@ -55,17 +55,23 @@ def enter():
         for obs in obstacles:
             game_world.add_object(obs, 1)
 
+    timer = 0
+
 
 def exit():
     game_world.clear()
 
 
 def update():
-    # timer += 1
-    # if timer > 2:
+    global timer, cookie
+    timer += 1
     for game_object in game_world.all_objects():
-       game_object.update()
-        #timer = 0
+        if game_object == cookie and timer > 0:
+            game_object.update()
+            timer = 0
+        elif not game_object == cookie:
+            game_object.update()
+
 
 
 def draw():

@@ -3,6 +3,7 @@ import game_framework
 import scene_main
 import character_bright
 import character_brave
+import game_world
 
 top_image = None
 top_image_x = 500
@@ -51,8 +52,16 @@ def enter():
 
     bright = character_bright.Bright()
     bright.newPosition(500 + 150, 250)
-    pass
 
+    # game_world.add_object(brave, 2)
+    # game_world.add_object(bright, 2)
+    # game_world.add_object(top_image, 0)
+    # game_world.add_object(bottom_image, 0)
+    # game_world.add_object(mouse, 2)
+    # game_world.add_object(play_image, 1)
+    # game_world.add_object(no_play_image, 1)
+    pass
+#
 def exit():
     global top_image, bottom_image, mouse, brave, bright, play_image, no_play_image
     del (top_image)

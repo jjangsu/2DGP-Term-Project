@@ -25,10 +25,11 @@ key_event_table = {
 class RunningState:
     @staticmethod
     def enter(character, event):
-        if event == L_SHIFT_DOWN:
-            character.add_event(L_SHIFT_DOWN)
-        elif event == L_SHIFT_UP:
-            character.add_event(L_SHIFT_UP)
+        # if event == L_SHIFT_DOWN:
+        #     character.add_event(L_SHIFT_DOWN)
+        # elif event == L_SHIFT_UP:
+        #     character.add_event(L_SHIFT_UP)
+        character.image_y = 4
         pass
 
     @staticmethod
@@ -51,11 +52,14 @@ class RunningState:
 class JumpState:
     @staticmethod
     def enter(character, event):
+       #  print(character.cur_state)
         if event == L_SHIFT_DOWN:
             character.image_y = 0
 
-        character.jump_timer = 20.0
+        character.jump_timer = 140.0
         character.standard_time = 7.0
+
+        character.frame_num = 5
         pass
 
     @staticmethod
@@ -64,24 +68,25 @@ class JumpState:
 
     @staticmethod
     def do(character):
-        character.jump_timer -= 10.0
+        character.jump_timer -= 1.0
         if character.jump_timer <= 0.0:
             character.add_event(RUN_TIMER)
-        #character.time += 0.1
-        #if character.time > character.standard_time:
-        character.frame = (int(character.frame) + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % character.frame_num + character.image_x
-        # character.time = 0
+
+        character.time += 1.5
+        if character.time > character.standard_time:
+            character.frame = (character.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % character.frame_num + character.image_x
+            character.time = 0
         pass
 
     @staticmethod
     def draw(character):
-        character.image.clip_draw(character.frame * 236, character.image_y * 236, 236, 236, character.x, character.y)
+        character.image.clip_draw(int(character.frame) * 236, character.image_y * 236, 236, 236, character.x, character.y)
         pass
 
 
 next_state_table = {
-    RunningState: {L_SHIFT_DOWN: JumpState, L_SHIFT_UP: RunningState, RUN_TIMER: RunningState},
-    JumpState: {L_SHIFT_DOWN: JumpState, L_SHIFT_UP: JumpState, RUN_TIMER: RunningState}
+    RunningState: {L_SHIFT_DOWN: JumpState, L_SHIFT_UP: JumpState, RUN_TIMER: RunningState},
+    JumpState: {L_SHIFT_DOWN: RunningState, L_SHIFT_UP: RunningState, RUN_TIMER: RunningState}
 }
 
 
@@ -111,14 +116,14 @@ class Character:
         self.event_que.insert(0, event)
 
     def update(self):
-        self.time += 1
-        if self.time > self.standard_time:
-            self.cur_state.do(self)
-            if len(self.event_que) > 0:
-                event = self.event_que.pop()
-                self.cur_state.exit(self, event)
-                self.cur_state = next_state_table[self.cur_state][event]
-                self.cur_state.enter(self, event)
+        # self.time += 1
+        # if self.time > self.standard_time:
+        self.cur_state.do(self)
+        if len(self.event_que) > 0:
+            event = self.event_que.pop()
+            self.cur_state.exit(self, event)
+            self.cur_state = next_state_table[self.cur_state][event]
+            self.cur_state.enter(self, event)
 
         #     self.frame = (self.frame + 1) % self.frame_num + self.image_x
         #     self.time = 0

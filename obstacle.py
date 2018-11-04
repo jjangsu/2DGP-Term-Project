@@ -25,5 +25,3 @@ class Obstacle:
     def draw(self):
         self.type.draw()
         pass
-
-

@@ -7,12 +7,12 @@ class Path:
         if Path.path == None:
             self.path = load_image('resource/Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_tb1.png')
         self.path_x = i * 124
-        self.speed = 0.0
+        self.speed = 200.0
         pass
 
     def update(self):
-        self.speed = game_framework.frame_time
-        self.path_x -= 20.0 * self.speed
+        self.path_x -= self.speed * game_framework.frame_time
+
         if self.path_x < -62:
             self.path_x = 124*10-62
         pass

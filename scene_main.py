@@ -27,9 +27,9 @@ def enter():
         cookie.newPosition(200, 70 + 115)
 
     line = [[0] * 12 for i in range(12)]
-    with open('obstacle.txt', 'r') as file:
-        line = np.loadtxt('obstacle.txt', delimiter=' ')
-    row = 1
+    with open('obstacleData.txt', 'r') as file:
+        line = np.loadtxt('obstacleData.txt', delimiter=' ')
+    row = 0
     col = 0
     for i in line:
         for j in i:
@@ -44,20 +44,18 @@ def enter():
                 obstacle_type = 4
             if j != 0:
                 obstacles.append(obstacle.Obstacle(obstacle_type, row, col))
-            row = row + 1
-        row = 4
+            row += 1
+        row = 0
         col += 1
 
-        game_world.add_object(backgrounds, 0)
-        for i in paths:
-            game_world.add_object(i, 0)
-        game_world.add_object(cookie, 2)
-        for obs in obstacles:
-            game_world.add_object(obs, 1)
+    game_world.add_object(backgrounds, 0)
+    for i in paths:
+        game_world.add_object(i, 0)
+    game_world.add_object(cookie, 2)
+    for obs in obstacles:
+        game_world.add_object(obs, 1)
 
     timer = 0
-
-
 def exit():
     game_world.clear()
 
@@ -65,13 +63,14 @@ def exit():
 def update():
     global timer, cookie
     timer += 1
+    # if timer > 2:
     for game_object in game_world.all_objects():
         if game_object == cookie and timer > 0:
             game_object.update()
             timer = 0
         elif not game_object == cookie:
             game_object.update()
-
+        #timer = 0
 
 
 def draw():

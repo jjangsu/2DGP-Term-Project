@@ -18,10 +18,11 @@ class Stone_1:
         self.y = 500 / 2 - 140
         self.frame = 0
         self.time = 0
+        self.speed = 400
         pass
 
     def update(self):
-        self.x -= 40.0 * game_framework.frame_time
+        self.x -=  self.speed * game_framework.frame_time
        #  self.time += 1
         # if self.time > 25:
         self.frame = (self.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 3

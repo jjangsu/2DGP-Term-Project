@@ -25,11 +25,8 @@ key_event_table = {
 class RunningState:
     @staticmethod
     def enter(character, event):
-        # if event == L_SHIFT_DOWN:
-        #     character.add_event(L_SHIFT_DOWN)
-        # elif event == L_SHIFT_UP:
-        #     character.add_event(L_SHIFT_UP)
         character.image_y = 4
+        character.image_x = 0
         pass
 
     @staticmethod
@@ -52,14 +49,18 @@ class RunningState:
 class JumpState:
     @staticmethod
     def enter(character, event):
+        global direct
        #  print(character.cur_state)
         if event == L_SHIFT_DOWN:
             character.image_y = 0
 
-        character.jump_timer = 140.0
+        character.jump_timer = 200.0
         character.standard_time = 7.0
-
-        character.frame_num = 5
+        character.frame = 0
+        character.frame_num = 2
+        character.image_y = 5
+        character.image_x = 7
+        direct = 1
         pass
 
     @staticmethod
@@ -68,14 +69,22 @@ class JumpState:
 
     @staticmethod
     def do(character):
+        global direct
         character.jump_timer -= 1.0
         if character.jump_timer <= 0.0:
             character.add_event(RUN_TIMER)
+            character.y = 70 + 115
 
-        character.time += 1.5
+        character.y += direct * 1.5
+
+        if character.y >= 172 + (70 + 115):
+            direct = -1
+
+        character.time += 7.0
         if character.time > character.standard_time:
             character.frame = (character.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % character.frame_num + character.image_x
             character.time = 0
+            print(character.frame_num)
         pass
 
     @staticmethod

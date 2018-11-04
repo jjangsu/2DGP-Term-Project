@@ -53,8 +53,8 @@ class JumpState:
     def enter(character, event):
         global direct
        #  print(character.cur_state)
-        if event == L_SHIFT_DOWN:
-            character.image_y = 0
+        # if event == L_SHIFT_DOWN:
+        #     character.image_y = 0
 
         character.jump_timer = 200.0
         character.standard_time = 7.0
@@ -86,7 +86,7 @@ class JumpState:
         if character.time > character.standard_time:
             character.frame = (character.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % character.frame_num + character.image_x
             character.time = 0
-            print(character.frame_num)
+            # print(character.frame_num)
         pass
 
     @staticmethod
@@ -98,6 +98,12 @@ class JumpState:
 class SlideState:
     @staticmethod
     def enter(character, event):
+        character.standard_time = 7.0
+        character.frame = 0
+        character.frame_num = 2
+        character.image_y = 5
+        character.image_x = 9
+        character.slide_timer = 150.0
         pass
 
     @staticmethod
@@ -106,17 +112,30 @@ class SlideState:
 
     @staticmethod
     def do(character):
+        character.slide_timer -= 1.0
+        if character.slide_timer <= 0.0:
+            character.add_event(RUN_TIMER)
+            character.y = 70 + 115
+
+        character.time += 7.0
+        if character.time > character.standard_time:
+            character.frame = (character.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % character.frame_num + character.image_x
+            character.time = 0
         pass
 
     @staticmethod
     def draw(character):
+        character.image.clip_draw(int(character.frame) * 236, character.image_y * 236, 236, 236, character.x, character.y)
         pass
 
 
 next_state_table = {
-    RunningState: {L_SHIFT_DOWN: JumpState, L_SHIFT_UP: JumpState, RUN_TIMER: RunningState},
-    JumpState: {L_SHIFT_DOWN: RunningState, L_SHIFT_UP: RunningState, RUN_TIMER: RunningState},
-    SlideState: {R_SHIFT_DOWN: SlideState, R_SHIFT_UP: SlideState}
+    RunningState: {L_SHIFT_DOWN: JumpState, L_SHIFT_UP: JumpState, RUN_TIMER: RunningState,
+                   R_SHIFT_DOWN: SlideState, R_SHIFT_UP: SlideState},
+    JumpState: {L_SHIFT_DOWN: RunningState, L_SHIFT_UP: RunningState, RUN_TIMER: RunningState,
+                R_SHIFT_DOWN:JumpState, R_SHIFT_UP: JumpState},
+    SlideState: {L_SHIFT_DOWN: SlideState, L_SHIFT_UP: SlideState,
+                 R_SHIFT_DOWN: SlideState, R_SHIFT_UP: SlideState, RUN_TIMER: RunningState}
 }
 
 
@@ -135,6 +154,7 @@ class Character:
         self.cur_state = RunningState
         self.cur_state.enter(self, None)
         self.jump_timer = 0
+        self.slide_timer = 0
         pass
 
     # def newPosition(self, x, y):

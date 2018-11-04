@@ -15,7 +15,7 @@ class Obstacle:
             self.type = obstacle_fly_stone.Fly_stone(row, col)
 
         self.timer = 0
-        print(obstacle_type)
+        # print(obstacle_type)
 
     def update(self):
         global obstacle_type

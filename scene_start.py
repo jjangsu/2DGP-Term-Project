@@ -41,7 +41,7 @@ def update():
     if current - previous_time >= 2.0:
         game_framework.change_state(scene_robby)
     # start_time += 0.01
-    loading_x += RUN_SPEED_PPS * game_framework.frame_time # 1027 / 470
+    loading_x += 1027 / 470 * game_framework.frame_time # 1027 / 470
 
     pass
 

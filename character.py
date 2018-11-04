@@ -102,6 +102,14 @@ class JumpState:
 class DoubleJumpState:
     @staticmethod
     def enter(character, event):
+        global direct, speed
+        character.standard_time = 7.0
+        character.frame = 0
+        character.frame_num = 7
+        character.image_y = 5
+        character.image_x = 0
+        direct = 1
+        speed = 2.0
         pass
 
     @staticmethod
@@ -110,10 +118,28 @@ class DoubleJumpState:
 
     @staticmethod
     def do(character):
+        global direct, speed
+
+        character.jump_timer -= 1.0
+        if character.jump_timer <= 0.0:
+            character.add_event(RUN_TIMER)
+            character.y = 70 + 115
+
+        character.y += direct * speed
+
+        if character.y >= 280 + (70 + 115):
+            direct = -1
+            speed = 2.5
+
+        character.time += 7.0
+        if character.time > character.standard_time:
+            character.frame = (character.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % character.frame_num + character.image_x
+            character.time = 0
         pass
 
     @staticmethod
     def draw(character):
+        character.image.clip_draw(int(character.frame) * 236, character.image_y * 236, 236, 236, character.x, character.y)
         pass
 
 
@@ -157,10 +183,13 @@ next_state_table = {
                    Z_DOWN: RunningState, Z_UP: RunningState},
     JumpState: {L_SHIFT_DOWN: RunningState, L_SHIFT_UP: RunningState, RUN_TIMER: RunningState,
                 R_SHIFT_DOWN:JumpState, R_SHIFT_UP: JumpState,
-                Z_DOWN: DoubleJumpState, Z_UP:DoubleJumpState},
+                Z_DOWN: DoubleJumpState, Z_UP: DoubleJumpState},
     SlideState: {L_SHIFT_DOWN: SlideState, L_SHIFT_UP: SlideState, RUN_TIMER: RunningState,
                  R_SHIFT_DOWN: SlideState, R_SHIFT_UP: SlideState,
-                 Z_DOWN: SlideState, Z_UP: SlideState}
+                 Z_DOWN: SlideState, Z_UP: SlideState},
+    DoubleJumpState: {L_SHIFT_DOWN: DoubleJumpState, L_SHIFT_UP: DoubleJumpState, RUN_TIMER: RunningState,
+                      R_SHIFT_DOWN: DoubleJumpState, R_SHIFT_UP:DoubleJumpState,
+                      Z_DOWN: DoubleJumpState, Z_UP: DoubleJumpState}
 }
 
 

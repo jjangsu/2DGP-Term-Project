@@ -51,7 +51,7 @@ class RunningState:
 class JumpState:
     @staticmethod
     def enter(character, event):
-        global direct
+        global direct, speed
        #  print(character.cur_state)
         # if event == L_SHIFT_DOWN:
         #     character.image_y = 0
@@ -63,6 +63,7 @@ class JumpState:
         character.image_y = 5
         character.image_x = 7
         direct = 1
+        speed = 2.0
         pass
 
     @staticmethod
@@ -71,16 +72,17 @@ class JumpState:
 
     @staticmethod
     def do(character):
-        global direct
+        global direct, speed
         character.jump_timer -= 1.0
         if character.jump_timer <= 0.0:
             character.add_event(RUN_TIMER)
             character.y = 70 + 115
 
-        character.y += direct * 1.5
+        character.y += direct * speed
 
         if character.y >= 172 + (70 + 115):
             direct = -1
+            speed = 1.0
 
         character.time += 7.0
         if character.time > character.standard_time:

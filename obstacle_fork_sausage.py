@@ -8,7 +8,7 @@ class Fork_sausage:
     def __init__(self, row, col):
         if Fork_sausage.image == None:
             Fork_sausage.image = load_image('resource\Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_jp2B.png')
-        self.x = ((106 * 12) * col + 106 * row - character_brave.Brave().x + 118) * 2 # 106 * ( 12 * col + row)
+        self.x = ((106 * 12) * col + 106 * row - character_brave.Brave().x + 118) # 106 * ( 12 * col + row)
         self.y = 70 + 92
         self.speed = 200
         pass

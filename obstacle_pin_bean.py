@@ -1,6 +1,7 @@
 from pico2d import *
 import game_framework
 import game_world
+import character_brave
 
 
 class Pin_bean:
@@ -10,7 +11,7 @@ class Pin_bean:
         if Pin_bean.image == None:
             Pin_bean.image = load_image('resource\Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_jp1B.png')
         Pin_bean.t += 1
-        self.x = 106 * ( 12 * col + row) # 93
+        self.x = ((106 * 12) * col + 106 * row - character_brave.Brave().x + 118) # 106 * ( 12 * col + row) # 93
         self.y = 70 + 45 # 115
         self.speed = 200
         self.row = row

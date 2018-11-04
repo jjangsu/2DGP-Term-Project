@@ -12,11 +12,13 @@ ACTION_PER_TIME = 1.0 / TIME_PER_ACTION
 FRAMES_PER_ACTION = 8
 
 # character event
-L_SHIFT_DOWN, L_SHIFT_UP, RUN_TIMER = range(3)
+L_SHIFT_DOWN, L_SHIFT_UP, RUN_TIMER, R_SHIFT_DOWN, R_SHIFT_UP = range(5)
 
 key_event_table = {
     (SDL_KEYDOWN, SDLK_LSHIFT): L_SHIFT_DOWN,
-    (SDL_KEYUP, SDLK_SPACE): L_SHIFT_UP
+    (SDL_KEYUP, SDLK_SPACE): L_SHIFT_UP,
+    (SDL_KEYDOWN, SDLK_RSHIFT): R_SHIFT_DOWN,
+    (SDL_KEYUP, SDLK_RSHIFT): R_SHIFT_UP
 }
 
 # character state
@@ -93,9 +95,28 @@ class JumpState:
         pass
 
 
+class SlideState:
+    @staticmethod
+    def enter(character, event):
+        pass
+
+    @staticmethod
+    def exit(character, event):
+        pass
+
+    @staticmethod
+    def do(character):
+        pass
+
+    @staticmethod
+    def draw(character):
+        pass
+
+
 next_state_table = {
     RunningState: {L_SHIFT_DOWN: JumpState, L_SHIFT_UP: JumpState, RUN_TIMER: RunningState},
-    JumpState: {L_SHIFT_DOWN: RunningState, L_SHIFT_UP: RunningState, RUN_TIMER: RunningState}
+    JumpState: {L_SHIFT_DOWN: RunningState, L_SHIFT_UP: RunningState, RUN_TIMER: RunningState},
+    SlideState: {R_SHIFT_DOWN: SlideState, R_SHIFT_UP: SlideState}
 }
 
 

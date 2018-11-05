@@ -40,5 +40,5 @@ class Stone_4(obstacle.Obstacle):
         pass
 
     def get_bb(self):
-        return self.x - 50, self.y - 38, self.x + 34, self.y + 250
+        return self.x - 50, self.y - 32, self.x + 34, self.y + 250
         pass

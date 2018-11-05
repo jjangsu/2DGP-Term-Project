@@ -1,6 +1,9 @@
 from pico2d import *
 import game_framework
 
+jump_hate = False
+double_jump = False
+
 PIXEL_PER_METER = (10.0 / 0.3)
 RUN_SPEED_KMPH = 20.0
 RUN_SPEED_MPM = (RUN_SPEED_KMPH * 1000.0 / 60.0)
@@ -61,7 +64,7 @@ class RunningState:
 class JumpState:
     @staticmethod
     def enter(character, event):
-        global direct, speed
+        global direct, speed, jump_hate
        #  print(character.cur_state)
         # if event == L_SHIFT_DOWN:
         #     character.image_y = 0
@@ -77,10 +80,13 @@ class JumpState:
         character.crash_x1 = 0
         character.crash_x2 = 40
         character.crash_y2 = 0
+        jump_hate = True
         pass
 
     @staticmethod
     def exit(character, event):
+        global jump_hate
+        jump_hate = False
         pass
 
     @staticmethod
@@ -114,7 +120,7 @@ class JumpState:
 class DoubleJumpState:
     @staticmethod
     def enter(character, event):
-        global direct, speed
+        global direct, speed, double_jump
         character.jump_timer = 150.0
         character.standard_time = 7.0
         character.frame = 0
@@ -126,10 +132,14 @@ class DoubleJumpState:
         character.crash_x1 = 0
         character.crash_x2 = 40
         character.crash_y2 = 0
+
+        double_jump = True
         pass
 
     @staticmethod
     def exit(character, event):
+        global double_jump
+        double_jump = False
         pass
 
     @staticmethod
@@ -232,6 +242,9 @@ class Character:
         self.crash_x2 = 40
         self.crash_y1 = 120
         self.crash_y2 = 0
+
+        self.crash = False
+        self.crash_timer = 0
         pass
 
     # def newPosition(self, x, y):
@@ -257,6 +270,13 @@ class Character:
         pass
 
     def draw(self):
+        if self.crash:
+            self.opacity = 0.5
+            self.crash_timer += 1
+            if self.crash_timer > 200:
+                self.opacity = 1.0
+                self.crash = False
+                self.crash_timer = 0
         self.cur_state.draw(self)
         draw_rectangle(*self.get_bb())
 
@@ -264,7 +284,11 @@ class Character:
         pass
 
     def handle_event(self, event):
+        global jump_hate
         if (event.type, event.key) in key_event_table:
             key_event = key_event_table[(event.type, event.key)]
-            self.add_event(key_event)
+            if jump_hate == False:
+                self.add_event(key_event)
+            elif jump_hate == True and double_jump == False and key_event == Z_DOWN:
+                self.add_event(key_event)
 

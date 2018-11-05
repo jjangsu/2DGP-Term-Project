@@ -100,6 +100,7 @@ def update():
     for obs in obstacles:
         if collide(cookie, obs):
             print("COLLISION")
+            cookie.crash = True
             # life_image.image_x += 1
             pass
 

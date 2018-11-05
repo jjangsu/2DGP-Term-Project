@@ -8,14 +8,14 @@ import character
 import character_brave
 import character_bright
 import scene_robby
-
+import life
 import game_world
 
 
 obstacles = []
 
 def enter():
-    global backgrounds, paths, obstacles, line, obstacle_type, cookie, select_cookie, timer
+    global backgrounds, paths, obstacles, line, obstacle_type, cookie, select_cookie, timer, life_image
     backgrounds = background.Background()
     paths = [path.Path(n) for n in range(10)]
     if scene_robby.select_cookie == 1:
@@ -47,6 +47,9 @@ def enter():
             row += 1
         row = 0
         col += 1
+
+    life_image = life.LIFE()
+    game_world.add_object(life_image, 1)
 
     game_world.add_object(backgrounds, 0)
     for i in paths:

@@ -4,7 +4,7 @@ class LIFE:
     image = None
     def __init__(self):
         self.x = 200
-        self.y = 400
+        self.y = 470
         if LIFE.image == None:
             LIFE.image = load_image('resource/life.png')
         pass
@@ -13,5 +13,5 @@ class LIFE:
         pass
 
     def draw(self):
-        self.image.clip_draw(0, 0, 88, 101, self.x, self.y)
+        self.image.clip_draw(0, 0, 88, 101, self.x, self.y, 50, 60)
         pass

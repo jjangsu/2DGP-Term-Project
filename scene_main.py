@@ -4,12 +4,16 @@ import path
 import background
 import numpy as np
 import obstacle
-import character
 import character_brave
 import character_bright
 import scene_robby
 import life
 import game_world
+import obstacle_pin_bean
+import obstacle_fork_sky
+import obstacle_fork_sausage
+import obstacle_fly_stone_1
+import obstacle_fly_stone_4
 
 
 obstacles = []
@@ -36,14 +40,21 @@ def enter():
             j = int(j)
             if j == 1:
                 obstacle_type = 1
+                obstacles.append(obstacle_pin_bean.Pin_bean(row, col))
             elif j == 2:
                 obstacle_type = 2
+                obstacles.append(obstacle_fork_sausage.Fork_sausage(row, col))
             elif j == 3:
                 obstacle_type = 3
+                obstacles.append(obstacle_fork_sky.Fork_sky(row, col))
             elif j == 4:
                 obstacle_type = 4
-            if j != 0:
-                obstacles.append(obstacle.Obstacle(obstacle_type, row, col))
+                obstacles.append(obstacle_fly_stone_1.Stone_1(row, col))
+            elif j == 5:
+                obstacle_type = 5
+                obstacles.append(obstacle_fly_stone_4.Stone_4(row, col))
+            # if j != 0:
+            #     obstacles.append(obstacle.Obstacle(obstacle_type, row, col))
             row += 1
         row = 0
         col += 1
@@ -86,9 +97,10 @@ def update():
             game_object.update()
         #timer = 0
 
-   # for obs in obstacles:
-   #     if collide(cookie, obs):
-   #         print("COLLISION")
+    for obs in obstacles:
+        if collide(cookie, obs):
+            print("COLLISION")
+            pass
 
 
 def draw():

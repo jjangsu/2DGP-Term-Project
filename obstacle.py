@@ -1,34 +1,24 @@
-import obstacle_pin_bean
-import obstacle_fork_sausage
-import obstacle_fork_sky
-import obstacle_fly_stone
+import character_brave
+import game_world
+import game_framework
+from pico2d import *
 
 class Obstacle:
-    def __init__(self, obstacle_type, row, col):
-        if obstacle_type == 1:
-            self.type = obstacle_pin_bean.Pin_bean(row, col)
-        elif obstacle_type == 2:
-            self.type = obstacle_fork_sausage.Fork_sausage(row, col)
-        elif obstacle_type == 3:
-            self.type = obstacle_fork_sky.Fork_sky(row, col)
-        elif obstacle_type == 4:
-            self.type = obstacle_fly_stone.Fly_stone(row, col)
+    def __init__(self, row, col):
+        # self.x = ((106 * 12) * col + 106 * row - character_brave.Brave().x + 118)
+        # self.y = 70
+        # self.speed = 200
+        # self.image = None
+
+        self.frame = 0
+        self.time = 0
 
         self.timer = 0
-        # print(obstacle_type)
 
     def update(self):
-        global obstacle_type
-        #self.timer += 1
-        #if self.timer > 20:
-        self.type.update()
-        pass
+        # global obstacle_type
+        self.x -= self.speed * game_framework.frame_time
+        # if self.x < - 100:
+        #     game_world.remove_object(self)
 
-    def draw(self):
-        self.type.draw()
         pass
-
-    def get_bb(self):
-        return self.type.get_bb()
-        pass
-

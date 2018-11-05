@@ -8,6 +8,7 @@ class LIFE:
         self.x = 500
         self.y = 470
         self.image_x = 0
+        self.timer = 0
         if LIFE.bar == None:
             LIFE.bar = load_image('resource/life bar.png')
         if LIFE.life == None:
@@ -15,10 +16,14 @@ class LIFE:
         pass
 
     def update(self):
+        self.timer += 1
+        if self.timer > 100:
+            self.image_x += 1
+            self.timer = 0
         pass
 
     def draw(self):
-        self.bar.clip_draw(0, 0, 865 - self.image_x, 90, self.x - int(self.image_x / 2) + 1, self.y, 750 - self.image_x, 65)
+        self.bar.clip_draw(0, 0, 865 - self.image_x, 90, self.x - int(self.image_x / 2), self.y, 750 - self.image_x, 65)
         # self.life.clip_draw(0, 0, 88, 101, 160, 470 + 10, 50, 55)
 
         pass

@@ -101,7 +101,9 @@ def update():
         if collide(cookie, obs):
             print("COLLISION")
             cookie.crash = True
-            # life_image.image_x += 1
+            cookie.crash_num += 1
+            if cookie.crash_num == 1:
+                life_image.image_x += 30
             pass
 
 

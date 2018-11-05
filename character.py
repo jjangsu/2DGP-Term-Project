@@ -245,6 +245,7 @@ class Character:
 
         self.crash = False
         self.crash_timer = 0
+        self.crash_num = 0
         pass
 
     # def newPosition(self, x, y):
@@ -273,10 +274,11 @@ class Character:
         if self.crash:
             self.opacity = 0.5
             self.crash_timer += 1
-            if self.crash_timer > 200:
+            if self.crash_timer > 150:
                 self.opacity = 1.0
                 self.crash = False
                 self.crash_timer = 0
+                self.crash_num = 0
         self.cur_state.draw(self)
         draw_rectangle(*self.get_bb())
 

@@ -31,6 +31,10 @@ class RunningState:
     def enter(character, event):
         character.image_y = 4
         character.image_x = 0
+
+        # character.standard_time = 7.0
+        character.frame = 0
+        character.frame_num = 4
         pass
 
     @staticmethod
@@ -46,6 +50,7 @@ class RunningState:
 
     @staticmethod
     def draw(character):
+        character.image.opacify(character.opacity)
         character.image.clip_draw(int(character.frame) * 236, character.image_y * 236, 236, 236, character.x, character.y)
         pass
 
@@ -95,6 +100,7 @@ class JumpState:
 
     @staticmethod
     def draw(character):
+        character.image.opacify(character.opacity)
         character.image.clip_draw(int(character.frame) * 236, character.image_y * 236, 236, 236, character.x, character.y)
         pass
 
@@ -103,6 +109,7 @@ class DoubleJumpState:
     @staticmethod
     def enter(character, event):
         global direct, speed
+        character.jump_timer = 150.0
         character.standard_time = 7.0
         character.frame = 0
         character.frame_num = 7
@@ -139,6 +146,7 @@ class DoubleJumpState:
 
     @staticmethod
     def draw(character):
+        character.image.opacify(character.opacity)
         character.image.clip_draw(int(character.frame) * 236, character.image_y * 236, 236, 236, character.x, character.y)
         pass
 
@@ -168,6 +176,7 @@ class SlideState:
 
     @staticmethod
     def draw(character):
+        character.image.opacify(character.opacity)
         character.image.clip_draw(int(character.frame) * 236, character.image_y * 236, 236, 236, character.x, character.y)
         pass
 
@@ -176,7 +185,7 @@ next_state_table = {
     RunningState: {L_SHIFT_DOWN: JumpState, L_SHIFT_UP: JumpState, RUN_TIMER: RunningState,
                    R_SHIFT_DOWN: SlideState, R_SHIFT_UP: SlideState,
                    Z_DOWN: RunningState, Z_UP: RunningState},
-    JumpState: {L_SHIFT_DOWN: RunningState, L_SHIFT_UP: RunningState, RUN_TIMER: RunningState,
+    JumpState: {L_SHIFT_DOWN: JumpState, L_SHIFT_UP: RunningState, RUN_TIMER: RunningState,
                 R_SHIFT_DOWN:JumpState, R_SHIFT_UP: JumpState,
                 Z_DOWN: DoubleJumpState, Z_UP: DoubleJumpState},
     SlideState: {L_SHIFT_DOWN: SlideState, L_SHIFT_UP: SlideState, RUN_TIMER: RunningState,
@@ -204,6 +213,7 @@ class Character:
         self.cur_state.enter(self, None)
         self.jump_timer = 0
         self.slide_timer = 0
+        self.opacity = 1.0
         pass
 
     # def newPosition(self, x, y):

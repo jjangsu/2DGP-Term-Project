@@ -23,4 +23,4 @@ class Pin_bean(obstacle.Obstacle):
         pass
 
     def get_bb(self):
-        return self.x - 34, self.y - 47, self.x + 34, self.y + 47
+        return self.x - 34, self.y - 47, self.x, self.y + 47

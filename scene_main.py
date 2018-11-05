@@ -30,7 +30,7 @@ def enter():
         cookie = character_bright.Bright()
         cookie.newPosition(200, 70 + 115)
 
-    line = [[0] * 12 for i in range(12)]
+    line = [[0] * 12 for i in range(24)]
     with open('obstacleData.txt', 'r') as file:
         line = np.loadtxt('obstacleData.txt', delimiter=' ')
     row = 0
@@ -86,7 +86,7 @@ def collide(a, b):
 
 
 def update():
-    global timer, cookie, obstacles
+    global timer, cookie, obstacles, life_image
     timer += 1
     # if timer > 2:
     for game_object in game_world.all_objects():
@@ -99,7 +99,8 @@ def update():
 
     for obs in obstacles:
         if collide(cookie, obs):
-            # print("COLLISION")
+            print("COLLISION")
+            # life_image.image_x += 1
             pass
 
 

@@ -21,5 +21,5 @@ class Fork_sausage(obstacle.Obstacle):
         pass
 
     def get_bb(self):
-        return self.x - 50, self.y - 100, self.x + 50, self.y + 100
+        return self.x - 40, self.y - 90, self.x, self.y + 60
         pass

@@ -21,5 +21,5 @@ class Fork_sky(obstacle.Obstacle):
         pass
 
     def get_bb(self):
-        return self.x - 40, self.y - 240, self.x + 40, self.y + 200
+        return self.x - 40, self.y - 240, self.x + 20, self.y + 200
         pass

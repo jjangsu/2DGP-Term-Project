@@ -18,7 +18,7 @@ class Stone_4(obstacle.Obstacle):
         self.time = 0
         self.speed = 400
         Stone_4.image = load_image('resource\Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_bl1_ing_sprite.png')
-        self.x = ((106 * 12) * col + 106 * row - character_brave.Brave().x + 118)
+        self.x = ((106 * 12) * col + 106 * row - character_brave.Brave().x + 118) * 2
         self.y = 500 / 2 - 85
         pass
 

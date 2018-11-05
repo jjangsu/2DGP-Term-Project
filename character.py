@@ -35,6 +35,9 @@ class RunningState:
         # character.standard_time = 7.0
         character.frame = 0
         character.frame_num = 4
+        character.crash_x1 = 0
+        character.crash_x2 = 40
+        character.crash_y2 = 0
         pass
 
     @staticmethod
@@ -71,6 +74,9 @@ class JumpState:
         character.image_x = 7
         direct = 1
         speed = 2.0
+        character.crash_x1 = 0
+        character.crash_x2 = 40
+        character.crash_y2 = 0
         pass
 
     @staticmethod
@@ -117,6 +123,9 @@ class DoubleJumpState:
         character.image_x = 0
         direct = 1
         speed = 2.0
+        character.crash_x1 = 0
+        character.crash_x2 = 40
+        character.crash_y2 = 0
         pass
 
     @staticmethod
@@ -134,7 +143,7 @@ class DoubleJumpState:
 
         character.y += direct * speed
 
-        if character.y >= 280 + (70 + 115):
+        if character.y >= 290 + (70 + 115):
             direct = -1
             speed = 2.5
 
@@ -160,6 +169,10 @@ class SlideState:
         character.image_y = 5
         character.image_x = 9
         character.slide_timer = 150.0
+
+        character.crash_x1 = -40
+        character.crash_x2 = 60
+        character.crash_y2 = - 55
         pass
 
     @staticmethod
@@ -214,6 +227,11 @@ class Character:
         self.jump_timer = 0
         self.slide_timer = 0
         self.opacity = 1.0
+
+        self.crash_x1 = 0
+        self.crash_x2 = 40
+        self.crash_y1 = 120
+        self.crash_y2 = 0
         pass
 
     # def newPosition(self, x, y):

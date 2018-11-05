@@ -24,20 +24,22 @@ class Background:
         self.backGround_x2 = 1500
         self.fire_x = 500
         self.fire_x2 = 1500
+        self.speed_1 = 80.0
+        self.speed_2 = 100.0
 
         # self.path[]
         pass
 
     def update(self):
-        self.backGround_x -= 0.3 * game_framework.frame_time
-        self.backGround_x2 -= 0.3 * game_framework.frame_time
+        self.backGround_x -= self.speed_1 * game_framework.frame_time
+        self.backGround_x2 -= self.speed_1 * game_framework.frame_time
         if (self.backGround_x < -500):
             self.backGround_x = 1500
         if self.backGround_x2 < -500:
             self.backGround_x2 = 1500
 
-        self.fire_x -= 0.5 * game_framework.frame_time
-        self.fire_x2 -= 0.5 * game_framework.frame_time
+        self.fire_x -= self.speed_2 * game_framework.frame_time
+        self.fire_x2 -= self.speed_2 * game_framework.frame_time
         if(self.fire_x < -500):
             self.fire_x = 1500
         if (self.fire_x2 < -500):

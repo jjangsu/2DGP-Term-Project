@@ -160,11 +160,6 @@ class SlideState:
 
     @staticmethod
     def do(character):
-        character.slide_timer -= 1.0
-        if character.slide_timer <= 0.0:
-            character.add_event(RUN_TIMER)
-            character.y = 70 + 115
-
         character.time += 7.0
         if character.time > character.standard_time:
             character.frame = (character.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % character.frame_num + character.image_x
@@ -185,7 +180,7 @@ next_state_table = {
                 R_SHIFT_DOWN:JumpState, R_SHIFT_UP: JumpState,
                 Z_DOWN: DoubleJumpState, Z_UP: DoubleJumpState},
     SlideState: {L_SHIFT_DOWN: SlideState, L_SHIFT_UP: SlideState, RUN_TIMER: RunningState,
-                 R_SHIFT_DOWN: SlideState, R_SHIFT_UP: SlideState,
+                 R_SHIFT_DOWN: SlideState, R_SHIFT_UP: RunningState,
                  Z_DOWN: SlideState, Z_UP: SlideState},
     DoubleJumpState: {L_SHIFT_DOWN: DoubleJumpState, L_SHIFT_UP: DoubleJumpState, RUN_TIMER: RunningState,
                       R_SHIFT_DOWN: DoubleJumpState, R_SHIFT_UP:DoubleJumpState,

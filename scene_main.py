@@ -14,12 +14,13 @@ import obstacle_fork_sky
 import obstacle_fork_sausage
 import obstacle_fly_stone_1
 import obstacle_fly_stone_4
+import obstacle_trident
 
 
 obstacles = []
 
 def enter():
-    global backgrounds, paths, obstacles, line, obstacle_type, cookie, select_cookie, timer, life_image
+    global backgrounds, paths, obstacles, line, cookie, select_cookie, timer, life_image
     backgrounds = background.Background()
     paths = [path.Path(n) for n in range(10)]
     if scene_robby.select_cookie == 1:
@@ -39,20 +40,17 @@ def enter():
         for j in i:
             j = int(j)
             if j == 1:
-                obstacle_type = 1
                 obstacles.append(obstacle_pin_bean.Pin_bean(row, col))
             elif j == 2:
-                obstacle_type = 2
                 obstacles.append(obstacle_fork_sausage.Fork_sausage(row, col))
             elif j == 3:
-                obstacle_type = 3
                 obstacles.append(obstacle_fork_sky.Fork_sky(row, col))
             elif j == 4:
-                obstacle_type = 4
                 obstacles.append(obstacle_fly_stone_1.Stone_1(row, col))
             elif j == 5:
-                obstacle_type = 5
                 obstacles.append(obstacle_fly_stone_4.Stone_4(row, col))
+            elif j == 6:
+                obstacles.append(obstacle_trident.Trident(row, col))
             # if j != 0:
             #     obstacles.append(obstacle.Obstacle(obstacle_type, row, col))
             row += 1

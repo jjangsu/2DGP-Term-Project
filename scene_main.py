@@ -49,7 +49,7 @@ def enter():
         col += 1
 
     life_image = life.LIFE()
-    game_world.add_object(life_image, 1)
+    game_world.add_object(life_image, 2)
 
     game_world.add_object(backgrounds, 0)
     for i in paths:
@@ -63,8 +63,19 @@ def exit():
     game_world.clear()
 
 
+def collide(a, b):
+    left_a, bottom_a, right_a, top_a = a.get_bb()
+    left_b, bottom_b, right_b, top_b = b.get_bb()
+    if left_a > right_b: return False
+    if right_a < left_b: return False
+    if top_a < bottom_b: return False
+    if bottom_a > top_b: return False
+
+    return True
+
+
 def update():
-    global timer, cookie
+    global timer, cookie, obstacles
     timer += 1
     # if timer > 2:
     for game_object in game_world.all_objects():
@@ -74,6 +85,10 @@ def update():
         elif not game_object == cookie:
             game_object.update()
         #timer = 0
+
+   # for obs in obstacles:
+   #     if collide(cookie, obs):
+   #         print("COLLISION")
 
 
 def draw():

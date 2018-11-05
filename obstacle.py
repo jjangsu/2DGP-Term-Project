@@ -27,3 +27,8 @@ class Obstacle:
     def draw(self):
         self.type.draw()
         pass
+
+    def get_bb(self):
+        return self.type.get_bb()
+        pass
+

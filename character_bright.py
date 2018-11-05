@@ -9,3 +9,6 @@ class Bright(character.Character):
         self.standard_time = 3.5
         self.image = load_image('resource/Bright Cookie.png')
         pass
+
+    def get_bb(self):
+        return self.x - 10, self.y - 120, self.x + 40, self.y + 0

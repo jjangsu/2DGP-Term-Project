@@ -22,4 +22,9 @@ class Fork_sausage:
     def draw(self):
         if self.x < 1100:
             self.image.clip_draw(0, 0, 106, 193, self.x, self.y)
+            draw_rectangle(*self.get_bb())
+        pass
+
+    def get_bb(self):
+        return self.x - 50, self.y - 100, self.x + 50, self.y + 100
         pass

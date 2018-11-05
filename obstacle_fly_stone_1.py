@@ -35,4 +35,9 @@ class Stone_1:
     def draw(self):
         if self.x < 1100:
             self.image.clip_draw(int(self.frame) * 200, 0, 202, 117, self.x, self.y)
+            draw_rectangle(*self.get_bb())
+        pass
+
+    def get_bb(self):
+        return self.x - 50, self.y - 38, self.x + 34, self.y + 35
         pass

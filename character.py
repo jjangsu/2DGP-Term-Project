@@ -240,6 +240,8 @@ class Character:
 
     def draw(self):
         self.cur_state.draw(self)
+        draw_rectangle(*self.get_bb())
+
         # self.image.clip_draw(self.frame * 236, self.image_y * 236, 236, 236, self.x, self.y)
         pass
 
@@ -247,3 +249,4 @@ class Character:
         if (event.type, event.key) in key_event_table:
             key_event = key_event_table[(event.type, event.key)]
             self.add_event(key_event)
+

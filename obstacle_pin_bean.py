@@ -28,4 +28,8 @@ class Pin_bean:
     def draw(self):
         if self.x < 1100:
             self.image.clip_draw(0, 0, 68, 99, self.x, self.y)
+            draw_rectangle(*self.get_bb())
         pass
+
+    def get_bb(self):
+        return self.x - 34, self.y - 47, self.x + 34, self.y + 47

@@ -38,4 +38,9 @@ class Stone_4:
             self.image.clip_draw(int(self.frame) * 200, 0, 202, 117, self.x, self.y + 70)
             self.image.clip_draw(int(self.frame) * 200, 0, 202, 117, self.x, self.y + 70 * 2)
             self.image.clip_draw(int(self.frame) * 200, 0, 202, 117, self.x, self.y + 70 * 3)
+            draw_rectangle(*self.get_bb())
+        pass
+
+    def get_bb(self):
+        return self.x - 50, self.y - 38, self.x + 34, self.y + 250
         pass

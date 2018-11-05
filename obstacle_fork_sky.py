@@ -22,4 +22,9 @@ class Fork_sky:
     def draw(self):
         if self.x < 1100:
             self.image.clip_draw(0, 0, 86, 482, self.x, self.y)
+            draw_rectangle(*self.get_bb())
+        pass
+
+    def get_bb(self):
+        return self.x - 40, self.y - 240, self.x + 40, self.y + 200
         pass

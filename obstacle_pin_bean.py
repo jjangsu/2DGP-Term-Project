@@ -6,7 +6,7 @@ import character_brave
 class Pin_bean(obstacle.Obstacle):
     image = None
 
-    def __init__(self, col, row):
+    def __init__(self, row, col):
         # if Pin_bean.image == None:
         Pin_bean.image = load_image('resource\Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_jp1B.png')
         self.y = 70 + 45 # 115

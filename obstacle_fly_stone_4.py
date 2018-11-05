@@ -11,7 +11,8 @@ FRAMES_PER_ACTION = 8
 
 class Stone_4(obstacle.Obstacle):
     image = None
-    def __init__(self, col, row):
+
+    def __init__(self, row, col):
         # if Stone_4.image == None:
         self.frame = 0
         self.time = 0

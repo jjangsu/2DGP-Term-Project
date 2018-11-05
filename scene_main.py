@@ -99,7 +99,7 @@ def update():
 
     for obs in obstacles:
         if collide(cookie, obs):
-            print("COLLISION")
+            # print("COLLISION")
             pass
 
 

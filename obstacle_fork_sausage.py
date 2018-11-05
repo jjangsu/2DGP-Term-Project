@@ -6,7 +6,7 @@ import character_brave
 class Fork_sausage(obstacle.Obstacle):
     image = None
 
-    def __init__(self, col, row):
+    def __init__(self, row, col):
         # if Fork_sausage.image == None:
         Fork_sausage.image = load_image('resource\Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_jp2B.png')
         self.y = 70 + 92

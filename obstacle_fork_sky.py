@@ -5,7 +5,7 @@ import character_brave
 class Fork_sky(obstacle.Obstacle):
     image = None
 
-    def __init__(self, col, row):
+    def __init__(self, row, col):
         # if Fork_sky.image == None:
         Fork_sky.image = load_image('resource\Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_sdA.png')
         self.y = 500 - 120

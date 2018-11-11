@@ -10,9 +10,9 @@ class LIFE:
         self.image_x = 0
         self.timer = 0
         if LIFE.bar == None:
-            LIFE.bar = load_image('resource/life bar2.png')
+            LIFE.bar = load_image('resource/UI/life bar2.png')
         if LIFE.life == None:
-            LIFE.life = load_image('resource/life.png')
+            LIFE.life = load_image('resource/UI/life.png')
         pass
 
     def update(self):

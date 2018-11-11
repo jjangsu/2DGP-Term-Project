@@ -7,7 +7,7 @@ class Brave(character.Character):
         self.x = x
         self.y = y
         self.standard_time = 3.5
-        self.image = load_image('resource/Brave Cookie.png')
+        self.image = load_image('resource/character/Brave Cookie.png')
         self.crash_x1 = 0
         self.crash_x2 = 40
         self.crash_y1 = 120

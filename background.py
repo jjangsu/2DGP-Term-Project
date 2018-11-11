@@ -13,13 +13,13 @@ class Background:
 
     def __init__(self):
         if Background.background == None:
-            Background.background = load_image('resource/background.png')
+            Background.background = load_image('resource/background/background.png')
         if Background.background2 == None:
-            Background.background2 = load_image('resource/background.png')
+            Background.background2 = load_image('resource/background/background.png')
         if Background.fire == None:
-            Background.fire = load_image('resource/background1.png')
+            Background.fire = load_image('resource/background/background1.png')
         if Background.fire2 == None:
-            Background.fire2 = load_image('resource/background1.png')
+            Background.fire2 = load_image('resource/background/background1.png')
         self.backGround_x = 500
         self.backGround_x2 = 1500
         self.fire_x = 500

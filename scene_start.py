@@ -17,9 +17,9 @@ def enter():
     global image, loading, loading_x, previous_time, speed
     hide_cursor()
     if image == None:
-        image = load_image('resource/title.png')
+        image = load_image('resource/background/title.png')
     if loading == None:
-        loading = load_image('resource/title_loading.png')
+        loading = load_image('resource/UI/title_loading.png')
     loading_x = - 512.0 # (1027.0 / 2.0)
     # print(loading_x)
     speed = 500.0

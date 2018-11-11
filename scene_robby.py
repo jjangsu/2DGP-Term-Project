@@ -29,23 +29,23 @@ play = False
 def enter():
     global top_image, bottom_image, mouse, brave, bright, select_image, play_image, no_play_image
     if top_image == None:
-        top_image = load_image('resource/robby_top1.png')
+        top_image = load_image('resource/background/robby_top1.png')
 
     if bottom_image == None:
-        bottom_image = load_image('resource/robby_bottom.png')
+        bottom_image = load_image('resource/background/robby_bottom.png')
 
     if mouse == None:
         hide_cursor()
-        mouse = load_image('resource/mouse1.png')
+        mouse = load_image('resource/UI/mouse1.png')
 
     if select_image == None:
-        select_image = load_image('resource/epN01_tm11_jp2down.png')
+        select_image = load_image('resource/UI/epN01_tm11_jp2down.png')
 
     if play_image == None:
-        play_image = load_image('resource/play.png')
+        play_image = load_image('resource/UI/play.png')
 
     if no_play_image == None:
-        no_play_image = load_image('resource/no play.png')
+        no_play_image = load_image('resource/UI/no play.png')
 
     brave = character_brave.Brave()
     brave.newPosition(500 - 150, 250)

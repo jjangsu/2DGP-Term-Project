@@ -1,8 +1,8 @@
-import character
+import cookie
 from pico2d import *
 
 
-class Bright(character.Character):
+class Bright(cookie.Character):
     def newPosition(self, x, y):
         self.x = x
         self.y = y

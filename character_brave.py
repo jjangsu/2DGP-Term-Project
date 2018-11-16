@@ -1,8 +1,8 @@
-import character
+import cookie
 from pico2d import *
 
 
-class Brave(character.Character):
+class Brave(cookie.Character):
     def newPosition(self, x, y):
         self.x = x
         self.y = y

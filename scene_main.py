@@ -15,6 +15,8 @@ import obstacle_fork_sausage
 import obstacle_fly_stone_1
 import obstacle_fly_stone_4
 import obstacle_trident
+import jelly_general
+import jelly
 
 
 obstacles = []
@@ -59,6 +61,10 @@ def enter():
 
     life_image = life.LIFE()
     game_world.add_object(life_image, 2)
+
+    jellies = jelly_general.General()
+    jellies.initialize()
+    game_world.add_object(jellies, 1)
 
     game_world.add_object(backgrounds, 0)
     for i in paths:

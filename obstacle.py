@@ -22,4 +22,5 @@ class Obstacle:
         # if self.x < - 100:
         #     game_world.remove_object(self)
 
-        pass
+    def exit(self):
+        del (self)

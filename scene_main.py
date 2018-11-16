@@ -4,8 +4,8 @@ import path
 import background
 import numpy as np
 import obstacle
-import character_brave
-import character_bright
+import cookie_brave
+import cookie_bright
 import scene_robby
 import life
 import game_world
@@ -24,11 +24,11 @@ def enter():
     backgrounds = background.Background()
     paths = [path.Path(n) for n in range(10)]
     if scene_robby.select_cookie == 1:
-        cookie = character_brave.Brave()
+        cookie = cookie_brave.Brave()
         cookie.newPosition(200, 70 + 115)
 
     elif scene_robby.select_cookie == 2:
-        cookie = character_bright.Bright()
+        cookie = cookie_bright.Bright()
         cookie.newPosition(200, 70 + 115)
 
     line = [[0] * 12 for i in range(24)]

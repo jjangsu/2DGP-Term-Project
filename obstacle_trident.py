@@ -1,7 +1,7 @@
 from pico2d import *
 import obstacle
 import game_framework
-import character_brave as brave
+import cookie_brave as brave
 
 TIME_PER_ACTION = 0.2
 ACTION_PER_TIME = 1.0 / TIME_PER_ACTION

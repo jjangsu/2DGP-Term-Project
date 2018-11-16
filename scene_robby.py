@@ -1,8 +1,8 @@
 from pico2d import *
 import game_framework
 import scene_main
-import character_bright
-import character_brave
+import cookie_bright
+import cookie_brave
 import game_world
 
 top_image = None
@@ -47,10 +47,10 @@ def enter():
     if no_play_image == None:
         no_play_image = load_image('resource/UI/no play.png')
 
-    brave = character_brave.Brave()
+    brave = cookie_brave.Brave()
     brave.newPosition(500 - 150, 250)
 
-    bright = character_bright.Bright()
+    bright = cookie_bright.Bright()
     bright.newPosition(500 + 150, 250)
 
     # game_world.add_object(brave, 2)

@@ -1,6 +1,6 @@
 from pico2d import *
 import obstacle
-import character_brave
+import cookie_brave
 
 
 class Fork_sausage(obstacle.Obstacle):
@@ -10,7 +10,7 @@ class Fork_sausage(obstacle.Obstacle):
         # if Fork_sausage.image == None:
         Fork_sausage.image = load_image('resource\Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_jp2B.png')
         self.y = 70 + 92
-        self.x = ((106 * 12) * col + 106 * row - character_brave.Brave().x + 118)
+        self.x = ((106 * 12) * col + 106 * row - cookie_brave.Brave().x + 118)
         self.speed = 200
         pass
 

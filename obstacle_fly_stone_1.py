@@ -1,7 +1,7 @@
 from pico2d import *
 import obstacle
 import game_framework
-import character_brave
+import cookie_brave
 
 TIME_PER_ACTION = 0.2
 ACTION_PER_TIME = 1.0 / TIME_PER_ACTION
@@ -17,7 +17,7 @@ class Stone_1(obstacle.Obstacle):
         self.time = 0
         self.speed = 400
         Stone_1.image = load_image('resource\Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_bl1_ing_sprite.png')
-        self.x = ((106 * 12) * col + 106 * row - character_brave.Brave().x + 118) * 2
+        self.x = ((106 * 12) * col + 106 * row - cookie_brave.Brave().x + 118) * 2
         self.y = 500 / 2 - 140
         pass
 

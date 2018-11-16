@@ -1,11 +1,11 @@
-import character_brave
+import cookie_brave
 import game_world
 import game_framework
 from pico2d import *
 
 class Obstacle:
     def __init__(self, row, col):
-        self.x = ((106 * 12) * col + 106 * row - character_brave.Brave().x + 118)
+        self.x = ((106 * 12) * col + 106 * row - cookie_brave.Brave().x + 118)
         self.y = 70
         self.speed = 200
         self.image = None
@@ -22,5 +22,3 @@ class Obstacle:
         # if self.x < - 100:
         #     game_world.remove_object(self)
 
-    def exit(self):
-        del (self)

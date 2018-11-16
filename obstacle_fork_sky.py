@@ -1,6 +1,6 @@
 from pico2d import *
 import obstacle
-import character_brave
+import cookie_brave
 
 class Fork_sky(obstacle.Obstacle):
     image = None
@@ -9,7 +9,7 @@ class Fork_sky(obstacle.Obstacle):
         # if Fork_sky.image == None:
         Fork_sky.image = load_image('resource\Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_sdA.png')
         self.y = 500 - 120
-        self.x = ((106 * 12) * col + 106 * row - character_brave.Brave().x + 118)
+        self.x = ((106 * 12) * col + 106 * row - cookie_brave.Brave().x + 118)
         self.speed = 200
         pass
 

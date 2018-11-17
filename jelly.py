@@ -11,7 +11,7 @@ class Jelly:
 
     def __init__(self, row, col):
         self.x = cookie_brave.Brave().x + 600 + col * 15
-        self.y = 140 + row * 20
+        self.y = 160 + row * 20
         self.speed = 200
         # self.image = None
         self.image_x = 0

@@ -17,26 +17,38 @@ import obstacle_fly_stone_4
 import obstacle_trident
 import jelly_general
 import jelly
+import threading
 
 
 obstacles = []
 jellies = []
 
-def enter():
-    global backgrounds, paths, obstacles, line, cookie, select_cookie, timer, life_image, jelly_line, jelly_file
-    backgrounds = background.Background()
-    game_world.add_object(backgrounds, 0)
+def jelly_init():
+    global jelly_line
+    jelly_line = [[0] * 10 for i in range(1000)]
+    with open('jellyData.txt', 'r') as jelly_file:
+        jelly_line = np.loadtxt('jellyData.txt', delimiter=' ')
+    row = 0
+    col = 0
+    for i in jelly_line:
+        for j in i:
+            j = int(j)
+            if j == 1:
+                jellies.append(jelly_general.General(row, col))
+
+            row += 1
+        row = 0
+        col += 1
+
+    for item in jellies:
+        game_world.add_object(item, 1)
+        item.initialize()
+        # for obs in obstacles:
+        #     if item.collide_obstacle(obs):
+        #         item.newPosition(obs)
 
 
-
-    if scene_robby.select_cookie == 1:
-        cookie = cookie_brave.Brave()
-        cookie.newPosition(200, 70 + 115)
-    elif scene_robby.select_cookie == 2:
-        cookie = cookie_bright.Bright()
-        cookie.newPosition(200, 70 + 115)
-    game_world.add_object(cookie, 2)
-
+def obstacle_init():
     line = [[0] * 12 for i in range(24)]
     with open('obstacleData.txt', 'r') as file:
         line = np.loadtxt('obstacleData.txt', delimiter=' ')
@@ -65,26 +77,27 @@ def enter():
     for obs in obstacles:
         game_world.add_object(obs, 1)
 
-    jelly_line = [[0] * 10 for i in range(1000)]
-    with open('jellyData.txt', 'r') as jelly_file:
-        jelly_line = np.loadtxt('jellyData.txt', delimiter=' ')
-    row = 0
-    col = 0
-    for i in jelly_line:
-        for j in i:
-            j = int(j)
-            if j == 1:
-                jellies.append(jelly_general.General(row, col))
 
-            row += 1
-        row = 0
-        col += 1
-    for item in jellies:
-        game_world.add_object(item, 1)
-        item.initialize()
-        # for obs in obstacles:
-        #     if item.collide_obstacle(obs):
-        #         item.newPosition(obs)
+def enter():
+    global backgrounds, paths, obstacles, line, cookie, select_cookie, timer, life_image, jelly_line, jelly_file
+    backgrounds = background.Background()
+    game_world.add_object(backgrounds, 0)
+
+    if scene_robby.select_cookie == 1:
+        cookie = cookie_brave.Brave()
+        cookie.newPosition(200, 70 + 115)
+    elif scene_robby.select_cookie == 2:
+        cookie = cookie_bright.Bright()
+        cookie.newPosition(200, 70 + 115)
+    game_world.add_object(cookie, 2)
+
+    obs = threading.Thread(target=obstacle_init)
+    obs.start()
+    obs.join()
+
+    t = threading.Thread(target=jelly_init)
+    t.start()
+    t.join()
 
     paths = [path.Path(n) for n in range(10)]
     for i in paths:
@@ -100,6 +113,9 @@ def enter():
     # jellies.initialize()
     # game_world.add_object(jellies, 1)
     timer = 0
+
+
+
 
 
 def exit():
@@ -141,9 +157,9 @@ def update():
     # for obs in obstacles:
     #     if obs.x < 0:
     #         game_world.remove_object(obs)
-    # for item in jellies:
-    #     if collide(cookie, item):
-    #         game_world.remove_object(item)
+    for item in jellies:
+        if collide(cookie, item):
+            game_world.remove_object(item)
 
 
 def draw():

@@ -14,6 +14,7 @@ class Obstacle:
         self.time = 0
 
         self.timer = 0
+        self.type = 0
 
     def update(self):
         # global obstacle_type

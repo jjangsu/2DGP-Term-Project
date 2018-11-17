@@ -12,12 +12,15 @@ class Fork_sausage(obstacle.Obstacle):
         self.y = 70 + 92
         self.x = ((106 * 12) * col + 106 * row - cookie_brave.Brave().x + 118)
         self.speed = 200
+        self.type = 2
         pass
 
     def draw(self):
         if self.x < 1100:
             Fork_sausage.image.clip_draw(0, 0, 106, 193, self.x, self.y)
             draw_rectangle(*self.get_bb())
+        if self.x < - 100:
+            del (self)
         pass
 
     def get_bb(self):

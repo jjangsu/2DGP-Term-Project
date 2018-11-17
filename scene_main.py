@@ -27,9 +27,7 @@ def enter():
     backgrounds = background.Background()
     game_world.add_object(backgrounds, 0)
 
-    paths = [path.Path(n) for n in range(10)]
-    for i in paths:
-        game_world.add_object(i, 0)
+
 
     if scene_robby.select_cookie == 1:
         cookie = cookie_brave.Brave()
@@ -67,7 +65,7 @@ def enter():
     for obs in obstacles:
         game_world.add_object(obs, 1)
 
-    jelly_line = [[0] * 10 for i in range(42)]
+    jelly_line = [[0] * 10 for i in range(1000)]
     with open('jellyData.txt', 'r') as jelly_file:
         jelly_line = np.loadtxt('jellyData.txt', delimiter=' ')
     row = 0
@@ -84,6 +82,16 @@ def enter():
     for item in jellies:
         game_world.add_object(item, 1)
         item.initialize()
+        # for obs in obstacles:
+        #     if item.collide_obstacle(obs):
+        #         item.newPosition(obs)
+
+    paths = [path.Path(n) for n in range(10)]
+    for i in paths:
+        game_world.add_object(i, 0)
+
+    # for j in jellies:
+    #    print(j.y)
 
     life_image = life.LIFE()
     game_world.add_object(life_image, 2)
@@ -123,12 +131,19 @@ def update():
 
     for obs in obstacles:
         if collide(cookie, obs):
-            print("COLLISION")
+            # print("COLLISION")
             cookie.crash = True
             cookie.crash_num += 1
             if cookie.crash_num == 1:
                 life_image.image_x += 30
             pass
+
+    # for obs in obstacles:
+    #     if obs.x < 0:
+    #         game_world.remove_object(obs)
+    # for item in jellies:
+    #     if collide(cookie, item):
+    #         game_world.remove_object(item)
 
 
 def draw():

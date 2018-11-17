@@ -19,6 +19,7 @@ class Stone_1(obstacle.Obstacle):
         Stone_1.image = load_image('resource\Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_bl1_ing_sprite.png')
         self.x = ((106 * 12) * col + 106 * row - cookie_brave.Brave().x + 118) * 2
         self.y = 500 / 2 - 140
+        self.type = 4
         pass
 
     def update(self):

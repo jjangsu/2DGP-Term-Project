@@ -20,6 +20,7 @@ class Trident(obstacle.Obstacle):
         self.speed = 200
         self.x = ((106 * 12) * col + 106 * row - brave.Brave().x + 118)
         self.y = 500 / 2 - 110
+        self.type = 6
         pass
 
     def update(self):

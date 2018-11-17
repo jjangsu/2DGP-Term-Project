@@ -11,6 +11,7 @@ class Fork_sky(obstacle.Obstacle):
         self.y = 500 - 120
         self.x = ((106 * 12) * col + 106 * row - cookie_brave.Brave().x + 118)
         self.speed = 200
+        self.type = 3
         pass
 
 

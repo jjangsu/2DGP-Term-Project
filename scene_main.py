@@ -67,7 +67,7 @@ def enter():
     for obs in obstacles:
         game_world.add_object(obs, 1)
 
-    jelly_line = [[0] * 10 for i in range(4)]
+    jelly_line = [[0] * 10 for i in range(42)]
     with open('jellyData.txt', 'r') as jelly_file:
         jelly_line = np.loadtxt('jellyData.txt', delimiter=' ')
     row = 0

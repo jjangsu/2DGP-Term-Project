@@ -20,18 +20,24 @@ import jelly
 
 
 obstacles = []
+jellies = []
 
 def enter():
-    global backgrounds, paths, obstacles, line, cookie, select_cookie, timer, life_image
+    global backgrounds, paths, obstacles, line, cookie, select_cookie, timer, life_image, jelly_line, jelly_file
     backgrounds = background.Background()
+    game_world.add_object(backgrounds, 0)
+
     paths = [path.Path(n) for n in range(10)]
+    for i in paths:
+        game_world.add_object(i, 0)
+
     if scene_robby.select_cookie == 1:
         cookie = cookie_brave.Brave()
         cookie.newPosition(200, 70 + 115)
-
     elif scene_robby.select_cookie == 2:
         cookie = cookie_bright.Bright()
         cookie.newPosition(200, 70 + 115)
+    game_world.add_object(cookie, 2)
 
     line = [[0] * 12 for i in range(24)]
     with open('obstacleData.txt', 'r') as file:
@@ -58,22 +64,36 @@ def enter():
             row += 1
         row = 0
         col += 1
+    for obs in obstacles:
+        game_world.add_object(obs, 1)
+
+    jelly_line = [[0] * 10 for i in range(4)]
+    with open('jellyData.txt', 'r') as jelly_file:
+        jelly_line = np.loadtxt('jellyData.txt', delimiter=' ')
+    row = 0
+    col = 0
+    for i in jelly_line:
+        for j in i:
+            j = int(j)
+            if j == 1:
+                jellies.append(jelly_general.General(row, col))
+
+            row += 1
+        row = 0
+        col += 1
+    for item in jellies:
+        game_world.add_object(item, 1)
+        item.initialize()
 
     life_image = life.LIFE()
     game_world.add_object(life_image, 2)
 
-    jellies = jelly_general.General()
-    jellies.initialize()
-    game_world.add_object(jellies, 1)
-
-    game_world.add_object(backgrounds, 0)
-    for i in paths:
-        game_world.add_object(i, 0)
-    game_world.add_object(cookie, 2)
-    for obs in obstacles:
-        game_world.add_object(obs, 1)
-
+    # jellies = jelly_general.General()
+    # jellies.initialize()
+    # game_world.add_object(jellies, 1)
     timer = 0
+
+
 def exit():
     game_world.clear()
 

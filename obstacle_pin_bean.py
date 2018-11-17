@@ -8,8 +8,8 @@ class Pin_bean(obstacle.Obstacle):
     image = None
 
     def __init__(self, row, col):
-        # if Pin_bean.image == None:
-        Pin_bean.image = load_image('resource\Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_jp1B.png')
+        if Pin_bean.image == None:
+            Pin_bean.image = load_image('resource\Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_jp1B.png')
         self.y = 70 + 45 # 115
         self.x = ((106 * 12) * col + 106 * row - cookie_brave.Brave().x + 118)
         self.speed = 200

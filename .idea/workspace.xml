@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95ae52e5-0d25-4dd4-9c9a-d8a92e5a4725" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/jelly_general.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jelly general.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/jelly.py" beforeDir="false" afterPath="$PROJECT_DIR$/jelly.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jelly_general.py" beforeDir="false" afterPath="$PROJECT_DIR$/jelly_general.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obstacle_pin_bean.py" beforeDir="false" afterPath="$PROJECT_DIR$/obstacle_pin_bean.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scene_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/scene_main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,65 +18,23 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/obstacle_trident.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="-1">
-                    <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/cookie.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="341">
-                    <caret line="255" column="14" lean-forward="true" selection-start-line="255" selection-start-column="14" selection-end-line="255" selection-end-column="14" />
-                    <folding>
-                      <element signature="e#0#20#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/cookie_brave.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="266">
-                    <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-                    <folding>
-                      <element signature="e#0#13#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/obstacle.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state>
-                    <caret column="19" lean-forward="true" selection-start-column="19" selection-end-column="19" />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/obstacle_pin_bean.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="361">
-                    <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-                    <folding>
-                      <element signature="e#0#20#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
             <file pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/scene_main.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="51">
-                    <caret line="45" column="24" lean-forward="true" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+                  <state relative-caret-position="95">
+                    <caret line="59" column="24" lean-forward="true" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
+                    <folding>
+                      <element signature="e#0#20#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/obstacle_pin_bean.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="247">
+                    <caret line="13" column="78" lean-forward="true" selection-start-line="13" selection-start-column="78" selection-end-line="13" selection-end-column="78" />
                     <folding>
                       <element signature="e#0#20#0" expanded="true" />
                     </folding>
@@ -112,28 +69,28 @@
           <entry key="PNG" value="3" />
           <entry key="jpg" value="4" />
           <entry key="png" value="14" />
-          <entry key="py" value="400" />
-          <entry key="txt" value="20" />
+          <entry key="py" value="403" />
+          <entry key="txt" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="21" />
-          <entry key="PLAIN_TEXT" value="20" />
-          <entry key="Python" value="400" />
+          <entry key="PLAIN_TEXT" value="22" />
+          <entry key="Python" value="403" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="72" />
-          <entry key="py" value="21249" />
-          <entry key="txt" value="373" />
+          <entry key="py" value="21717" />
+          <entry key="txt" value="387" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="445" />
-          <entry key="Python" value="21249" />
+          <entry key="PLAIN_TEXT" value="459" />
+          <entry key="Python" value="21717" />
         </counts>
       </usages-collector>
     </session>
@@ -141,31 +98,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/obstacleData.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jelly.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+            <state relative-caret-position="95">
+              <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
               <folding>
-                <marker date="1542370181093" expanded="true" signature="36:41" ph="..." />
+                <marker date="1542441102726" expanded="true" signature="36:41" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/life.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/game_world.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -173,12 +121,30 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jelly_general.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="22" column="94" selection-start-line="22" selection-start-column="94" selection-end-line="22" selection-end-column="94" />
+            <state relative-caret-position="392">
+              <caret line="25" column="94" selection-start-line="25" selection-start-column="94" selection-end-line="25" selection-end-column="94" />
               <folding>
                 <element signature="e#1#21#0" expanded="true" />
-                <marker date="1542372169427" expanded="true" signature="297:316" ph="..." />
+                <marker date="1542441534980" expanded="true" signature="382:401" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/game_framework.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="101" selection-start-line="101" selection-end-line="101" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jellyData.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -220,6 +186,7 @@
       <find>1</find>
       <find>6</find>
       <find>frame</find>
+      <find>line</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -261,10 +228,11 @@
         <option value="$PROJECT_DIR$/scene_robby.py" />
         <option value="$PROJECT_DIR$/scene_start.py" />
         <option value="$PROJECT_DIR$/obstacleData.txt" />
-        <option value="$PROJECT_DIR$/obstacle_pin_bean.py" />
         <option value="$PROJECT_DIR$/obstacle.py" />
         <option value="$PROJECT_DIR$/cookie run.py" />
         <option value="$PROJECT_DIR$/jelly general.py" />
+        <option value="$PROJECT_DIR$/jellyData.txt" />
+        <option value="$PROJECT_DIR$/obstacle_pin_bean.py" />
         <option value="$PROJECT_DIR$/scene_main.py" />
         <option value="$PROJECT_DIR$/jelly.py" />
         <option value="$PROJECT_DIR$/jelly_general.py" />
@@ -474,24 +442,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/game_framework.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1280">
-          <caret line="100" selection-start-line="100" selection-end-line="100" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scene_start.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/obstacleData.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -571,10 +525,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scene_main.py">
+    <entry file="file://$PROJECT_DIR$/game_framework.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="45" column="24" lean-forward="true" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+        <state relative-caret-position="213">
+          <caret line="101" selection-start-line="101" selection-end-line="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cookie.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="255" column="14" lean-forward="true" selection-start-line="255" selection-start-column="14" selection-end-line="255" selection-end-column="14" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
@@ -591,16 +552,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cookie.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="255" column="14" lean-forward="true" selection-start-line="255" selection-start-column="14" selection-end-line="255" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/obstacle.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -608,40 +559,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/obstacle_pin_bean.py">
+    <entry file="file://$PROJECT_DIR$/obstacle_trident.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        <state relative-caret-position="13">
+          <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jellyData.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jelly.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+          <folding>
+            <marker date="1542441102726" expanded="true" signature="36:41" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scene_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="59" column="24" lean-forward="true" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jelly.py">
+    <entry file="file://$PROJECT_DIR$/obstacleData.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-          <folding>
-            <marker date="1542370181093" expanded="true" signature="36:41" ph="..." />
-          </folding>
+        <state relative-caret-position="171">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/obstacle_trident.py">
+    <entry file="file://$PROJECT_DIR$/obstacle_pin_bean.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="2" column="21" lean-forward="true" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        <state relative-caret-position="247">
+          <caret line="13" column="78" lean-forward="true" selection-start-line="13" selection-start-column="78" selection-end-line="13" selection-end-column="78" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jelly_general.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="94" selection-start-line="22" selection-start-column="94" selection-end-line="22" selection-end-column="94" />
+        <state relative-caret-position="392">
+          <caret line="25" column="94" selection-start-line="25" selection-start-column="94" selection-end-line="25" selection-end-column="94" />
           <folding>
             <element signature="e#1#21#0" expanded="true" />
-            <marker date="1542372169427" expanded="true" signature="297:316" ph="..." />
+            <marker date="1542441534980" expanded="true" signature="382:401" ph="..." />
           </folding>
         </state>
       </provider>

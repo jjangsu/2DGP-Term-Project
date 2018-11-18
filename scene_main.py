@@ -18,6 +18,7 @@ import obstacle_trident
 import jelly_general
 import jelly
 import threading
+import jelly_gold_coin
 
 
 obstacles = []
@@ -89,6 +90,8 @@ def enter():
             j = int(j)
             if j == 1:
                 jellies.append(jelly_general.General(row, col))
+            elif j == 2:
+                jellies.append(jelly_gold_coin.GoldCoin(row, col))
                 # print(row)
             row += 1
         row = 0

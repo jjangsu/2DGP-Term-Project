@@ -2,12 +2,12 @@ from pico2d import *
 import jelly
 
 
-class PinkBear(jelly.Jelly):
+class YellowBear(jelly.Jelly):
     image = None
     def initialize(self):
-        if PinkBear.image == None:
-            PinkBear.image = load_image('resource/Cookie Skill Effects and Jellies/jelly/simple bear.png')
-        self.image_x = 1
+        if YellowBear.image == None:
+            YellowBear.image = load_image('resource/Cookie Skill Effects and Jellies/jelly/simple bear.png')
+        self.image_x = 0
         pass
 
     def draw(self):

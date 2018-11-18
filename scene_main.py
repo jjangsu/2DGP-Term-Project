@@ -19,17 +19,35 @@ import threading
 import jelly_gold_coin
 import jelly_silver_coin
 import jelly_pink_bear
+import jelly_yellow_bear
 
 
 obstacles = []
 jellies = []
 
 def jelly_init():
-    global jelly_line, tmp, t
-    #
-        # for obs in obstacles:
-        #     if item.collide_obstacle(obs):
-        #         item.newPosition(obs)
+    jelly_line = [[0] * 5 for i in range(500)]
+    with open('jellyData.txt', 'r') as jelly_file:
+        jelly_line = np.loadtxt('jellyData.txt', delimiter=' ')
+    row = 0
+    col = 0
+    for i in jelly_line:
+        for j in i:
+            j = int(j)
+            if j == 1:
+                jellies.append(jelly_general.General(row, col))
+            elif j == 2:
+                jellies.append(jelly_gold_coin.GoldCoin(row, col))
+            elif j == 3:
+                jellies.append(jelly_silver_coin.SilverCoin(row, col))
+            elif j == 4:
+                jellies.append(jelly_pink_bear.PinkBear(row, col))
+            elif j == 5:
+                jellies.append(jelly_yellow_bear.YellowBear(row, col))
+                # print(row)
+            row += 1
+        row = 0
+        col += 1
 
 
 
@@ -54,8 +72,6 @@ def obstacle_init():
                 obstacles.append(obstacle_fly_stone_4.Stone_4(row, col))
             elif j == 6:
                 obstacles.append(obstacle_trident.Trident(row, col))
-            # if j != 0:
-            #     obstacles.append(obstacle.Obstacle(obstacle_type, row, col))
             row += 1
         row = 0
         col += 1
@@ -76,51 +92,21 @@ def enter():
         cookie.newPosition(200, 70 + 115)
     game_world.add_object(cookie, 2)
 
-    obs = threading.Thread(target=obstacle_init)
-    obs.start()
-    obs.join()
+    obstacle_init()
 
-    jelly_line = [[0] * 5 for i in range(500)]
-    with open('jellyData.txt', 'r') as jelly_file:
-        jelly_line = np.loadtxt('jellyData.txt', delimiter=' ')
-    row = 0
-    col = 0
-    for i in jelly_line:
-        for j in i:
-            j = int(j)
-            if j == 1:
-                jellies.append(jelly_general.General(row, col))
-            elif j == 2:
-                jellies.append(jelly_gold_coin.GoldCoin(row, col))
-            elif j == 3:
-                jellies.append(jelly_silver_coin.SilverCoin(row, col))
-            elif j == 4:
-                jellies.append(jelly_pink_bear.PinkBear(row, col))
-                # print(row)
-            row += 1
-        row = 0
-        col += 1
+    jelly_init()
 
     for item in jellies:
         game_world.add_object(item, 1)
         item.initialize()
-    # t = threading.Thread(target=jelly_init)
-    # t.start()
-    # t.join()
 
     paths = [path.Path(n) for n in range(10)]
     for i in paths:
         game_world.add_object(i, 0)
-
-    # for j in jellies:
-    #    print(j.y)
-
+#
     life_image = life.LIFE()
     game_world.add_object(life_image, 2)
 
-    # jellies = jelly_general.General()
-    # jellies.initialize()
-    # game_world.add_object(jellies, 1)
     timer = 0
 
 
@@ -151,7 +137,6 @@ def update():
             timer = 0
         elif not game_object == cookie:
             game_object.update()
-        #timer = 0
 
     for obs in obstacles:
         if collide(cookie, obs):
@@ -169,7 +154,8 @@ def update():
     for item in jellies:
         if collide(cookie, item):
             game_world.remove_object(item)
-
+        elif item.x < -10:
+            game_world.remove_object(item)
 
 
 def draw():

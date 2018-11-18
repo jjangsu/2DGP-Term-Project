@@ -3,7 +3,6 @@ import game_framework
 import path
 import background
 import numpy as np
-import obstacle
 import cookie_brave
 import cookie_bright
 import scene_robby
@@ -16,9 +15,9 @@ import obstacle_fly_stone_1
 import obstacle_fly_stone_4
 import obstacle_trident
 import jelly_general
-import jelly
 import threading
 import jelly_gold_coin
+import jelly_silver_coin
 
 
 obstacles = []
@@ -92,6 +91,8 @@ def enter():
                 jellies.append(jelly_general.General(row, col))
             elif j == 2:
                 jellies.append(jelly_gold_coin.GoldCoin(row, col))
+            elif j == 3:
+                jellies.append(jelly_silver_coin.SilverCoin(row, col))
                 # print(row)
             row += 1
         row = 0

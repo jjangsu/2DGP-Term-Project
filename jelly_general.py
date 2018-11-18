@@ -13,8 +13,8 @@ class General(jelly.Jelly):
     image = None
 
     def initialize(self):
-        # if General.image == None:
-        General.image = load_image('resource/Cookie Skill Effects and Jellies/jelly/simple jelly.png')
+        if General.image == None:
+            General.image = load_image('resource/Cookie Skill Effects and Jellies/jelly/simple jelly.png')
         # self.image_x = 1
         pass
 

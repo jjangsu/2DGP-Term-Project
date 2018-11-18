@@ -1,5 +1,6 @@
 from pico2d import *
 import game_framework
+import fps
 
 class Path:
     path = None
@@ -13,7 +14,7 @@ class Path:
     def update(self):
         self.path_x -= self.speed * game_framework.frame_time
 
-        if self.path_x < -62:
+        if self.path_x < -124/2:
             self.path_x = 124*10-62
         pass
 

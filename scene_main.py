@@ -24,28 +24,12 @@ obstacles = []
 jellies = []
 
 def jelly_init():
-    global jelly_line
-    jelly_line = [[0] * 10 for i in range(1000)]
-    with open('jellyData.txt', 'r') as jelly_file:
-        jelly_line = np.loadtxt('jellyData.txt', delimiter=' ')
-    row = 0
-    col = 0
-    for i in jelly_line:
-        for j in i:
-            j = int(j)
-            if j == 1:
-                jellies.append(jelly_general.General(row, col))
-
-            row += 1
-        row = 0
-        col += 1
-
-    for item in jellies:
-        game_world.add_object(item, 1)
-        item.initialize()
+    global jelly_line, tmp, t
+    #
         # for obs in obstacles:
         #     if item.collide_obstacle(obs):
         #         item.newPosition(obs)
+
 
 
 def obstacle_init():
@@ -95,9 +79,27 @@ def enter():
     obs.start()
     obs.join()
 
-    t = threading.Thread(target=jelly_init)
-    t.start()
-    t.join()
+    jelly_line = [[0] * 5 for i in range(500)]
+    with open('jellyData.txt', 'r') as jelly_file:
+        jelly_line = np.loadtxt('jellyData.txt', delimiter=' ')
+    row = 0
+    col = 0
+    for i in jelly_line:
+        for j in i:
+            j = int(j)
+            if j == 1:
+                jellies.append(jelly_general.General(row, col))
+                # print(row)
+            row += 1
+        row = 0
+        col += 1
+
+    for item in jellies:
+        game_world.add_object(item, 1)
+        item.initialize()
+    # t = threading.Thread(target=jelly_init)
+    # t.start()
+    # t.join()
 
     paths = [path.Path(n) for n in range(10)]
     for i in paths:
@@ -113,9 +115,6 @@ def enter():
     # jellies.initialize()
     # game_world.add_object(jellies, 1)
     timer = 0
-
-
-
 
 
 def exit():
@@ -134,9 +133,11 @@ def collide(a, b):
 
 
 def update():
-    global timer, cookie, obstacles, life_image
+    global timer, cookie, obstacles, life_image, fps
     timer += 1
     # if timer > 2:
+    fps = game_framework.frame_time
+
     for game_object in game_world.all_objects():
         if game_object == cookie and timer > 0:
             game_object.update()
@@ -154,12 +155,14 @@ def update():
                 life_image.image_x += 30
             pass
 
-    # for obs in obstacles:
-    #     if obs.x < 0:
-    #         game_world.remove_object(obs)
+    for obs in obstacles:
+        if obs.x < - 50:
+            game_world.remove_object(obs)
+
     for item in jellies:
         if collide(cookie, item):
             game_world.remove_object(item)
+
 
 
 def draw():

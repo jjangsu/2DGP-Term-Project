@@ -26,6 +26,18 @@ key_event_table = {
     (SDL_KEYUP, SDLK_z): Z_UP
 }
 
+speed = 0.001
+height = 40# .0
+origin_y = 0.0
+is_jumping = False
+stop = False
+timer = 0
+
+pi = 3.14
+angle = 0
+double_angle, double_radian = 0, 0
+
+
 # character state
 
 
@@ -64,7 +76,7 @@ class RunningState:
 class JumpState:
     @staticmethod
     def enter(character, event):
-        global direct, speed, jump_hate
+        global direct, speed, jump_hate, angle
        #  print(character.cur_state)
         # if event == L_SHIFT_DOWN:
         #     character.image_y = 0
@@ -81,6 +93,8 @@ class JumpState:
         character.crash_x2 = 40
         character.crash_y2 = 0
         jump_hate = True
+
+        angle = 0.0
         pass
 
     @staticmethod
@@ -91,17 +105,17 @@ class JumpState:
 
     @staticmethod
     def do(character):
-        global direct, speed
-        character.jump_timer -= 1.0
-        if character.jump_timer <= 0.0:
+        global direct, angle, radian, pi
+
+
+        radian = math.radians(angle)
+        character.y = 175 * math.sin(radian * pi) + (75 + 115)
+        angle += 0.4
+        print(angle)#
+        if radian > 1:
+            angle = 0.0
+            radian = 0
             character.add_event(RUN_TIMER)
-            character.y = 70 + 115
-
-        character.y += direct * speed
-
-        if character.y >= 172 + (70 + 115):
-            direct = -1
-            speed = 1.0
 
         character.time += 7.0
         if character.time > character.standard_time:
@@ -120,7 +134,7 @@ class JumpState:
 class DoubleJumpState:
     @staticmethod
     def enter(character, event):
-        global direct, speed, double_jump
+        global direct, speed, double_jump, double_angle, origin_y
         character.jump_timer = 150.0
         character.standard_time = 7.0
         character.frame = 0
@@ -128,12 +142,16 @@ class DoubleJumpState:
         character.image_y = 5
         character.image_x = 0
         direct = 1
-        speed = 2.0
+        speed = 3.0
         character.crash_x1 = 0
         character.crash_x2 = 40
         character.crash_y2 = 0
 
         double_jump = True
+
+        double_radian = 0.0
+        double_angle = 0.0
+        origin_y = character.y
         pass
 
     @staticmethod
@@ -144,20 +162,37 @@ class DoubleJumpState:
 
     @staticmethod
     def do(character):
-        global direct, speed
+        global direct, speed, double_angle, double_radian, origin_y
 
-        character.jump_timer -= 1.0
-        if character.jump_timer <= 0.0:
+
+        double_radian = math.radians(double_angle)
+        character.y = 80 * math.sin(double_radian * pi) + origin_y
+        double_angle += 0.6
+        # print(double_angle)
+        if  double_radian > 1.0:
+            origin_y = 75 + 115
+
+        if double_radian > 1.0:
+            double_angle = 0.0
+            double_radian = 0
             character.add_event(RUN_TIMER)
-            character.y = 70 + 115
 
-        character.y += direct * speed
+        # haracter.jump_timer -= 1.0
+        # if character.jump_timer <= 0.0:
+        #     character.add_event(RUN_TIMER)
+        #     character.y = 70 + 115
 
-        if character.y >= 290 + (70 + 115):
-            direct = -1
-            speed = 2.5
+        # character.y += direct * speed
+#
+        # if character.y >= 290 + (70 + 115):
+        #     direct = -1
+        #     speed = 2.3
+#
+        # if character.y <= 70 + 115:
+        #     character.y = 70 + 115
+        #     character.add_event(RUN_TIMER)
 
-        character.time += 7.0
+        character.time += 8.2
         if character.time > character.standard_time:
             character.frame = (character.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % character.frame_num + character.image_x
             character.time = 0

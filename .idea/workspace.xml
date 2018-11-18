@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="95ae52e5-0d25-4dd4-9c9a-d8a92e5a4725" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/cookie.py" beforeDir="false" afterPath="$PROJECT_DIR$/cookie.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/life.py" beforeDir="false" afterPath="$PROJECT_DIR$/life.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scene_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/scene_main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -157,11 +155,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cookie.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="178" column="24" selection-start-line="178" selection-start-column="24" selection-end-line="178" selection-end-column="24" />
-              <folding>
-                <element signature="e#773#1689#0" />
-              </folding>
+            <state relative-caret-position="188">
+              <caret line="274" lean-forward="true" selection-start-line="274" selection-end-line="274" />
             </state>
           </provider>
         </entry>
@@ -680,11 +675,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cookie.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="178" column="24" selection-start-line="178" selection-start-column="24" selection-end-line="178" selection-end-column="24" />
-          <folding>
-            <element signature="e#773#1689#0" />
-          </folding>
+        <state relative-caret-position="188">
+          <caret line="274" lean-forward="true" selection-start-line="274" selection-end-line="274" />
         </state>
       </provider>
     </entry>

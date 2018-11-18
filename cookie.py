@@ -38,9 +38,6 @@ angle = 0
 double_angle, double_radian = 0, 0
 
 
-isBottom = False
-
-
 class RunningState:
     @staticmethod
     def enter(character, event):
@@ -77,10 +74,6 @@ class JumpState:
     @staticmethod
     def enter(character, event):
         global direct, speed, jump_hate, angle
-       #  print(character.cur_state)
-        # if event == L_SHIFT_DOWN:
-        #     character.image_y = 0
-
         character.jump_timer = 200.0
         character.standard_time = 7.0
         character.frame = 0
@@ -119,7 +112,6 @@ class JumpState:
         if character.time > character.standard_time:
             character.frame = (character.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % character.frame_num + character.image_x
             character.time = 0
-            # print(character.frame_num)
         pass
 
     @staticmethod
@@ -166,19 +158,11 @@ class DoubleJumpState:
 
         double_radian = math.radians(double_angle)
         character.y = height * math.sin(double_radian * pi) + origin_y
-
-        # if character.y > 75 + 115 and double_angle >= 90.0:
-        #     character.y -= 1.0
-        #     print(character.y)
         double_angle += 0.6
 
-        # if double_radian > 1:
         if double_radian >= 1.0:
-            # double_angle = 90.0
-            # double_radian = 1.0
             height = 200
             origin_y -= 1.0
-            # character.add_event(RUN_TIMER)
 
         if character.y < 75 + 115:
             character.y = 75 + 115
@@ -276,26 +260,17 @@ class Character:
         self.crash_num = 0
         pass
 
-    # def newPosition(self, x, y):
-    #     self.x = x
-    #     self.y = y
-    #     pass
 
     def add_event(self, event):
         self.event_que.insert(0, event)
 
     def update(self):
-        # self.time += 1
-        # if self.time > self.standard_time:
         self.cur_state.do(self)
         if len(self.event_que) > 0:
             event = self.event_que.pop()
             self.cur_state.exit(self, event)
             self.cur_state = next_state_table[self.cur_state][event]
             self.cur_state.enter(self, event)
-
-        #     self.frame = (self.frame + 1) % self.frame_num + self.image_x
-        #     self.time = 0
         pass
 
     def draw(self):
@@ -309,8 +284,6 @@ class Character:
                 self.crash_num = 0
         self.cur_state.draw(self)
         draw_rectangle(*self.get_bb())
-
-        # self.image.clip_draw(self.frame * 236, self.image_y * 236, 236, 236, self.x, self.y)
         pass
 
     def handle_event(self, event):

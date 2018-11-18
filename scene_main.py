@@ -152,7 +152,7 @@ def update():
             cookie.crash = True
             cookie.crash_num += 1
             if cookie.crash_num == 1:
-                life_image.image_x += 30
+                life_image.image_x += 40
             pass
 
     for obs in obstacles:

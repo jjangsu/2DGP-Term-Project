@@ -38,7 +38,7 @@ angle = 0
 double_angle, double_radian = 0, 0
 
 
-# character state
+isBottom = False
 
 
 class RunningState:
@@ -107,11 +107,9 @@ class JumpState:
     def do(character):
         global direct, angle, radian, pi
 
-
         radian = math.radians(angle)
         character.y = 175 * math.sin(radian * pi) + (75 + 115)
         angle += 0.4
-        print(angle)#
         if radian > 1:
             angle = 0.0
             radian = 0
@@ -134,7 +132,7 @@ class JumpState:
 class DoubleJumpState:
     @staticmethod
     def enter(character, event):
-        global direct, speed, double_jump, double_angle, origin_y
+        global direct, speed, double_jump, double_angle, origin_y, double_radian, height
         character.jump_timer = 150.0
         character.standard_time = 7.0
         character.frame = 0
@@ -152,6 +150,8 @@ class DoubleJumpState:
         double_radian = 0.0
         double_angle = 0.0
         origin_y = character.y
+
+        height = 100
         pass
 
     @staticmethod
@@ -162,35 +162,27 @@ class DoubleJumpState:
 
     @staticmethod
     def do(character):
-        global direct, speed, double_angle, double_radian, origin_y
-
+        global direct, speed, double_angle, double_radian, origin_y, height
 
         double_radian = math.radians(double_angle)
-        character.y = 80 * math.sin(double_radian * pi) + origin_y
+        character.y = height * math.sin(double_radian * pi) + origin_y
+
+        # if character.y > 75 + 115 and double_angle >= 90.0:
+        #     character.y -= 1.0
+        #     print(character.y)
         double_angle += 0.6
-        # print(double_angle)
-        if  double_radian > 1.0:
-            origin_y = 75 + 115
 
-        if double_radian > 1.0:
-            double_angle = 0.0
-            double_radian = 0
+        # if double_radian > 1:
+        if double_radian >= 1.0:
+            # double_angle = 90.0
+            # double_radian = 1.0
+            height = 200
+            origin_y -= 1.0
+            # character.add_event(RUN_TIMER)
+
+        if character.y < 75 + 115:
+            character.y = 75 + 115
             character.add_event(RUN_TIMER)
-
-        # haracter.jump_timer -= 1.0
-        # if character.jump_timer <= 0.0:
-        #     character.add_event(RUN_TIMER)
-        #     character.y = 70 + 115
-
-        # character.y += direct * speed
-#
-        # if character.y >= 290 + (70 + 115):
-        #     direct = -1
-        #     speed = 2.3
-#
-        # if character.y <= 70 + 115:
-        #     character.y = 70 + 115
-        #     character.add_event(RUN_TIMER)
 
         character.time += 8.2
         if character.time > character.standard_time:
@@ -249,7 +241,8 @@ next_state_table = {
     SlideState: {L_SHIFT_DOWN: SlideState, L_SHIFT_UP: SlideState, RUN_TIMER: RunningState,
                  R_SHIFT_DOWN: SlideState, R_SHIFT_UP: RunningState,
                  Z_DOWN: SlideState, Z_UP: SlideState},
-    DoubleJumpState: {L_SHIFT_DOWN: DoubleJumpState, L_SHIFT_UP: DoubleJumpState, RUN_TIMER: RunningState,
+    DoubleJumpState: {L_SHIFT_DOWN: DoubleJumpState, L_SHIFT_UP: DoubleJumpState,
+                      RUN_TIMER: RunningState,
                       R_SHIFT_DOWN: DoubleJumpState, R_SHIFT_UP:DoubleJumpState,
                       Z_DOWN: DoubleJumpState, Z_UP: DoubleJumpState}
 }

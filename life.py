@@ -17,7 +17,7 @@ class LIFE:
 
     def update(self):
         self.timer += 1
-        if self.timer > 100:
+        if self.timer > 20:
             self.image_x += 1
             self.timer = 0
         pass

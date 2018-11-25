@@ -52,14 +52,6 @@ def enter():
 
     bright = cookie_bright.Bright()
     bright.newPosition(500 + 150, 250)
-
-    # game_world.add_object(brave, 2)
-    # game_world.add_object(bright, 2)
-    # game_world.add_object(top_image, 0)
-    # game_world.add_object(bottom_image, 0)
-    # game_world.add_object(mouse, 2)
-    # game_world.add_object(play_image, 1)
-    # game_world.add_object(no_play_image, 1)
     pass
 #
 def exit():

@@ -15,10 +15,7 @@ class General(jelly.Jelly):
     def initialize(self):
         if General.image == None:
             General.image = load_image('resource/Cookie Skill Effects and Jellies/jelly/simple jelly.png')
-        # self.image_x = 1
         pass
-
-
 
     # def update(self):
     #     self.x -= self.speed * game_framework.frame_time

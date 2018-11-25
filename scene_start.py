@@ -36,13 +36,7 @@ def exit():
 
 def update():
     global start_time, loading_x, previous_time, speed
-    # if(start_time > 2.0):
-        # start_time = 0
-
     loading_x += speed * game_framework.frame_time # 1027 / 470
-    # print(speed)
-    # print(game_framework.frame_time)
-    # print(loading_x)
     current = get_time()
     if current - previous_time >= 2.0:
         game_framework.change_state(scene_robby)

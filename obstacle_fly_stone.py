@@ -16,11 +16,6 @@ class Fly_stone(obstacle.Obstacle):
         self.speed = 400
         self.image = load_image(
             'resource\Episode 1 - Escape from the Oven/1. The Witch Oven/epN01_tm01_bl1_ing_sprite.png')
-        # self.stone_type = random.randint(0, 1)
-        # if self.stone_type == 0:
-        #     self.fly_stone = obstacle_fly_stone_1.Stone_1(row, col)#
-        # elif self.stone_type == 1:
-        #     self.fly_stone = obstacle_fly_stone_4.Stone_4(row, col)
         pass
 
     def update(self):

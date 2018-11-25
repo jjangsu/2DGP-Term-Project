@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="95ae52e5-0d25-4dd4-9c9a-d8a92e5a4725" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/jelly_general.py" beforeDir="false" afterPath="$PROJECT_DIR$/jelly_general.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obstacle_fly_stone.py" beforeDir="false" afterPath="$PROJECT_DIR$/obstacle_fly_stone.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scene_robby.py" beforeDir="false" afterPath="$PROJECT_DIR$/scene_robby.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scene_start.py" beforeDir="false" afterPath="$PROJECT_DIR$/scene_start.py" afterDir="false" />
-    </list>
+    <list default="true" id="95ae52e5-0d25-4dd4-9c9a-d8a92e5a4725" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +12,7 @@
     <session id="-1820792846">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="42" />
+          <entry key="project.closed" value="43" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="8" />
           <entry key="project.open.time.10" value="3" />
@@ -366,7 +361,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="701" y="0" width="1193" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20952381" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />

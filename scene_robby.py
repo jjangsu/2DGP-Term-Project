@@ -53,7 +53,7 @@ def enter():
     bright = cookie_bright.Bright()
     bright.newPosition(500 + 150, 250)
     pass
-#
+
 def exit():
     global top_image, bottom_image, mouse, brave, bright, play_image, no_play_image
     del (top_image)

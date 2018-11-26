@@ -8,6 +8,7 @@ class YellowBear(jelly.Jelly):
         if YellowBear.image == None:
             YellowBear.image = load_image('resource/Cookie Skill Effects and Jellies/jelly/simple bear.png')
         self.image_x = 0
+        self.type = 4
         pass
 
     def draw(self):

@@ -14,6 +14,7 @@ class SilverCoin(jelly.Jelly):
     def initialize(self):
         if SilverCoin.image == None:
             SilverCoin.image = load_image('resource/Cookie Skill Effects and Jellies/jelly/silver coin.png')
+        self.type = 3
         pass
 
     def update(self):

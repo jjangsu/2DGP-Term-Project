@@ -15,6 +15,7 @@ class General(jelly.Jelly):
     def initialize(self):
         if General.image == None:
             General.image = load_image('resource/Cookie Skill Effects and Jellies/jelly/simple jelly.png')
+        self.type = 1
         pass
 
     # def update(self):

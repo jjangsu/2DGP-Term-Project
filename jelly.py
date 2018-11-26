@@ -8,16 +8,15 @@ class Jelly:
         self.x = cookie_brave.Brave().x + 600 + col * 30
         self.y = 110 + row * 25
         self.speed = 200
-        # self.image = load_image('resource/Cookie Skill Effects and Jellies/jelly/General Jellies.png')
         self.image_x = 0
         self.image_y = 0
+
+        self.type = 0
         pass
 
 
     def update(self):
         self.x -= self.speed * game_framework.frame_time
-        # if self.x < -10:
-        #     game_world.remove_object(self)
         pass
 
     def get_bb(self):

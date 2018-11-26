@@ -15,7 +15,6 @@ import obstacle_fly_stone_1
 import obstacle_fly_stone_4
 import obstacle_trident
 import jelly_general
-import threading
 import jelly_gold_coin
 import jelly_silver_coin
 import jelly_pink_bear

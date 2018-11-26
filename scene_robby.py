@@ -3,7 +3,7 @@ import game_framework
 import scene_main
 import cookie_bright
 import cookie_brave
-import game_world
+import scene_loading
 
 top_image = None
 top_image_x = 500
@@ -137,7 +137,7 @@ def update():
 
     if play and 500 - 150 < click_x and click_x < 500 + 150 and \
         60 < 500 - click_y and 500 - click_y < 60 + 85:
-            game_framework.push_state(scene_main)
+            game_framework.push_state(scene_loading)
 
 
     brave.update()

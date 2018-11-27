@@ -19,10 +19,12 @@ import jelly_gold_coin
 import jelly_silver_coin
 import jelly_pink_bear
 import jelly_yellow_bear
+import ui
 
 
 obstacles = []
 jellies = []
+button = None
 
 def jelly_init():
     jelly_line = [[0] * 5 for i in range(500)]
@@ -80,6 +82,7 @@ def obstacle_init():
 
 def enter():
     global backgrounds, paths, obstacles, line, cookie, select_cookie, timer, life_image, jelly_line, jelly_file
+    global  button
 
     backgrounds = background.Background()
     game_world.add_object(backgrounds, 0)
@@ -111,6 +114,9 @@ def enter():
 
     scene_robby.bgm = load_music('sound/Cookie Run Ovenbreak - Theme Song Breakout 1.mp3')
     scene_robby.bgm.repeat_play()
+
+    button = ui.UI()
+    game_world.add_object(button, 2)
 
 def exit():
     game_world.clear()

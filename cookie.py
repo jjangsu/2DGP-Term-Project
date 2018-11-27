@@ -1,5 +1,6 @@
 from pico2d import *
 import game_framework
+import scene_main
 
 jump_hate = False
 double_jump = False
@@ -89,12 +90,15 @@ class JumpState:
         jump_hate = True
 
         angle = 0.0
+
+        scene_main.button.jump_push = True
         pass
 
     @staticmethod
     def exit(character, event):
         global jump_hate
         jump_hate = False
+        scene_main.button.jump_push = False
         pass
 
     @staticmethod
@@ -145,12 +149,17 @@ class DoubleJumpState:
         origin_y = character.y
 
         height = 100
+
+        scene_main.button.jump_push = True
+        scene_main.button.opacity_jump = 0.7
         pass
 
     @staticmethod
     def exit(character, event):
         global double_jump
         double_jump = False
+        scene_main.button.jump_push = False
+        scene_main.button.opacity_jump = 0.3
         pass
 
     @staticmethod
@@ -195,10 +204,13 @@ class SlideState:
         character.crash_x1 = -40
         character.crash_x2 = 60
         character.crash_y2 = - 55
+
+        scene_main.button.slide_push = True
         pass
 
     @staticmethod
     def exit(character, event):
+        scene_main.button.slide_push = False
         pass
 
     @staticmethod

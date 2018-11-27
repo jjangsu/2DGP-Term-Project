@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95ae52e5-0d25-4dd4-9c9a-d8a92e5a4725" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cookie.py" beforeDir="false" afterPath="$PROJECT_DIR$/cookie.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scene_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/scene_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/life.py" beforeDir="false" afterPath="$PROJECT_DIR$/life.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +57,7 @@
           <entry key="PNG" value="3" />
           <entry key="jpg" value="4" />
           <entry key="png" value="14" />
-          <entry key="py" value="523" />
+          <entry key="py" value="524" />
           <entry key="txt" value="25" />
         </counts>
       </usages-collector>
@@ -67,20 +65,20 @@
         <counts>
           <entry key="Image" value="21" />
           <entry key="PLAIN_TEXT" value="25" />
-          <entry key="Python" value="523" />
+          <entry key="Python" value="524" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="72" />
-          <entry key="py" value="30589" />
+          <entry key="py" value="30662" />
           <entry key="txt" value="735" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="807" />
-          <entry key="Python" value="30589" />
+          <entry key="Python" value="30662" />
         </counts>
       </usages-collector>
     </session>
@@ -100,23 +98,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scene_start.py">
+        <entry file="file://$PROJECT_DIR$/scene_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="352">
+              <caret line="199" column="45" selection-start-line="199" selection-start-column="45" selection-end-line="199" selection-end-column="45" />
+              <folding>
+                <element signature="e#573#1368#0" />
+                <element signature="e#1395#2328#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scene_main.py">
+        <entry file="file://$PROJECT_DIR$/life.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="192" lean-forward="true" selection-start-line="192" selection-end-line="192" />
-              <folding>
-                <element signature="e#573#1368#0" />
-                <element signature="e#1395#2328#0" />
-              </folding>
+            <state relative-caret-position="409">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -179,8 +177,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://C:/python37/Lib/site-packages/pico2d/pico2d.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6479">
-              <caret line="352" selection-start-line="352" selection-end-line="352" />
+            <state relative-caret-position="41">
+              <caret line="279" column="8" selection-start-line="279" selection-start-column="8" selection-end-line="279" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -272,7 +270,6 @@
         <option value="$PROJECT_DIR$/obstacle_fly_stone_1.py" />
         <option value="$PROJECT_DIR$/obstacle.py" />
         <option value="$PROJECT_DIR$/obstacle_fly_stone_4.py" />
-        <option value="$PROJECT_DIR$/life.py" />
         <option value="$PROJECT_DIR$/obstacleData.txt" />
         <option value="$PROJECT_DIR$/jellyData.txt" />
         <option value="$PROJECT_DIR$/obstacle_fly_stone.py" />
@@ -291,6 +288,7 @@
         <option value="$PROJECT_DIR$/game_world.py" />
         <option value="$PROJECT_DIR$/cookie.py" />
         <option value="$PROJECT_DIR$/scene_main.py" />
+        <option value="$PROJECT_DIR$/life.py" />
       </list>
     </option>
   </component>
@@ -406,10 +404,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1112" height="1047" extended-state="0" />
+    <frame x="-7" y="0" width="1256" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22532588" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19868638" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -502,13 +500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
           <caret line="77" column="15" selection-start-line="77" selection-start-column="15" selection-end-line="77" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/life.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -632,13 +623,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/python37/Lib/site-packages/pico2d/pico2d.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6479">
-          <caret line="352" selection-start-line="352" selection-end-line="352" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/python37/Lib/site-packages/pico2d/sdl2/sdlmixer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3059">
@@ -706,12 +690,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scene_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="192" lean-forward="true" selection-start-line="192" selection-end-line="192" />
+        <state relative-caret-position="352">
+          <caret line="199" column="45" selection-start-line="199" selection-start-column="45" selection-end-line="199" selection-end-column="45" />
           <folding>
             <element signature="e#573#1368#0" />
             <element signature="e#1395#2328#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/python37/Lib/site-packages/pico2d/pico2d.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="279" column="8" selection-start-line="279" selection-start-column="8" selection-end-line="279" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/life.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>

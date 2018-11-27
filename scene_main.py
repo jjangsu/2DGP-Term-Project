@@ -80,6 +80,7 @@ def obstacle_init():
 
 def enter():
     global backgrounds, paths, obstacles, line, cookie, select_cookie, timer, life_image, jelly_line, jelly_file
+
     backgrounds = background.Background()
     game_world.add_object(backgrounds, 0)
 

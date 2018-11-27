@@ -273,6 +273,7 @@ class Character:
         self.crash_num = 0
 
         self.score = 0
+        self.coin = 0
         pass
 
 

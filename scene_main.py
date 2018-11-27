@@ -28,6 +28,7 @@ button = None
 score = 0
 score_font = None
 count = 0
+coin_image = None
 
 def jelly_init():
     jelly_line = [[0] * 5 for i in range(500)]
@@ -83,7 +84,7 @@ def obstacle_init():
 
 def enter():
     global backgrounds, paths, obstacles, line, cookie, select_cookie, timer, life_image, jelly_line, jelly_file
-    global button, score_font, score_font_back
+    global button, score_font, score_font_back, coin_image
 
     backgrounds = background.Background()
     game_world.add_object(backgrounds, 0)
@@ -124,6 +125,8 @@ def enter():
         score_font = load_font('font/Maplestory Light.ttf', 20)
         # score_font = load_font('font/HoonJumbomamboB_0.ttf', 20)
 
+    if coin_image == None:
+        coin_image = load_image('resource/Cookie Skill Effects and Jellies/jelly/silver coin.png')
 
 def exit():
     game_world.clear()
@@ -163,13 +166,26 @@ def update():
     for obs in obstacles:
         if obs.x < - 50:
             game_world.remove_object(obs)
-    # i = 0
-    # count = 0
+
 
     for item in jellies:
         if collide(item, cookie):
             game_world.remove_object(item)
-            count += 1
+            jellies.remove(item)
+
+            if item.type == 1:
+                cookie.score += 1500
+            elif item.type == 2: # 골드코인
+                cookie.score += 800
+                cookie.coin += 5
+            elif item.type == 3: # 실버 코인
+                cookie.score += 500
+                cookie.coin += 1
+            elif item.type == 4: # 노란 곰
+                cookie.score += 1800
+            elif item.type == 5:
+                cookie.score += 2000
+
         elif item.x < -10:
             game_world.remove_object(item)
 
@@ -181,8 +197,10 @@ def draw():
     for game_object in game_world.all_objects():
         game_object.draw()
 
-    score_font.draw(200, 400, '%d' % count, (255, 255, 0))
-    score_font.draw(880, 400, '%d' % cookie.score, (255, 255, 0))
+    coin_image.clip_draw(0, 0, 50, 50, 40, 420, 30, 30)
+    score_font.draw(60, 420, '%d' % cookie.coin, (255, 255, 100))
+    score_font.draw(900, 450, 'SCORE' , (255, 255, 0))
+    score_font.draw(880, 420, '%d' % cookie.score, (255, 255, 0))
     update_canvas()
 
 

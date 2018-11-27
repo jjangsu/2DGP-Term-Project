@@ -6,10 +6,10 @@ import cookie_brave
 import scene_robby
 
 image = None
-
+bgm = None
 
 def enter():
-    global image, cookie, speed, previous_time
+    global image, cookie, speed, previous_time, bgm
 
     if image == None:
         image = load_image('resource/background/LoadingBgOvenbreak.png')
@@ -18,6 +18,8 @@ def enter():
         cookie = load_image('resource/character/One_Brave_Cookie.png')
     elif scene_robby.select_cookie == 2:
         cookie = load_image('resource/character/One_Bright_Cookie.png')
+
+
 
     speed = 500.0
     previous_time = get_time()

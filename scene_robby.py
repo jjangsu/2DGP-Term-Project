@@ -24,10 +24,10 @@ play_image = None
 no_play_image = None
 
 play = False
-
+bgm = None
 
 def enter():
-    global top_image, bottom_image, mouse, brave, bright, select_image, play_image, no_play_image
+    global top_image, bottom_image, mouse, brave, bright, select_image, play_image, no_play_image, bgm
     if top_image == None:
         top_image = load_image('resource/background/robby_top1.png')
 
@@ -52,6 +52,10 @@ def enter():
 
     bright = cookie_bright.Bright()
     bright.newPosition(500 + 150, 250)
+
+    if bgm == None:
+        bgm = load_music('sound/Cookierun- Ovenbreak - OST - Trial Mode Main Lobby Theme - Extended 10 minutes.mp3')
+    bgm.repeat_play()
     pass
 
 def exit():
@@ -63,6 +67,7 @@ def exit():
     del (bright)
     del(play_image)
     del(no_play_image)
+    del (bgm)
     pass
 
 
@@ -138,7 +143,7 @@ def update():
     if play and 500 - 150 < click_x and click_x < 500 + 150 and \
         60 < 500 - click_y and 500 - click_y < 60 + 85:
             game_framework.push_state(scene_loading)
-
+            bgm.stop()
 
     brave.update()
     bright.update()

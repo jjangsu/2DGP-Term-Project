@@ -23,6 +23,7 @@ def enter():
         loading = load_image('resource/UI/title_loading.png')
 
     bgm = load_music('sound/loading sound - cutting2.mp3')
+    bgm.get_volume()
     bgm.repeat_play()
     loading_x = - 512.0 # (1027.0 / 2.0)
     # print(loading_x)

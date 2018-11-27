@@ -25,7 +25,6 @@ class UI:
 
         if UI.slide == None:
             UI.slide = load_image('resource/UI/slide.png')
-
         pass
 
     def update(self):

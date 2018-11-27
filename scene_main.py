@@ -25,6 +25,9 @@ import ui
 obstacles = []
 jellies = []
 button = None
+score = 0
+score_font = None
+count = 0
 
 def jelly_init():
     jelly_line = [[0] * 5 for i in range(500)]
@@ -49,8 +52,6 @@ def jelly_init():
             row += 1
         row = 0
         col += 1
-
-
 
 def obstacle_init():
     line = [[0] * 12 for i in range(24)]
@@ -82,7 +83,7 @@ def obstacle_init():
 
 def enter():
     global backgrounds, paths, obstacles, line, cookie, select_cookie, timer, life_image, jelly_line, jelly_file
-    global  button
+    global button, score_font, score_font_back
 
     backgrounds = background.Background()
     game_world.add_object(backgrounds, 0)
@@ -113,10 +114,16 @@ def enter():
     timer = 0
 
     scene_robby.bgm = load_music('sound/Cookie Run Ovenbreak - Theme Song Breakout 1.mp3')
+    scene_robby.bgm.get_volume()
     scene_robby.bgm.repeat_play()
 
     button = ui.UI()
     game_world.add_object(button, 2)
+
+    if score_font == None:
+        score_font = load_font('font/Maplestory Light.ttf', 20)
+        # score_font = load_font('font/HoonJumbomamboB_0.ttf', 20)
+
 
 def exit():
     game_world.clear()
@@ -129,12 +136,11 @@ def collide(a, b):
     if right_a < left_b: return False
     if top_a < bottom_b: return False
     if bottom_a > top_b: return False
-
     return True
 
 
 def update():
-    global timer, cookie, obstacles, life_image, fps
+    global timer, cookie, obstacles, life_image, fps, score, count
     timer += 1
     # if timer > 2:
     fps = game_framework.frame_time
@@ -148,7 +154,6 @@ def update():
 
     for obs in obstacles:
         if collide(cookie, obs):
-            # print("COLLISION")
             cookie.crash = True
             cookie.crash_num += 1
             if cookie.crash_num == 1:
@@ -158,18 +163,26 @@ def update():
     for obs in obstacles:
         if obs.x < - 50:
             game_world.remove_object(obs)
+    # i = 0
+    # count = 0
 
     for item in jellies:
-        if collide(cookie, item):
+        if collide(item, cookie):
             game_world.remove_object(item)
+            count += 1
         elif item.x < -10:
             game_world.remove_object(item)
 
 
+
 def draw():
+    global count
     clear_canvas()
     for game_object in game_world.all_objects():
         game_object.draw()
+
+    score_font.draw(200, 400, '%d' % count, (255, 255, 0))
+    score_font.draw(880, 400, '%d' % cookie.score, (255, 255, 0))
     update_canvas()
 
 

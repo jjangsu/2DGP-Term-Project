@@ -56,6 +56,7 @@ def enter():
 
     if bgm == None:
         bgm = load_music('sound/Cookierun- Ovenbreak - OST - Trial Mode Main Lobby Theme - Extended 10 minutes.mp3')
+        bgm.get_volume()
         # bgm.set_volume(80)
     bgm.repeat_play()
 

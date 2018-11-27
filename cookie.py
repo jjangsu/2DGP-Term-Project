@@ -271,6 +271,8 @@ class Character:
         self.crash = False
         self.crash_timer = 0
         self.crash_num = 0
+
+        self.score = 0
         pass
 
 

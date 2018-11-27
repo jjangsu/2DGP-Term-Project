@@ -25,9 +25,10 @@ no_play_image = None
 
 play = False
 bgm = None
+pick = None
 
 def enter():
-    global top_image, bottom_image, mouse, brave, bright, select_image, play_image, no_play_image, bgm
+    global top_image, bottom_image, mouse, brave, bright, select_image, play_image, no_play_image, bgm, pick
     if top_image == None:
         top_image = load_image('resource/background/robby_top1.png')
 
@@ -55,11 +56,16 @@ def enter():
 
     if bgm == None:
         bgm = load_music('sound/Cookierun- Ovenbreak - OST - Trial Mode Main Lobby Theme - Extended 10 minutes.mp3')
+        # bgm.set_volume(80)
     bgm.repeat_play()
+
+    if pick == None:
+        pick = load_wav('sound/picking.wav')
+        pick.set_volume(60)
     pass
 
 def exit():
-    global top_image, bottom_image, mouse, brave, bright, play_image, no_play_image
+    global top_image, bottom_image, mouse, brave, bright, play_image, no_play_image, pick
     del (top_image)
     del (bottom_image)
     del (mouse)
@@ -68,6 +74,7 @@ def exit():
     del(play_image)
     del(no_play_image)
     del (bgm)
+    del(pick)
     pass
 
 
@@ -173,7 +180,7 @@ def draw():
 
 
 def handle_events():
-    global mouse_x, mouse_y, click_x, click_y
+    global mouse_x, mouse_y, click_x, click_y, pick
     events = get_events()
     for event in events:
         if event.type == SDL_QUIT:
@@ -182,6 +189,7 @@ def handle_events():
             mouse_x, mouse_y = event.x, 500 - 1 - event.y - 73/2 + 3
         elif event.type == SDL_MOUSEBUTTONDOWN:
             if event.button == SDL_BUTTON_LEFT:
+                pick.play()
                 click_x, click_y = event.x, event.y - 73 / 2 + 3
         # elif event.type == SDL_KEYDOWN:
         #     if event.key == SDLK_SPACE:

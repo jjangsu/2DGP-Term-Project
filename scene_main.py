@@ -108,9 +108,9 @@ def enter():
 
     timer = 0
 
-
     scene_robby.bgm = load_music('sound/Cookie Run Ovenbreak - Theme Song Breakout 1.mp3')
     scene_robby.bgm.repeat_play()
+
 def exit():
     game_world.clear()
 

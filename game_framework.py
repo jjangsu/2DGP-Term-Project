@@ -88,7 +88,7 @@ def quit():
 
 
 def run(start_state):
-    global running, stack, curTime, frame_time
+    global running, stack, frame_time
 
     running = True
     stack = [start_state]

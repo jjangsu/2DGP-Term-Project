@@ -6,6 +6,7 @@ import numpy as np
 import cookie_brave
 import cookie_bright
 import scene_robby
+import scene_finish
 import life
 import game_world
 import obstacle_pin_bean
@@ -166,7 +167,10 @@ def update():
             if cookie.crash_num == 1:
                 life_image.image_x += 40
             pass
-    if life_image.image_x > 550:
+        # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    if life_image.image_x > 450:
+        scene_robby.bgm.stop()
+        game_framework.push_state(scene_finish)
         pass
 
     for obs in obstacles:

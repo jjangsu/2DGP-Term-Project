@@ -10,10 +10,8 @@ bgm = None
 
 def enter():
     global image, cookie, speed, previous_time, bgm
-
     if image == None:
         image = load_image('resource/background/LoadingBgOvenbreak.png')
-
     if scene_robby.select_cookie == 1:
         cookie = load_image('resource/character/One_Brave_Cookie.png')
     elif scene_robby.select_cookie == 2:

@@ -5,8 +5,8 @@ class LIFE:
     bar = None
     life = None
     def __init__(self):
-        self.x = 160
-        self.y = 435
+        self.x = 200
+        self.y = 438
         self.image_x = 0
         self.timer = 0
         if LIFE.bar == None:
@@ -20,11 +20,12 @@ class LIFE:
         if self.timer > 20:
             self.image_x += 1
             self.timer = 0
+
+
         pass
 
     def draw(self):
-        self.bar.clip_draw_to_origin(0, 0, 803, 90, self.x, self.y, 750 - self.image_x, 65)
-        # self.bar.clip_draw(0, 0, 803 - self.image_x, 90, self.x - int(self.image_x / 2), self.y, 750 - self.image_x, 65)
-        self.life.clip_draw(0, 0, 88, 101, 160, 470 + 10, 50, 55)
+        self.bar.clip_draw_to_origin(0, 0, 550 - self.image_x, 90, self.x, self.y, 550 - self.image_x, 65)
+        self.life.clip_draw(0, 0, 88, 101, 200, 470 + 10, 50, 55)
 
         pass

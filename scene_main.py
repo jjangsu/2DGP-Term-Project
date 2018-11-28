@@ -22,6 +22,7 @@ import jelly_yellow_bear
 import ui
 
 
+
 obstacles = []
 jellies = []
 button = None
@@ -29,6 +30,7 @@ score = 0
 score_font = None
 count = 0
 coin_image = None
+jelly_image = None
 
 def jelly_init():
     jelly_line = [[0] * 5 for i in range(500)]
@@ -84,7 +86,7 @@ def obstacle_init():
 
 def enter():
     global backgrounds, paths, obstacles, line, cookie, select_cookie, timer, life_image, jelly_line, jelly_file
-    global button, score_font, score_font_back, coin_image
+    global button, score_font, score_font_back, coin_image, jelly_image
 
     backgrounds = background.Background()
     game_world.add_object(backgrounds, 0)
@@ -127,6 +129,8 @@ def enter():
 
     if coin_image == None:
         coin_image = load_image('resource/Cookie Skill Effects and Jellies/jelly/silver coin.png')
+    if jelly_image == None:
+        jelly_image = load_image('resource/Cookie Skill Effects and Jellies/jelly/simple jelly.png')
 
 def exit():
     game_world.clear()
@@ -162,6 +166,8 @@ def update():
             if cookie.crash_num == 1:
                 life_image.image_x += 40
             pass
+    if life_image.image_x > 550:
+        pass
 
     for obs in obstacles:
         if obs.x < - 50:
@@ -199,8 +205,9 @@ def draw():
 
     coin_image.clip_draw(0, 0, 50, 50, 40, 420, 30, 30)
     score_font.draw(60, 420, '%d' % cookie.coin, (255, 255, 100))
-    score_font.draw(900, 450, 'SCORE' , (255, 255, 0))
-    score_font.draw(880, 420, '%d' % cookie.score, (255, 255, 0))
+    score_font.draw(900, 435, 'SCORE', (255, 255, 0))
+    jelly_image.clip_composite_draw(00, 0, 40, 57, 1.57 * 2, 'v', 870, 410, 20, 30)
+    score_font.draw(890, 410, '%d' % cookie.score, (255, 255, 0))
     update_canvas()
 
 

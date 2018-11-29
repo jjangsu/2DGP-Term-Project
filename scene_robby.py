@@ -74,7 +74,6 @@ def enter():
     if font == None:
         font = load_font('font/Maplestory Bold.ttf', 30)
 
-
     if coin_image == None:
         coin_image = load_image('resource/Cookie Skill Effects and Jellies/jelly/silver coin.png')
 
@@ -162,7 +161,7 @@ def update():
 
     if select_cookie == 0:
         play = False
-    else :
+    else:
         play = True
 
 

@@ -108,10 +108,10 @@ def enter():
         game_world.add_object(item, 1)
         item.initialize()
 
-    paths = [path.Path(n) for n in range(10)]
+    paths = [path.Path(n) for n in range(2)]
     for i in paths:
         game_world.add_object(i, 0)
-#
+
     life_image = life.LIFE()
     game_world.add_object(life_image, 2)
 
@@ -167,7 +167,7 @@ def update():
             if cookie.crash_num == 1:
                 life_image.image_x += 40
             pass
-        # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     if life_image.image_x > 50: # 450:
         scene_robby.bgm.stop()
         game_framework.push_state(scene_finish)

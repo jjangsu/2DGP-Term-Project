@@ -43,7 +43,7 @@ def draw():
     global image, cookie
     clear_canvas()
     image.clip_draw(0, 0, 1000, 703, 500, 250, 1000, 600)
-    cookie.clip_draw(0, 0, 300, 300, 500, 180, 180, 180)
+    cookie.clip_draw(0, 0, 312, 312, 500, 180, 180, 180)
     update_canvas()
     pass
 

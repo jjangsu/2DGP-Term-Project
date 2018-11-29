@@ -168,7 +168,7 @@ def update():
                 life_image.image_x += 40
             pass
         # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    if life_image.image_x > 450:
+    if life_image.image_x > 50: # 450:
         scene_robby.bgm.stop()
         game_framework.push_state(scene_finish)
         pass

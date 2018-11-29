@@ -4,6 +4,8 @@ import scene_main
 import cookie_bright
 import cookie_brave
 import scene_loading
+import numpy as np
+import json
 
 top_image = None
 top_image_x = 500
@@ -26,9 +28,14 @@ no_play_image = None
 play = False
 bgm = None
 pick = None
+font = None
+coin = None
+list = None
+coin_image = None
 
 def enter():
-    global top_image, bottom_image, mouse, brave, bright, select_image, play_image, no_play_image, bgm, pick
+    global top_image, bottom_image, mouse, brave, bright, select_image, play_image, no_play_image, bgm, pick, coin
+    global font, list, coin_image
     if top_image == None:
         top_image = load_image('resource/background/robby_top1.png')
 
@@ -63,6 +70,17 @@ def enter():
     if pick == None:
         pick = load_wav('sound/picking.wav')
         pick.set_volume(60)
+
+    if font == None:
+        font = load_font('font/Maplestory Bold.ttf', 30)
+
+
+    if coin_image == None:
+        coin_image = load_image('resource/Cookie Skill Effects and Jellies/jelly/silver coin.png')
+
+    f = open('coin data.txt', 'r')
+    coin = f.read()
+    f.close()
     pass
 
 def exit():
@@ -160,7 +178,7 @@ def update():
 
 
 def draw():
-    global top_image, bottom_image, top_image_2, bottom_image_x_2, brave, bright
+    global top_image, bottom_image, top_image_2, bottom_image_x_2, brave, bright,coin
     clear_canvas()
     top_image.clip_draw(0, 0, 1030, 246, top_image_x, 250 + 125)
     top_image.clip_draw(0, 0, 1030, 246, top_image_x_2, 250 + 125)
@@ -175,6 +193,11 @@ def draw():
         play_image.clip_draw(0, 0, 300, 85, 1000 // 2, 60)
     else:
         no_play_image.clip_draw(0, 0, 300, 85, 1000 // 2, 60)
+
+    coin_image.clip_draw(0, 0, 50, 50, 380, 460, 30, 30)
+    font.draw(400, 460, '%s' % coin, (255, 255, 0))
+
+
     mouse.clip_draw(0, 0, 73, 73, mouse_x, mouse_y)
     update_canvas()
     pass

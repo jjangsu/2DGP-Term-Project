@@ -31,11 +31,11 @@ class Background:
         pass
 
     def update(self):
-        self.backGround_x -= self.speed_1 * game_framework.frame_time
-        self.backGround_x2 -= self.speed_1 * game_framework.frame_time
-        if (self.backGround_x < -500):
+        self.backGround_x -= int(self.speed_1 * game_framework.frame_time)
+        self.backGround_x2 -= int(self.speed_1 * game_framework.frame_time)
+        if (self.backGround_x <= -500):
             self.backGround_x = 1500
-        if self.backGround_x2 < -500:
+        if self.backGround_x2 <= -500:
             self.backGround_x2 = 1500
 
         self.fire_x -= self.speed_2 * game_framework.frame_time

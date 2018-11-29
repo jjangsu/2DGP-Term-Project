@@ -17,8 +17,6 @@ def enter():
     elif scene_robby.select_cookie == 2:
         cookie = load_image('resource/character/One_Bright_Cookie.png')
 
-
-
     speed = 500.0
     previous_time = get_time()
     pass
@@ -26,8 +24,8 @@ def enter():
 
 def exit():
     global image, cookie
-    del (image)
-    del (cookie)
+    # del (image)
+    # del (cookie)
     pass
 
 

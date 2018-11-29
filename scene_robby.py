@@ -84,15 +84,6 @@ def enter():
 
 def exit():
     global top_image, bottom_image, mouse, brave, bright, play_image, no_play_image, pick
-    del (top_image)
-    del (bottom_image)
-    del (mouse)
-    del (brave)
-    del (bright)
-    del(play_image)
-    del(no_play_image)
-    del (bgm)
-    del(pick)
     pass
 
 
@@ -164,14 +155,14 @@ def update():
     else:
         play = True
 
-
-    if play and 500 - 150 < click_x and click_x < 500 + 150 and \
-        60 < 500 - click_y and 500 - click_y < 60 + 85:
-            game_framework.push_state(scene_loading)
-            bgm.stop()
-
     brave.update()
     bright.update()
+
+    if (not select_cookie == -1) and 500 - 150 < click_x and click_x < 500 + 150 and \
+        60 < 500 - click_y and 500 - click_y < 60 + 85:
+            game_framework.change_state(scene_loading)
+            bgm.stop()
+
 
     pass
 
@@ -186,7 +177,8 @@ def draw():
     brave.draw()
     bright.draw()
     #if select_x > 100:
-    select_image.clip_draw(0, 0, 110, 179, select_x, select_y)
+    if select_cookie != -1:
+        select_image.clip_draw(0, 0, 110, 179, select_x, select_y)
 
     if play == True:
         play_image.clip_draw(0, 0, 300, 85, 1000 // 2, 60)

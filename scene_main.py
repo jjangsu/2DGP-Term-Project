@@ -26,6 +26,7 @@ import ui
 
 obstacles = []
 jellies = []
+cookie = None
 button = None
 score = 0
 score_font = None
@@ -89,6 +90,7 @@ def enter():
     global backgrounds, paths, obstacles, line, cookie, select_cookie, timer, life_image, jelly_line, jelly_file
     global button, score_font, score_font_back, coin_image, jelly_image
 
+
     backgrounds = background.Background()
     game_world.add_object(backgrounds, 0)
 
@@ -135,6 +137,8 @@ def enter():
 
 def exit():
     game_world.clear()
+    obstacles.clear()
+    jellies.clear()
 
 
 def collide(a, b):
@@ -170,7 +174,7 @@ def update():
         # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     if life_image.image_x > 50: # 450:
         scene_robby.bgm.stop()
-        game_framework.push_state(scene_finish)
+        game_framework.change_state(scene_finish)
         pass
 
     for obs in obstacles:

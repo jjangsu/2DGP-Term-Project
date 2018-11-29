@@ -107,7 +107,7 @@ class JumpState:
 
         radian = math.radians(angle)
         character.y = 175 * math.sin(radian * pi) + (75 + 115)
-        angle += 0.4
+        angle += 50 * game_framework.frame_time
         if radian > 1:
             angle = 0.0
             radian = 0
@@ -168,7 +168,7 @@ class DoubleJumpState:
 
         double_radian = math.radians(double_angle)
         character.y = height * math.sin(double_radian * pi) + origin_y
-        double_angle += 0.6
+        double_angle += 80 * game_framework.frame_time
 
         if double_radian >= 1.0:
             height = 200

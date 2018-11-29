@@ -82,17 +82,17 @@ def exit():
 def update():
     global top_image_x, top_image_x_2, bottom_image_x, bottom_image_x_2, brave, bright, select, mouse_x, mouse_y, select_cookie
     global select_x, play, click_x, click_y
-    top_image_x -= 0.5
+    top_image_x -= 100 * game_framework.frame_time
     if top_image_x <= -515:
         top_image_x = 1000 + 515
-    top_image_x_2 -= 0.5
+    top_image_x_2 -= 100 * game_framework.frame_time
     if top_image_x_2 <= -515:
         top_image_x_2 = 1000 + 515
 
-    bottom_image_x -= 1.0
+    bottom_image_x -= 200.0 * game_framework.frame_time
     if bottom_image_x < -657:
         bottom_image_x = 1000 + 1314/2
-    bottom_image_x_2 -= 1.0
+    bottom_image_x_2 -=  200.0 * game_framework.frame_time
     if bottom_image_x_2 < -657:
         bottom_image_x_2 = 1000 + 1314 / 2
 

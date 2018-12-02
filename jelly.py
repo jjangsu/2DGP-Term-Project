@@ -12,6 +12,7 @@ class Jelly:
         self.image_y = 0
 
         self.type = 0
+        self.sound = None
         pass
 
 

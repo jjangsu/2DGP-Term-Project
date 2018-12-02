@@ -25,7 +25,6 @@ class GoldCoin(jelly.Jelly):
     def draw(self):
         if self.x < 1000.0:
             GoldCoin.image.clip_draw(int(self.image_x) * 60, self.image_y, 60, 60, self.x, self.y, 30, 30)
-            draw_rectangle(*self.get_bb())
         pass
 
     def get_bb(self):

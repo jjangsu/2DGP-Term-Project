@@ -12,6 +12,9 @@ class Brave(cookie.Character):
         self.crash_x2 = 40
         self.crash_y1 = 120
         self.crash_y2 = 0
+        self.jump_sound = load_wav('sound/effect sound/ch01jump.wav')
+        self.Double_jump_sound = load_wav('sound/effect sound/ch01jump.wav')
+        self.slide_sound = load_wav('sound/effect sound/ch01slide.wav')
         pass
 
     def get_bb(self):

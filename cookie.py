@@ -92,6 +92,8 @@ class JumpState:
         angle = 0.0
 
         scene_main.button.jump_push = True
+        character.jump_sound.play(1)
+        character.jump_sound.set_volume(70)
         pass
 
     @staticmethod
@@ -152,14 +154,17 @@ class DoubleJumpState:
 
         scene_main.button.jump_push = True
         scene_main.button.opacity_jump = 0.7
+
+        character.Double_jump_sound.play(1)
+        character.Double_jump_sound.set_volume(70)
         pass
 
     @staticmethod
     def exit(character, event):
         global double_jump
-        double_jump = False
         scene_main.button.jump_push = False
         scene_main.button.opacity_jump = 0.3
+        double_jump = False
         pass
 
     @staticmethod
@@ -206,6 +211,9 @@ class SlideState:
         character.crash_y2 = - 55
 
         scene_main.button.slide_push = True
+
+        character.slide_sound.play(1)
+        character.slide_sound.set_volume(70)
         pass
 
     @staticmethod
@@ -240,7 +248,7 @@ next_state_table = {
                  Z_DOWN: SlideState, Z_UP: SlideState},
     DoubleJumpState: {L_SHIFT_DOWN: DoubleJumpState, L_SHIFT_UP: DoubleJumpState,
                       RUN_TIMER: RunningState,
-                      R_SHIFT_DOWN: DoubleJumpState, R_SHIFT_UP:DoubleJumpState,
+                      R_SHIFT_DOWN: DoubleJumpState, R_SHIFT_UP: DoubleJumpState,
                       Z_DOWN: DoubleJumpState, Z_UP: DoubleJumpState}
 }
 
@@ -274,8 +282,11 @@ class Character:
 
         self.score = 0
         self.coin = 0
-        pass
 
+        self.jump_sound = None
+        self.Double_jump_sound = None
+        self.slide_sound = None
+        pass
 
     def add_event(self, event):
         self.event_que.insert(0, event)
@@ -306,8 +317,10 @@ class Character:
         global jump_hate
         if (event.type, event.key) in key_event_table:
             key_event = key_event_table[(event.type, event.key)]
-            if jump_hate == False:
+            if not jump_hate:
                 self.add_event(key_event)
-            elif jump_hate == True and double_jump == False and key_event == Z_DOWN:
-                self.add_event(key_event)
-
+            elif jump_hate:
+                if key_event == Z_DOWN and not double_jump:
+                    self.add_event(key_event)
+                elif double_jump:
+                    pass

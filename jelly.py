@@ -1,5 +1,5 @@
 import game_framework
-from pico2d import *
+import scene_main
 import cookie_brave
 
 
@@ -12,12 +12,13 @@ class Jelly:
         self.image_y = 0
 
         self.type = 0
-        self.sound = None
         pass
 
 
     def update(self):
         self.x -= self.speed * game_framework.frame_time
+        if scene_main.cookie.die_animation:
+            self.speed = 0
         pass
 
     def get_bb(self):

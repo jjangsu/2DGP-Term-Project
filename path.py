@@ -1,6 +1,6 @@
 from pico2d import *
 import game_framework
-import fps
+import scene_main
 
 class Path:
     path = None
@@ -16,6 +16,9 @@ class Path:
 
         if self.path_x < -620:
             self.path_x = 1000 + 1240 // 2
+
+        if scene_main.cookie.die_animation:
+            self.speed = 0
         pass
 
     def draw(self):

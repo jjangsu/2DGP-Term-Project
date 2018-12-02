@@ -16,7 +16,6 @@ class General(jelly.Jelly):
         if General.image == None:
             General.image = load_image('resource/Cookie Skill Effects and Jellies/jelly/simple jelly.png')
         self.type = 1
-        self.sound = load_wav('sound/effect sound/g_jelly.wav')
         pass
 
     def draw(self):

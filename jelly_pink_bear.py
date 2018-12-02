@@ -13,7 +13,7 @@ class PinkBear(jelly.Jelly):
 
     def draw(self):
         if self.x < 1000.0:
-            self.image.clip_draw(self.image_x * 60, self.image_y, 60, 60, self.x, self.y, 32, 32)
+            self.image.clip_draw(self.image_x * 60, self.image_y, 59, 60, self.x, self.y, 32, 32)
         pass
 
     def get_bb(self):

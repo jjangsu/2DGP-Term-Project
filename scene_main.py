@@ -32,6 +32,7 @@ score_font = None
 count = 0
 coin_image = None
 jelly_image = None
+obs_sound = None
 
 
 def jelly_init():
@@ -89,7 +90,7 @@ def obstacle_init():
 
 def enter():
     global backgrounds, paths, obstacles, line, cookie, select_cookie, timer, life_image, jelly_line, jelly_file
-    global button, score_font, score_font_back, coin_image, jelly_image
+    global button, score_font, score_font_back, coin_image, jelly_image, obs_sound
 
 
     backgrounds = background.Background()
@@ -136,6 +137,10 @@ def enter():
     if jelly_image == None:
         jelly_image = load_image('resource/Cookie Skill Effects and Jellies/jelly/simple jelly.png')
 
+    if obs_sound == None:
+        obs_sound = load_wav('sound/effect sound/g_obs1.wav')
+    obs_sound.set_volume(60)
+
 def exit():
     game_world.clear()
     obstacles.clear()
@@ -153,7 +158,7 @@ def collide(a, b):
 
 
 def update():
-    global timer, cookie, obstacles, life_image, fps, score, count
+    global timer, cookie, obstacles, life_image, fps, score, count, obs_sound
     timer += 1
     # if timer > 2:
     fps = game_framework.frame_time
@@ -165,17 +170,25 @@ def update():
         elif not game_object == cookie:
             game_object.update()
 
+    if life_image.image_x > 50: # 450:
+        scene_robby.bgm.stop()
+        cookie.crash_animation = 0
+        cookie.die_animation += 1
+        cookie.crash = False
+        if cookie.die_animation > 100:
+            game_framework.change_state(scene_finish)
+
     for obs in obstacles:
         if collide(cookie, obs):
             cookie.crash = True
             cookie.crash_num += 1
+            if cookie.die_animation == 0:
+                cookie.crash_animation += 1
+            if cookie.crash_animation == 1:
+                obs_sound.play(1)
             if cookie.crash_num == 1:
                 life_image.image_x += 40
             pass
-        # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    if life_image.image_x > 50: # 450:
-        scene_robby.bgm.stop()
-        game_framework.change_state(scene_finish)
         pass
 
     for obs in obstacles:
@@ -189,16 +202,21 @@ def update():
             jellies.remove(item)
 
             if item.type == 1:
+                cookie.sound_general.play(1)
                 cookie.score += 1500
             elif item.type == 2: # 골드코인
+                cookie.sound_gold_coin.play(1)
                 cookie.score += 800
                 cookie.coin += 5
             elif item.type == 3: # 실버 코인
+                cookie.sound_silver_coin.play(1)
                 cookie.score += 500
                 cookie.coin += 1
             elif item.type == 4: # 노란 곰
+                cookie.sound_bear.play(1)
                 cookie.score += 1800
             elif item.type == 5:
+                cookie.sound_bear.play(1)
                 cookie.score += 2000
 
         elif item.x < -10:

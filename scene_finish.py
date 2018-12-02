@@ -103,8 +103,8 @@ def enter():
 
 
     if sound == None:
-        # sound = load_music('sound/finish orign.mp3')
-        sound = load_music('sound/finish 2.mp3')
+        sound = load_wav('sound/effect sound/r_medal.wav')
+        # sound = load_music('sound/finish 2.mp3')
     sound.get_volume()
     sound.play(1)
     pass

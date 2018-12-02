@@ -1,6 +1,6 @@
 from pico2d import *
 import game_framework
-import random
+import scene_main
 import os
 
 name = "background_state"
@@ -45,7 +45,9 @@ class Background:
         if (self.fire_x2 < -500):
             self.fire_x2 = 1500
 
-
+        if scene_main.cookie.die_animation:
+            self.speed_1 = 0
+            self.speed_2 = 0
         pass
 
     def draw(self):

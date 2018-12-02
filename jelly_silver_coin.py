@@ -1,7 +1,7 @@
 from pico2d import *
 import game_framework
 import jelly
-
+import scene_main
 
 TIME_PER_ACTION = 0.4
 ACTION_PER_TIME = 1.0 / TIME_PER_ACTION
@@ -20,6 +20,8 @@ class SilverCoin(jelly.Jelly):
     def update(self):
         self.x -= self.speed * game_framework.frame_time
         self.image_x = (self.image_x + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 4
+        if scene_main.cookie.die_animation:
+            self.speed = 0
         pass
 
     def draw(self):

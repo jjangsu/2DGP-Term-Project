@@ -1,6 +1,7 @@
 import cookie_brave
 import game_world
 import game_framework
+import scene_main
 from pico2d import *
 
 class Obstacle:
@@ -19,6 +20,8 @@ class Obstacle:
     def update(self):
         # global obstacle_type
         self.x -= self.speed * game_framework.frame_time
+        if scene_main.cookie.die_animation:
+            self.speed = 0
         # print(self.x)
         # if self.x < - 100:
         #     game_world.remove_object(self)

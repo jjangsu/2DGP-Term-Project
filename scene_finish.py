@@ -1,7 +1,7 @@
 from pico2d import *
 import game_framework
 import scene_main
-import scene_robby
+import scene_lobby
 import game_world
 
 TIME_PER_ACTION = 0.4
@@ -75,7 +75,7 @@ def enter():
     if jelly_image == None:
         jelly_image = load_image('resource/Cookie Skill Effects and Jellies/jelly/simple jelly.png')
 
-    tmp = scene_main.cookie.coin + int(scene_robby.coin)
+    tmp = scene_main.cookie.coin + int(scene_lobby.coin)
 
     particles = [Particle(315, 450), Particle(685, 450)]
 
@@ -93,10 +93,10 @@ def enter():
     f.write(str(tmp))
     f.close()
 
-    if scene_robby.select_cookie == 1:
+    if scene_lobby.select_cookie == 1:
         if cookie == None:
             cookie = load_image('resource/character/Brave cookie.png')
-    elif scene_robby.select_cookie == 2:
+    elif scene_lobby.select_cookie == 2:
         if cookie == None:
             cookie = load_image('resource/character/Bright cookie.png')
 
@@ -126,10 +126,10 @@ def update():
 
     if 450 < click_x and click_x < 500 and \
         20 < 500 - click_y and 500 - click_y < 100:
-        scene_robby.select_cookie = -1
-        scene_robby.play = False
+        scene_lobby.select_cookie = -1
+        scene_lobby.play = False
         game_world.clear()
-        game_framework.change_state(scene_robby)
+        game_framework.change_state(scene_lobby)
     pass
 
 

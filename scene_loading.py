@@ -3,7 +3,7 @@ import game_framework
 import scene_main
 import cookie_bright
 import cookie_brave
-import scene_robby
+import scene_lobby
 
 image = None
 bgm = None
@@ -12,9 +12,9 @@ def enter():
     global image, cookie, speed, previous_time, bgm
     if image == None:
         image = load_image('resource/background/LoadingBgOvenbreak.png')
-    if scene_robby.select_cookie == 1:
+    if scene_lobby.select_cookie == 1:
         cookie = load_image('resource/character/One_Brave_Cookie.png')
-    elif scene_robby.select_cookie == 2:
+    elif scene_lobby.select_cookie == 2:
         cookie = load_image('resource/character/One_Bright_Cookie.png')
 
     bgm = load_wav('sound/effect sound/g_start.wav')

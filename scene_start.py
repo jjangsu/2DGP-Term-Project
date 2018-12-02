@@ -1,6 +1,6 @@
 from pico2d import *
 import game_framework
-import scene_robby
+import scene_lobby
 
 image = None
 start_time = 0.0
@@ -46,7 +46,7 @@ def update():
     loading_x += speed * game_framework.frame_time # 1027 / 470
     current = get_time()
     if current - previous_time >= 2.5:
-        game_framework.change_state(scene_robby)
+        game_framework.change_state(scene_lobby)
     pass
 
 

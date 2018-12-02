@@ -5,6 +5,7 @@ import cookie_bright
 import cookie_brave
 import scene_loading
 import life
+import scene_store
 
 top_image = None
 top_image_x = 500
@@ -33,10 +34,14 @@ list = None
 coin_image = None
 life_image = None
 life_num = None
+store = None
+
 
 def enter():
-    global top_image, bottom_image, mouse, brave, bright, select_image, play_image, no_play_image, bgm, pick, coin
-    global font, list, coin_image, life_num, life_image
+    global top_image, bottom_image, mouse, brave, bright, select_image, play_image, no_play_image, bgm, pick, coin, play
+    global click_x, click_y
+    play = False
+    global font, list, coin_image, life_num, life_image, store
     if top_image == None:
         top_image = load_image('resource/background/robby_top1.png')
 
@@ -55,6 +60,9 @@ def enter():
 
     if no_play_image == None:
         no_play_image = load_image('resource/UI/no play.png')
+
+    if store == None:
+        store = load_image('resource/UI/store.png')
 
     brave = cookie_brave.Brave()
     brave.newPosition(500 - 150, 250)
@@ -83,7 +91,11 @@ def enter():
     f = open('coin data.txt', 'r')
     coin = f.read()
     f.close()
+
+    click_y = 0
+    click_x = 0
     pass
+
 
 def exit():
     global top_image, bottom_image, mouse, brave, bright, play_image, no_play_image, pick
@@ -153,7 +165,7 @@ def update():
         bright.frame_num = 4
         bright.standard_time = 3.5
 
-    if select_cookie == 0:
+    if select_cookie < 1:
         play = False
     else:
         play = True
@@ -165,11 +177,16 @@ def update():
         60 < 500 - click_y and 500 - click_y < 60 + 85:
             game_framework.change_state(scene_loading)
             bgm.stop()
+
+    if 940 - 60 < click_x and click_x < 1000 and \
+        225 - 50 < 500 - click_y and 500 - click_y < 225 + 50:
+        bgm.stop()
+        game_framework.change_state(scene_store)
     pass
 
 
 def draw():
-    global top_image, bottom_image, top_image_2, bottom_image_x_2, brave, bright, coin, life_image
+    global top_image, bottom_image, top_image_2, bottom_image_x_2, brave, bright, coin, life_image, store, play
     clear_canvas()
     top_image.clip_draw(0, 0, 1030, 246, top_image_x, 250 + 125)
     top_image.clip_draw(0, 0, 1030, 246, top_image_x_2, 250 + 125)
@@ -181,10 +198,12 @@ def draw():
     if select_cookie != -1:
         select_image.clip_draw(0, 0, 110, 179, select_x, select_y)
 
-    if play == True:
+    if play:
         play_image.clip_draw(0, 0, 300, 85, 1000 // 2, 60)
-    else:
+    elif not play:
         no_play_image.clip_draw(0, 0, 300, 85, 1000 // 2, 60)
+
+    store.draw(900 + 40, 225)
 
     coin_image.clip_draw(0, 0, 50, 50, 360, 460, 30, 30)
     font.draw(380, 460, '%s' % coin, (255, 255, 0))

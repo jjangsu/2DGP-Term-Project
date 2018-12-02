@@ -5,7 +5,7 @@ import background
 import numpy as np
 import cookie_brave
 import cookie_bright
-import scene_robby
+import scene_lobby
 import scene_finish
 import game_world
 import obstacle_pin_bean
@@ -94,10 +94,10 @@ def enter():
     backgrounds = background.Background()
     game_world.add_object(backgrounds, 0)
 
-    if scene_robby.select_cookie == 1:
+    if scene_lobby.select_cookie == 1:
         cookie = cookie_brave.Brave()
         cookie.newPosition(200, 70 + 115)
-    elif scene_robby.select_cookie == 2:
+    elif scene_lobby.select_cookie == 2:
         cookie = cookie_bright.Bright()
         cookie.newPosition(200, 70 + 115)
     game_world.add_object(cookie, 2)
@@ -114,13 +114,13 @@ def enter():
     for i in paths:
         game_world.add_object(i, 0)
 
-    game_world.add_object(scene_robby.life_num, 2)
+    game_world.add_object(scene_lobby.life_num, 2)
 
     timer = 0
 
-    scene_robby.bgm = load_music('sound/Cookie Run Ovenbreak - Theme Song Breakout 1.mp3')
-    scene_robby.bgm.get_volume()
-    scene_robby.bgm.repeat_play()
+    scene_lobby.bgm = load_music('sound/Cookie Run Ovenbreak - Theme Song Breakout 1.mp3')
+    scene_lobby.bgm.get_volume()
+    scene_lobby.bgm.repeat_play()
 
     button = ui.UI()
     game_world.add_object(button, 2)
@@ -167,8 +167,8 @@ def update():
         elif not game_object == cookie:
             game_object.update()
 
-    if scene_robby.life_num.image_x > scene_robby.life_num.life_amount:
-        scene_robby.bgm.stop()
+    if scene_lobby.life_num.image_x > int(scene_lobby.life_num.life_amount):
+        scene_lobby.bgm.stop()
         cookie.crash_animation = 0
         cookie.die_animation += 1
         cookie.crash = False
@@ -184,7 +184,7 @@ def update():
             if cookie.crash_animation == 1:
                 obs_sound.play(1)
             if cookie.crash_num == 1:
-                scene_robby.life_num.image_x += 40
+                scene_lobby.life_num.image_x += 40
             pass
         pass
 

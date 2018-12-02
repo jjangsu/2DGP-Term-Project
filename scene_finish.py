@@ -18,7 +18,7 @@ best_score = None
 cookie = None
 cookie_frame = 0
 mouse = None
-mouse_x , mouse_y = 0, 0
+mouse_x, mouse_y = 0, 0
 main = None
 click_x, click_y = 0, 0
 sound = None
@@ -52,6 +52,8 @@ class Particle:
 
 def enter():
     global base, black, font, coin_image, jelly_image, particle, particles, best_score, cookie, mouse, main, small_font, sound
+    global click_x, click_y
+    click_x, click_y = 0, 0
     if mouse == None:
         hide_cursor()
         mouse = load_image('resource/UI/mouse1.png')
@@ -101,10 +103,9 @@ def enter():
     if main == None:
         main = load_image('resource/UI/oven.png')
 
-
     if sound == None:
         sound = load_wav('sound/effect sound/r_medal.wav')
-        # sound = load_music('sound/finish 2.mp3')
+        # sound = load_music('sound/finish.mp3')
     sound.get_volume()
     sound.play(1)
     pass
@@ -112,6 +113,8 @@ def enter():
 
 def exit():
     global base, black, font, coin_image, jelly_image, particles, best_score, cookie, mouse, main, small_font
+    scene_main.jellies.clear()
+    scene_main.obstacles.clear()
 #     # del base
     # del black
     # del font
@@ -133,13 +136,12 @@ def update():
     for p in particles:
         p.update()
 
-    # if 450 < click_x and click_x < 500 and \
-    #     20 < 500 - click_y and 500 - click_y < 80:
-    #     scene_robby.select_cookie = -1
-    #     scene_robby.play = False
-    #     game_world.clear()
-
-    # #     game_framework.change_state(scene_robby)
+    if 450 < click_x and click_x < 500 and \
+        20 < 500 - click_y and 500 - click_y < 100:
+        scene_robby.select_cookie = -1
+        scene_robby.play = False
+        game_world.clear()
+        game_framework.change_state(scene_robby)
     pass
 
 
@@ -160,9 +162,9 @@ def draw():
 
     cookie.clip_draw(int(cookie_frame) * 236,  1 * 236, 236, 236, 630, 265, 200, 200)
 
-    # main.clip_draw(0, 0, 340, 296, 470, 50, 80, 69)
-    # small_font.draw(520, 55, '메인으로', (250, 250, 100))
-    # small_font.draw(520, 35, '돌아가기', (250, 250, 100))
+    main.clip_draw(0, 0, 340, 296, 470, 50, 80, 69)
+    small_font.draw(520, 55, '메인으로', (250, 250, 100))
+    small_font.draw(520, 35, '돌아가기', (250, 250, 100))
 
     mouse.clip_draw(0, 0, 73, 73, mouse_x, mouse_y)
 

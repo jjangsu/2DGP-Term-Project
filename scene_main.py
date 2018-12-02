@@ -92,7 +92,6 @@ def enter():
     global backgrounds, paths, obstacles, line, cookie, select_cookie, timer, life_image, jelly_line, jelly_file
     global button, score_font, score_font_back, coin_image, jelly_image, obs_sound
 
-
     backgrounds = background.Background()
     game_world.add_object(backgrounds, 0)
 
@@ -130,7 +129,6 @@ def enter():
 
     if score_font == None:
         score_font = load_font('font/Maplestory Light.ttf', 20)
-        # score_font = load_font('font/HoonJumbomamboB_0.ttf', 20)
 
     if coin_image == None:
         coin_image = load_image('resource/Cookie Skill Effects and Jellies/jelly/silver coin.png')
@@ -141,10 +139,12 @@ def enter():
         obs_sound = load_wav('sound/effect sound/g_obs1.wav')
     obs_sound.set_volume(60)
 
+    cookie.score = 0
+
 def exit():
+    global jellies, obstacles
     game_world.clear()
-    obstacles.clear()
-    jellies.clear()
+
 
 
 def collide(a, b):
@@ -160,7 +160,6 @@ def collide(a, b):
 def update():
     global timer, cookie, obstacles, life_image, fps, score, count, obs_sound
     timer += 1
-    # if timer > 2:
     fps = game_framework.frame_time
 
     for game_object in game_world.all_objects():
@@ -170,7 +169,7 @@ def update():
         elif not game_object == cookie:
             game_object.update()
 
-    if life_image.image_x > 50: # 450:
+    if life_image.image_x > life_image.life_amount:
         scene_robby.bgm.stop()
         cookie.crash_animation = 0
         cookie.die_animation += 1

@@ -17,7 +17,7 @@ mouse = None
 mouse_x , mouse_y = 0, 0
 select = None
 click_x, click_y = 0, 0
-select_cookie = 0
+select_cookie = -1
 select_image = None
 select_x = - 200
 select_y = 350
@@ -61,10 +61,8 @@ def enter():
     bright = cookie_bright.Bright()
     bright.newPosition(500 + 150, 250)
 
-    if bgm == None:
-        bgm = load_music('sound/Cookierun- Ovenbreak - OST - Trial Mode Main Lobby Theme - Extended 10 minutes.mp3')
-        bgm.get_volume()
-        # bgm.set_volume(80)
+    bgm = load_music('sound/Cookierun- Ovenbreak - OST - Trial Mode Main Lobby Theme - Extended 10 minutes.mp3')
+    bgm.get_volume()
     bgm.repeat_play()
 
     if pick == None:
@@ -162,8 +160,6 @@ def update():
         60 < 500 - click_y and 500 - click_y < 60 + 85:
             game_framework.change_state(scene_loading)
             bgm.stop()
-
-
     pass
 
 

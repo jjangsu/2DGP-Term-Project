@@ -2,6 +2,7 @@ from pico2d import *
 import obstacle
 import game_framework
 import cookie_brave
+import scene_main
 
 TIME_PER_ACTION = 0.2
 ACTION_PER_TIME = 1.0 / TIME_PER_ACTION
@@ -24,6 +25,8 @@ class Stone_1(obstacle.Obstacle):
 
     def update(self):
         self.x -= self.speed * game_framework.frame_time
+        if scene_main.cookie.die_animation:
+            self.speed = 0
         self.frame = (self.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 3
         # self.fly_stone.update()
         pass

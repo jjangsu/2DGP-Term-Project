@@ -17,24 +17,23 @@ def enter():
     elif scene_robby.select_cookie == 2:
         cookie = load_image('resource/character/One_Bright_Cookie.png')
 
+    bgm = load_wav('sound/effect sound/g_start.wav')
+    bgm.play(1)
+
     speed = 500.0
     previous_time = get_time()
     pass
 
 
 def exit():
-    global image, cookie
-    # del (image)
-    # del (cookie)
     pass
 
 
 def update():
     global previous_time, speed
     current = get_time()
-    if current - previous_time >= 1.5:
+    if current - previous_time >= 2.0:
         game_framework.change_state(scene_main)
-pass
 
 
 def draw():

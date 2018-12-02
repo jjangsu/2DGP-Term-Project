@@ -4,8 +4,7 @@ import scene_main
 import cookie_bright
 import cookie_brave
 import scene_loading
-import numpy as np
-import json
+import life
 
 top_image = None
 top_image_x = 500
@@ -32,10 +31,12 @@ font = None
 coin = None
 list = None
 coin_image = None
+life_image = None
+life_num = None
 
 def enter():
     global top_image, bottom_image, mouse, brave, bright, select_image, play_image, no_play_image, bgm, pick, coin
-    global font, list, coin_image
+    global font, list, coin_image, life_num, life_image
     if top_image == None:
         top_image = load_image('resource/background/robby_top1.png')
 
@@ -60,6 +61,10 @@ def enter():
 
     bright = cookie_bright.Bright()
     bright.newPosition(500 + 150, 250)
+
+    life_num = life.LIFE()
+    if life_image == None:
+        life_image = load_image('resource/UI/life.png')
 
     bgm = load_music('sound/Cookierun- Ovenbreak - OST - Trial Mode Main Lobby Theme - Extended 10 minutes.mp3')
     bgm.get_volume()
@@ -164,7 +169,7 @@ def update():
 
 
 def draw():
-    global top_image, bottom_image, top_image_2, bottom_image_x_2, brave, bright,coin
+    global top_image, bottom_image, top_image_2, bottom_image_x_2, brave, bright, coin, life_image
     clear_canvas()
     top_image.clip_draw(0, 0, 1030, 246, top_image_x, 250 + 125)
     top_image.clip_draw(0, 0, 1030, 246, top_image_x_2, 250 + 125)
@@ -172,7 +177,7 @@ def draw():
     bottom_image.clip_draw(0, 0, 1314, 394, bottom_image_x_2, 250 - 195)
     brave.draw()
     bright.draw()
-    #if select_x > 100:
+
     if select_cookie != -1:
         select_image.clip_draw(0, 0, 110, 179, select_x, select_y)
 
@@ -181,9 +186,11 @@ def draw():
     else:
         no_play_image.clip_draw(0, 0, 300, 85, 1000 // 2, 60)
 
-    coin_image.clip_draw(0, 0, 50, 50, 380, 460, 30, 30)
-    font.draw(400, 460, '%s' % coin, (255, 255, 0))
+    coin_image.clip_draw(0, 0, 50, 50, 360, 460, 30, 30)
+    font.draw(380, 460, '%s' % coin, (255, 255, 0))
 
+    life_image.clip_draw(0, 0, 88, 101, 580, 460, 40, 45)
+    font.draw(600, 460, '%s' % life_num.life_amount, (255, 255, 0))
 
     mouse.clip_draw(0, 0, 73, 73, mouse_x, mouse_y)
     update_canvas()
@@ -202,9 +209,6 @@ def handle_events():
             if event.button == SDL_BUTTON_LEFT:
                 pick.play()
                 click_x, click_y = event.x, event.y - 73 / 2 + 3
-        # elif event.type == SDL_KEYDOWN:
-        #     if event.key == SDLK_SPACE:
-        #         game_framework.push_state(scene_main)
     pass
 
 

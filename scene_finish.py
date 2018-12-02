@@ -105,7 +105,6 @@ def enter():
 
     if sound == None:
         sound = load_wav('sound/effect sound/r_medal.wav')
-        # sound = load_music('sound/finish.mp3')
     sound.get_volume()
     sound.play(1)
     pass
@@ -115,17 +114,6 @@ def exit():
     global base, black, font, coin_image, jelly_image, particles, best_score, cookie, mouse, main, small_font
     scene_main.jellies.clear()
     scene_main.obstacles.clear()
-#     # del base
-    # del black
-    # del font
-    # del coin_image
-    # del jelly_image
-    # del particles
-    # del best_score
-    # del cookie
-    # del mouse
-    # del main
-    # del small_font#
     pass
 
 

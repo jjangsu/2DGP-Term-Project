@@ -7,7 +7,6 @@ import cookie_brave
 import cookie_bright
 import scene_robby
 import scene_finish
-import life
 import game_world
 import obstacle_pin_bean
 import obstacle_fork_sky
@@ -89,7 +88,7 @@ def obstacle_init():
 
 
 def enter():
-    global backgrounds, paths, obstacles, line, cookie, select_cookie, timer, life_image, jelly_line, jelly_file
+    global backgrounds, paths, obstacles, line, cookie, select_cookie, timer, jelly_line, jelly_file
     global button, score_font, score_font_back, coin_image, jelly_image, obs_sound
 
     backgrounds = background.Background()
@@ -115,8 +114,7 @@ def enter():
     for i in paths:
         game_world.add_object(i, 0)
 
-    life_image = life.LIFE()
-    game_world.add_object(life_image, 2)
+    game_world.add_object(scene_robby.life_num, 2)
 
     timer = 0
 
@@ -141,10 +139,10 @@ def enter():
 
     cookie.score = 0
 
+
 def exit():
     global jellies, obstacles
     game_world.clear()
-
 
 
 def collide(a, b):
@@ -158,7 +156,7 @@ def collide(a, b):
 
 
 def update():
-    global timer, cookie, obstacles, life_image, fps, score, count, obs_sound
+    global timer, cookie, obstacles, fps, score, count, obs_sound
     timer += 1
     fps = game_framework.frame_time
 
@@ -169,7 +167,7 @@ def update():
         elif not game_object == cookie:
             game_object.update()
 
-    if life_image.image_x > life_image.life_amount:
+    if scene_robby.life_num.image_x > scene_robby.life_num.life_amount:
         scene_robby.bgm.stop()
         cookie.crash_animation = 0
         cookie.die_animation += 1
@@ -186,7 +184,7 @@ def update():
             if cookie.crash_animation == 1:
                 obs_sound.play(1)
             if cookie.crash_num == 1:
-                life_image.image_x += 40
+                scene_robby.life_num.image_x += 40
             pass
         pass
 
@@ -220,7 +218,6 @@ def update():
 
         elif item.x < -10:
             game_world.remove_object(item)
-
 
 
 def draw():

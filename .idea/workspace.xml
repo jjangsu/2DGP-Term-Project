@@ -2,23 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95ae52e5-0d25-4dd4-9c9a-d8a92e5a4725" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/coin data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/coin data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game_world.py" beforeDir="false" afterPath="$PROJECT_DIR$/game_world.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/life.py" beforeDir="false" afterPath="$PROJECT_DIR$/life.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obstacle_fly_stone_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/obstacle_fly_stone_1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obstacle_fly_stone_4.py" beforeDir="false" afterPath="$PROJECT_DIR$/obstacle_fly_stone_4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resource/UI/life bar2.png" beforeDir="false" afterPath="$PROJECT_DIR$/resource/UI/life bar2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scene_finish.py" beforeDir="false" afterPath="$PROJECT_DIR$/scene_finish.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scene_loading.py" beforeDir="false" afterPath="$PROJECT_DIR$/scene_loading.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scene_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/scene_main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scene_robby.py" beforeDir="false" afterPath="$PROJECT_DIR$/scene_robby.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/score.txt" beforeDir="false" afterPath="$PROJECT_DIR$/score.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/life.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="314">
+                    <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/scene_main.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="386">
+                    <caret line="126" lean-forward="true" selection-start-line="126" selection-end-line="126" />
+                    <folding>
+                      <element signature="e#0#20#0" expanded="true" />
+                      <element signature="e#662#1457#0" />
+                      <element signature="e#1485#2418#0" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1820792846">
@@ -45,7 +72,7 @@
           <entry key="PNG" value="3" />
           <entry key="jpg" value="4" />
           <entry key="png" value="14" />
-          <entry key="py" value="617" />
+          <entry key="py" value="621" />
           <entry key="txt" value="31" />
         </counts>
       </usages-collector>
@@ -53,20 +80,20 @@
         <counts>
           <entry key="Image" value="21" />
           <entry key="PLAIN_TEXT" value="31" />
-          <entry key="Python" value="617" />
+          <entry key="Python" value="621" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="72" />
-          <entry key="py" value="38237" />
+          <entry key="py" value="38514" />
           <entry key="txt" value="736" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="808" />
-          <entry key="Python" value="38237" />
+          <entry key="Python" value="38514" />
         </counts>
       </usages-collector>
     </session>
@@ -88,8 +115,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scene_robby.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2280">
-              <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+            <state relative-caret-position="224">
+              <caret line="191" column="56" selection-start-line="191" selection-start-column="56" selection-end-line="191" selection-end-column="56" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scene_loading.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="281">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -103,11 +142,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scene_finish.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="116" column="32" selection-start-line="116" selection-start-column="32" selection-end-line="116" selection-end-column="32" />
+            <state relative-caret-position="600">
+              <caret line="109" column="8" lean-forward="true" selection-start-line="109" selection-start-column="8" selection-end-line="109" selection-end-column="8" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -124,15 +163,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/life.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -144,8 +174,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>5</find>
-      <find>6</find>
       <find>frame</find>
       <find>line</find>
       <find>double_radian</find>
@@ -169,11 +197,13 @@
       <find>crash_animation</find>
       <find>crash_num</find>
       <find>height</find>
-      <find>life_image</find>
-      <find>double_jump</find>
-      <find>select_cookie</find>
       <find>remove</find>
       <find>del</find>
+      <find>play</find>
+      <find>double_jump</find>
+      <find>select_cookie</find>
+      <find>life_image</find>
+      <find>life</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -214,7 +244,6 @@
         <option value="$PROJECT_DIR$/scene_start.py" />
         <option value="$PROJECT_DIR$/game_framework.py" />
         <option value="$PROJECT_DIR$/jellyData.txt" />
-        <option value="$PROJECT_DIR$/scene_loading.py" />
         <option value="$PROJECT_DIR$/cookie_brave.py" />
         <option value="$PROJECT_DIR$/cookie_bright.py" />
         <option value="$PROJECT_DIR$/jelly_yellow_bear.py" />
@@ -230,15 +259,16 @@
         <option value="$PROJECT_DIR$/obstacle_fly_stone_1.py" />
         <option value="$PROJECT_DIR$/obstacle_fly_stone_4.py" />
         <option value="$PROJECT_DIR$/game_world.py" />
-        <option value="$PROJECT_DIR$/scene_robby.py" />
-        <option value="$PROJECT_DIR$/scene_main.py" />
         <option value="$PROJECT_DIR$/scene_finish.py" />
+        <option value="$PROJECT_DIR$/scene_main.py" />
+        <option value="$PROJECT_DIR$/scene_robby.py" />
+        <option value="$PROJECT_DIR$/scene_loading.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
-    <option name="width" value="1229" />
+    <option name="width" value="1109" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
@@ -348,10 +378,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1229" height="1047" extended-state="0" />
+    <frame x="-7" y="0" width="1109" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2031906" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22595705" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -490,13 +520,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scene_loading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/python37/Lib/site-packages/numpy/lib/npyio.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19532">
@@ -625,13 +648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/life.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/obstacle.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
@@ -663,13 +679,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scene_robby.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2280">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/1986093431/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
@@ -677,10 +686,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scene_finish.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="109" column="8" lean-forward="true" selection-start-line="109" selection-start-column="8" selection-end-line="109" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/life.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scene_main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
-          <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
+          <caret line="126" lean-forward="true" selection-start-line="126" selection-end-line="126" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
             <element signature="e#662#1457#0" />
@@ -689,13 +715,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scene_finish.py">
+    <entry file="file://$PROJECT_DIR$/scene_robby.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="116" column="32" selection-start-line="116" selection-start-column="32" selection-end-line="116" selection-end-column="32" />
+        <state relative-caret-position="224">
+          <caret line="191" column="56" selection-start-line="191" selection-start-column="56" selection-end-line="191" selection-end-column="56" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scene_loading.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>

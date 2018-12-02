@@ -23,7 +23,6 @@ import jelly_yellow_bear
 import ui
 
 
-
 obstacles = []
 jellies = []
 cookie = None
@@ -33,6 +32,7 @@ score_font = None
 count = 0
 coin_image = None
 jelly_image = None
+
 
 def jelly_init():
     jelly_line = [[0] * 5 for i in range(500)]
@@ -57,6 +57,7 @@ def jelly_init():
             row += 1
         row = 0
         col += 1
+
 
 def obstacle_init():
     line = [[0] * 12 for i in range(24)]

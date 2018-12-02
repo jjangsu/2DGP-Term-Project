@@ -21,6 +21,7 @@ mouse = None
 mouse_x , mouse_y = 0, 0
 main = None
 click_x, click_y = 0, 0
+sound = None
 
 class Particle:
     particle = None
@@ -50,8 +51,7 @@ class Particle:
 
 
 def enter():
-    global base, black, font, coin_image, jelly_image, particle, particles, best_score, cookie, mouse, main, small_font
-
+    global base, black, font, coin_image, jelly_image, particle, particles, best_score, cookie, mouse, main, small_font, sound
     if mouse == None:
         hide_cursor()
         mouse = load_image('resource/UI/mouse1.png')
@@ -100,6 +100,13 @@ def enter():
 
     if main == None:
         main = load_image('resource/UI/oven.png')
+
+
+    if sound == None:
+        # sound = load_music('sound/finish orign.mp3')
+        sound = load_music('sound/finish 2.mp3')
+    sound.get_volume()
+    sound.play(1)
     pass
 
 

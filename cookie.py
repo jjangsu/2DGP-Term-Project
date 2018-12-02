@@ -1,10 +1,7 @@
 from pico2d import *
 import game_framework
 import scene_main
-import scene_finish
 
-jump_hate = False
-double_jump = False
 
 PIXEL_PER_METER = (10.0 / 0.3)
 RUN_SPEED_KMPH = 20.0
@@ -17,7 +14,7 @@ ACTION_PER_TIME = 1.0 / TIME_PER_ACTION
 FRAMES_PER_ACTION = 9
 
 # character event
-L_SHIFT_DOWN, L_SHIFT_UP, RUN_TIMER, R_SHIFT_DOWN, R_SHIFT_UP, Z_DOWN, Z_UP, CRASH = range(8)
+L_SHIFT_DOWN, L_SHIFT_UP, RUN_TIMER, R_SHIFT_DOWN, R_SHIFT_UP, Z_DOWN, Z_UP = range(7)
 
 key_event_table = {
     (SDL_KEYDOWN, SDLK_LSHIFT): L_SHIFT_DOWN,
@@ -27,6 +24,8 @@ key_event_table = {
     (SDL_KEYDOWN, SDLK_z): Z_DOWN,
     (SDL_KEYUP, SDLK_z): Z_UP
 }
+
+jump_hate = False
 
 speed = 0.001
 height = 40
@@ -44,7 +43,6 @@ stop = False
 class RunningState:
     @staticmethod
     def enter(character, event):
-        global double_jump
         character.image_y = 4
         character.image_x = 0
 
@@ -54,7 +52,6 @@ class RunningState:
         character.crash_x2 = 40
         character.crash_y2 = 0
 
-        double_jump = False
         pass
 
     @staticmethod
@@ -184,7 +181,7 @@ class JumpState:
 class DoubleJumpState:
     @staticmethod
     def enter(character, event):
-        global direct, speed, double_jump, double_angle, origin_y, double_radian, height
+        global direct, speed, double_angle, origin_y, double_radian, height
         character.jump_timer = 150.0
         character.standard_time = 7.0
         character.frame = 0
@@ -197,8 +194,6 @@ class DoubleJumpState:
         character.crash_x2 = 40
         character.crash_y2 = 0
 
-        double_jump = True
-
         double_radian = 0.0
         double_angle = 0.0
         origin_y = character.y
@@ -210,13 +205,15 @@ class DoubleJumpState:
 
         character.Double_jump_sound.play(1)
         character.Double_jump_sound.set_volume(70)
+
+        character.double_jump = True
         pass
 
     @staticmethod
     def exit(character, event):
-        global double_jump
         scene_main.button.jump_push = False
         scene_main.button.opacity_jump = 0.3
+        character.double_jump = False
         pass
 
     @staticmethod
@@ -249,14 +246,6 @@ class DoubleJumpState:
             character.frame_num = 1
         if character.crash_animation > 0:
             timer += 1
-
-        if character.die_animation == 1:
-            character.image_y = 1
-            character.image_x = 5
-            character.frame = 0
-            character.frame_num = 5
-        if character.frame >= 9:
-            character.frame = 9
 
         if character.die_animation == 1:
             character.image_y = 1
@@ -357,12 +346,10 @@ class SlideState:
         pass
 
 
-
 next_state_table = {
     RunningState: {L_SHIFT_DOWN: JumpState, L_SHIFT_UP: JumpState, RUN_TIMER: RunningState,
                    R_SHIFT_DOWN: SlideState, R_SHIFT_UP: SlideState,
                    Z_DOWN: RunningState, Z_UP: RunningState,
-                   CRASH: RunningState
                    },
     JumpState: {L_SHIFT_DOWN: JumpState, L_SHIFT_UP: RunningState, RUN_TIMER: RunningState,
                 R_SHIFT_DOWN: JumpState, R_SHIFT_UP: JumpState,
@@ -390,7 +377,7 @@ class Character:
         self.frame = 0
         self.time = 0
         self.standard_time = 3.0
-        self.image = None # load_image('resource/Brave Cookie.png')
+        self.image = None
         self.event_que = []
         self.cur_state = RunningState
         self.cur_state.enter(self, None)
@@ -413,6 +400,8 @@ class Character:
         self.jump_sound = None
         self.Double_jump_sound = None
         self.slide_sound = None
+
+        self.double_jump = False
 
         self.crash_animation = 0
 
@@ -444,6 +433,7 @@ class Character:
             self.cur_state = next_state_table[self.cur_state][event]
             self.cur_state.enter(self, event)
         pass
+
     def draw(self):
         if self.crash:
             self.opacity = 0.5
@@ -458,14 +448,12 @@ class Character:
         pass
 
     def handle_event(self, event):
-        global jump_hate, double_jump
-        if (event.type, event.key) in key_event_table:
-            key_event = key_event_table[(event.type, event.key)]
-            if not jump_hate:
-                self.add_event(key_event)
-            elif jump_hate:
-                if double_jump ==  False:
+        global jump_hate
+        if not self.double_jump:
+            if (event.type, event.key) in key_event_table:
+                key_event = key_event_table[(event.type, event.key)]
+                if not jump_hate:
+                    self.add_event(key_event)
+                if jump_hate and not self.double_jump:
                     if key_event == Z_DOWN:
                         self.add_event(key_event)
-                else:
-                    double_jump = True

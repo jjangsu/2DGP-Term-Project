@@ -171,6 +171,9 @@ def update():
         scene_lobby.bgm.stop()
         cookie.crash_animation = 0
         cookie.die_animation += 1
+        if cookie.die_animation == 1:
+            cookie.die_sound.play(1)
+
         cookie.crash = False
         if cookie.die_animation > 100:
             game_framework.change_state(scene_finish)

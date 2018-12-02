@@ -25,8 +25,7 @@ def enter():
     bgm = load_music('sound/loading sound - cutting2.mp3')
     bgm.get_volume()
     bgm.repeat_play()
-    loading_x = - 512.0 # (1027.0 / 2.0)
-    # print(loading_x)
+    loading_x = - 512.0
     speed = 400.0
 
     previous_time = get_time()
@@ -43,7 +42,7 @@ def exit():
 
 def update():
     global start_time, loading_x, previous_time, speed
-    loading_x += speed * game_framework.frame_time # 1027 / 470
+    loading_x += speed * game_framework.frame_time
     current = get_time()
     if current - previous_time >= 2.5:
         game_framework.change_state(scene_lobby)

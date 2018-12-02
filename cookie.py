@@ -288,7 +288,6 @@ class SlideState:
         character.frame_num = 2
         character.image_y = 5
         character.image_x = 9
-        # character.slide_timer = 150.0
 
         character.crash_x1 = -40
         character.crash_x2 = 60
@@ -382,7 +381,6 @@ class Character:
         self.cur_state = RunningState
         self.cur_state.enter(self, None)
         self.jump_timer = 0
-        # self.slide_timer = 0
         self.opacity = 1.0
 
         self.crash_x1 = 0
@@ -418,6 +416,9 @@ class Character:
 
         self.sound_bear = load_wav('sound/effect sound/g_alphabet.wav')
         self.sound_bear.set_volume(50)
+
+        self.die_sound = load_wav('sound/g_end.wav')
+        self.die_sound.set_volume(50)
 
         pass
 

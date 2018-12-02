@@ -57,7 +57,6 @@ def enter():
         pick = load_wav('sound/picking.wav')
         pick.set_volume(60)
 
-    #if bgm == None:
     bgm = load_wav('sound/effect sound/bgm_lobby.wav')
     bgm.get_volume()
     bgm.repeat_play()

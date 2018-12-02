@@ -37,7 +37,6 @@ class Particle:
         pass
 
     def draw(self):
-        # if self.timer <= 0:
         Particle.particle.clip_draw(256 * int(self.frame), 0, 256, 256, self.x, self.y, 80, 80)
 
         pass

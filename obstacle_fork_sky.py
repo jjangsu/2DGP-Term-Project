@@ -1,6 +1,7 @@
 from pico2d import *
 import obstacle
 import cookie_brave
+import scene_main
 
 class Fork_sky(obstacle.Obstacle):
     image = None
@@ -16,6 +17,8 @@ class Fork_sky(obstacle.Obstacle):
 
 
     def draw(self):#
+        if scene_main.cookie.die_animation:
+            self.speed = 0
         if self.x < 1100:
             Fork_sky.image.clip_draw(0, 0, 86, 482, self.x, self.y)
             draw_rectangle(*self.get_bb())

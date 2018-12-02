@@ -2,6 +2,7 @@ from pico2d import *
 import obstacle
 import game_framework
 import cookie_brave as brave
+import scene_main
 
 TIME_PER_ACTION = 0.2
 ACTION_PER_TIME = 1.0 / TIME_PER_ACTION
@@ -24,6 +25,8 @@ class Trident(obstacle.Obstacle):
         pass
 
     def update(self):
+        if scene_main.cookie.die_animation:
+            self.speed = 0
         self.x -= self.speed * game_framework.frame_time
         if brave.Brave().x + 300 < self.x:
             self.frame = 0
@@ -32,7 +35,6 @@ class Trident(obstacle.Obstacle):
 
         if self.frame >= 3:
             self.frame = 3
-        # self.fly_stone.update()
         pass
 
     def draw(self):

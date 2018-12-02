@@ -29,7 +29,7 @@ class LIFE:
             self.image_x += self.speed
             self.timer = 0
         self.speed_timer += 1
-        if self.speed_timer % 1500 == 0:
+        if self.speed_timer % 1800 == 0:
             self.speed_parameter += 1.1
             self.speed = self.speed + int(self.speed_parameter + 0.5)
         pass

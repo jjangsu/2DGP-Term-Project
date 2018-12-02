@@ -28,7 +28,6 @@ class Stone_1(obstacle.Obstacle):
         if scene_main.cookie.die_animation:
             self.speed = 0
         self.frame = (self.frame + FRAMES_PER_ACTION * ACTION_PER_TIME * game_framework.frame_time) % 3
-        # self.fly_stone.update()
         pass
 
     def draw(self):
